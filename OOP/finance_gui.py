@@ -100,7 +100,6 @@ class FinanceGUI(tk.Tk):
         # Перейти к созданию dashboard'а
         self.on_login_success()
 
-
     def on_login_success(self):
         """Вызывается после успешного входа — создаёт dashboard и нужный role-GUI."""
         if self.dashboard_frame:
@@ -139,7 +138,6 @@ class FinanceGUI(tk.Tk):
                                     self.admin_service, self.current_user)
         else:
             tk.Label(self.dashboard_frame, text="Неизвестная роль").pack()
-
 
     def logout(self):
         """Корректно разлогиниться и вернуть экран логина."""

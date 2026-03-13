@@ -1,30 +1,25 @@
+# window/role_window.py
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 from data.DataStore import LogEntry
 from window.helper_window import TransferDialog, CreateDepositDialog
 import json
 
-class ClientGUI:
-    """Интерфейс и методы для клиента"""
-    def __init__(self, parent, store, auth, bank_service, tx_service, enterprise_service, current_user):
-        # parent должен быть tk.Frame или tk.Tk (dashboard_frame из FinanceGUI)
+class RoleGUIBase:
+    """Базовый GUI-класс для всех ролей."""
+    def __init__(self, parent, store, current_user):
         self.parent = parent
         self.store = store
-        self.auth = auth
-        self.bank_service = bank_service
-        self.tx_service = tx_service
-        self.enterprise_service = enterprise_service
         self.current_user = current_user
 
-        self.main_frame = None  # корневой фрейм GUI (для destroy)
-        self.accounts_tree = None
-        self.deposits_tree = None
-        self.banks_list = None
+        self.main_frame = None
 
-        self.build_client_ui()
+    def build_main_frame(self):
+        self.main_frame = tk.Frame(self.parent)
+        self.main_frame.pack(fill="both", expand=True)
+        return self.main_frame
 
     def destroy(self):
-        """Корректно удалить GUI"""
         try:
             if self.main_frame:
                 self.main_frame.destroy()
@@ -32,19 +27,48 @@ class ClientGUI:
         except Exception:
             pass
 
-    # Client UI
-    def build_client_ui(self):
-        # создаём главный контейнер внутри переданного parent
-        self.main_frame = tk.Frame(self.parent)
-        self.main_frame.pack(fill="both", expand=True)
+    def ask_string(self, title, prompt):
+        return simpledialog.askstring(title, prompt, parent=self.parent)
 
-        left = tk.Frame(self.main_frame)
+    def ask_float(self, title, prompt):
+        return simpledialog.askfloat(title, prompt, parent=self.parent)
+
+    def show_info(self, title, text):
+        messagebox.showinfo(title, text, parent=self.parent)
+
+    def show_error(self, title, text):
+        messagebox.showerror(title, text, parent=self.parent)
+
+    def show_warning(self, title, text):
+        messagebox.showwarning(title, text, parent=self.parent)
+
+    def wait_window(self, widget):
+        self.parent.wait_window(widget)
+
+class ClientGUI(RoleGUIBase):
+    """Интерфейс и методы для клиента"""
+    def __init__(self, parent, store, auth, bank_service, tx_service, enterprise_service, current_user):
+        super().__init__(parent, store, current_user)
+        self.auth = auth
+        self.bank_service = bank_service
+        self.tx_service = tx_service
+        self.enterprise_service = enterprise_service
+
+        self.accounts_tree = None
+        self.deposits_tree = None
+        self.banks_list = None
+        self.build_client_ui()
+
+    def build_client_ui(self):
+        frame = self.build_main_frame()
+
+        left = tk.Frame(frame)
         left.pack(side="left", fill="both", expand=True, padx=6)
 
-        mid = tk.Frame(self.main_frame)
+        mid = tk.Frame(frame)
         mid.pack(side="left", fill="both", expand=True, padx=6)
 
-        right = tk.Frame(self.main_frame)
+        right = tk.Frame(frame)
         right.pack(side="left", fill="both", expand=True, padx=6)
 
         # Banks list + open account
@@ -83,8 +107,8 @@ class ClientGUI:
         tk.Button(right, text="Перевести между счётом и вкладом", command=self.client_transfer_dialog).pack(pady=2)
         tk.Button(right, text="Накопить (1 месяц) на выбранном вкладе", command=self.client_accrue_deposit).pack(pady=2)
 
-        # Enterprises / payroll (ниже — отдельный bottom, но внутри main_frame)
-        bottom = tk.Frame(self.main_frame)
+        # Enterprises / payroll
+        bottom = tk.Frame(frame)
         bottom.pack(fill="x", pady=(8, 0))
         tk.Button(bottom, text="Посмотреть предприятия и подать заявку на зарплатный проект",
                   command=self.client_view_enterprises_window).pack(side="left", padx=6)
@@ -96,7 +120,6 @@ class ClientGUI:
         self.refresh_client_deposits()
 
     def refresh_client_accounts(self):
-        # безопасно: если дерево ещё не инициализировано — ничего не делаем
         if not self.accounts_tree:
             return
         for i in self.accounts_tree.get_children():
@@ -121,7 +144,7 @@ class ClientGUI:
     def client_open_account(self):
         sel = self.banks_list.curselection()
         if not sel:
-            messagebox.showwarning("Открытие счета", "Выберите банк.", parent=self.parent)
+            self.show_warning("Открытие счета", "Выберите банк.")
             return
         line = self.banks_list.get(sel[0])
         bank_id = line.split(" — ")[0]
@@ -130,76 +153,71 @@ class ClientGUI:
             return
         try:
             acc = self.bank_service.open_account(bank_id, self.current_user.id, initial=initial)
-            messagebox.showinfo("Открытие счета", f"Счет открыт: {acc.id}", parent=self.parent)
+            self.show_info("Открытие счета", f"Счет открыт: {acc.id}")
             self.refresh_client_accounts()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def client_close_account(self):
         sel = self.accounts_tree.selection()
         if not sel:
-            messagebox.showwarning("Закрытие счета", "Выберите счёт.", parent=self.parent)
+            self.show_warning("Закрытие счета", "Выберите счёт.")
             return
         aid = sel[0]
         try:
             self.bank_service.close_account(aid, actor_id=self.current_user.id)
-            messagebox.showinfo("Закрытие", "Счёт закрыт.", parent=self.parent)
+            self.show_info("Закрытие", "Счёт закрыт.")
             self.refresh_client_accounts()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def client_create_deposit(self):
         banks = list(self.store.banks.values())
         bank_choices = {b.id: b.name for b in banks}
-        # dialog parent — используем parent (dashboard_frame)
         d = CreateDepositDialog(self.parent, bank_choices)
-        # ждём закрытия окна диалога (родитель — dashboard_frame)
-        self.parent.wait_window(d)
+        self.wait_window(d)
         if not getattr(d, "result", None):
             return
         bank_id, principal, rate, term = d.result
         try:
             dep = self.bank_service.create_deposit(bank_id, self.current_user.id, principal, rate, term)
-            messagebox.showinfo("Вклад", f"Вклад создан: {dep.id}", parent=self.parent)
+            self.show_info("Вклад", f"Вклад создан: {dep.id}")
             self.refresh_client_deposits()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def client_close_deposit(self):
         sel = self.deposits_tree.selection()
         if not sel:
-            messagebox.showwarning("Закрытие вклада", "Выберите вклад.", parent=self.parent)
+            self.show_warning("Закрытие вклада", "Выберите вклад.")
             return
         did = sel[0]
         try:
             self.bank_service.close_deposit(did, actor_id=self.current_user.id)
-            messagebox.showinfo("Вклад", "Вклад закрыт.", parent=self.parent)
+            self.show_info("Вклад", "Вклад закрыт.")
             self.refresh_client_deposits()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def client_accrue_deposit(self):
         sel = self.deposits_tree.selection()
         if not sel:
-            messagebox.showwarning("Накопление", "Выберите вклад.", parent=self.parent)
+            self.show_warning("Накопление", "Выберите вклад.")
             return
         did = sel[0]
         try:
             dep = self.bank_service._get_deposit(did)
             dep.accrue_month()
-
             self.store.save_log(LogEntry(actor_id=self.current_user.id, action="accrue_deposit",
                                         payload={"deposit_id": did, "new_principal": dep.principal}))
-            messagebox.showinfo("Накопление", f"Капитализация выполнена. Новый принципал: {dep.principal:.2f}",
-                                parent=self.parent)
+            self.show_info("Накопление", f"Капитализация выполнена. Новый принципал: {dep.principal:.2f}")
             self.refresh_client_deposits()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def client_transfer_dialog(self):
         dlg = TransferDialog(self.parent, self.store, self.tx_service, self.current_user)
-        self.parent.wait_window(dlg)
-
+        self.wait_window(dlg)
         self.refresh_client_accounts()
         self.refresh_client_deposits()
 
@@ -254,7 +272,7 @@ class ClientGUI:
                 if req["client_id"] == self.current_user.id and req.get("approved"):
                     approved.append((e, rid, req))
         if not approved:
-            messagebox.showinfo("Зарплата", "Нет одобренных заявок.", parent=self.parent)
+            self.show_info("Зарплата", "Нет одобренных заявок.")
             return
 
         w = tk.Toplevel(self.parent)
@@ -309,41 +327,29 @@ class ClientGUI:
             except Exception as e:
                 messagebox.showerror("Ошибка", str(e), parent=w)
 
-class ManagerGUI:
+class ManagerGUI(RoleGUIBase):
     """Интерфейс и методы для менеджера"""
     def __init__(self, parent, store, enterprise_service, bank_service, current_user):
-        self.parent = parent
-        self.store = store
+        super().__init__(parent, store, current_user)
         self.enterprise_service = enterprise_service
         self.bank_service = bank_service
-        self.current_user = current_user
 
-        self.main_frame = None
         self.unconfirmed_list = None
         self.ent_tree = None
         self.payroll_tree = None
 
         self.build_manager_ui()
 
-    def destroy(self):
-        try:
-            if self.main_frame:
-                self.main_frame.destroy()
-                self.main_frame = None
-        except Exception:
-            pass
-
     def build_manager_ui(self):
-        self.main_frame = tk.Frame(self.parent)
-        self.main_frame.pack(fill="both", expand=True)
+        frame = self.build_main_frame()
 
-        left = tk.Frame(self.main_frame)
+        left = tk.Frame(frame)
         left.pack(side="left", fill="both", expand=True, padx=6)
 
-        mid = tk.Frame(self.main_frame)
+        mid = tk.Frame(frame)
         mid.pack(side="left", fill="both", expand=True, padx=6)
 
-        right = tk.Frame(self.main_frame)
+        right = tk.Frame(frame)
         right.pack(side="left", fill="both", expand=True, padx=6)
 
         # Unconfirmed clients
@@ -394,16 +400,16 @@ class ManagerGUI:
     def manager_confirm_selected(self):
         sel = self.unconfirmed_list.curselection()
         if not sel:
-            messagebox.showwarning("Подтверждение", "Выберите клиента.", parent=self.parent)
+            self.show_warning("Подтверждение", "Выберите клиента.")
             return
         line = self.unconfirmed_list.get(sel[0])
         client_id = line.split(" — ")[0]
         if client_id not in self.store.users:
-            messagebox.showerror("Ошибка", "Клиент не найден.", parent=self.parent)
+            self.show_error("Ошибка", "Клиент не найден.")
             return
         self.store.users[client_id].confirmed = True
         self.store.save_log(LogEntry(actor_id=self.current_user.id, action="confirm_client", payload={"client_id": client_id}))
-        messagebox.showinfo("Подтверждение", "Клиент подтверждён.", parent=self.parent)
+        self.show_info("Подтверждение", "Клиент подтверждён.")
         self.refresh_unconfirmed()
 
     def refresh_enterprises(self):
@@ -417,48 +423,48 @@ class ManagerGUI:
     def manager_add_employee_dialog(self):
         ent_ids = list(self.store.enterprises.keys())
         if not ent_ids:
-            messagebox.showinfo("Добавление", "Нет предприятий.", parent=self.parent)
+            self.show_info("Добавление", "Нет предприятий.")
             return
         eid = simpledialog.askstring("Добавить в предприятие",
                                      f"Введите id предприятия:\nДоступные: {', '.join(ent_ids)}", parent=self.parent)
         if not eid or eid not in self.store.enterprises:
-            messagebox.showwarning("Ошибка", "Неверный enterprise id.", parent=self.parent)
+            self.show_warning("Ошибка", "Неверный enterprise id.")
             return
         clients = [u for u in self.store.users.values() if u.role == "client"]
         if not clients:
-            messagebox.showinfo("Добавление", "Нет клиентов.", parent=self.parent)
+            self.show_info("Добавление", "Нет клиентов.")
             return
         cid = simpledialog.askstring("Добавить клиента",
                                      f"Введите id клиента:\nДоступные: {', '.join(u.id for u in clients)}", parent=self.parent)
         if not cid or cid not in self.store.users:
-            messagebox.showwarning("Ошибка", "Неверный client id.", parent=self.parent)
+            self.show_warning("Ошибка", "Неверный client id.")
             return
         try:
             self.enterprise_service.add_employee(eid, cid, manager_id=self.current_user.id)
             self.store.save_log(LogEntry(actor_id=self.current_user.id, action="add_employee",
                                         payload={"enterprise_id": eid, "client_id": cid}))
-            messagebox.showinfo("Добавление", "Клиент добавлен в предприятие.", parent=self.parent)
+            self.show_info("Добавление", "Клиент добавлен в предприятие.")
             self.refresh_enterprises()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def manager_remove_employee_dialog(self):
         eid = simpledialog.askstring("Удалить из предприятия", "Введите id предприятия:", parent=self.parent)
         if not eid or eid not in self.store.enterprises:
-            messagebox.showwarning("Ошибка", "Неверный enterprise id.", parent=self.parent)
+            self.show_warning("Ошибка", "Неверный enterprise id.")
             return
         cid = simpledialog.askstring("Клиент id", "Введите id клиента для удаления:", parent=self.parent)
         if not cid or cid not in self.store.users:
-            messagebox.showwarning("Ошибка", "Неверный client id.", parent=self.parent)
+            self.show_warning("Ошибка", "Неверный client id.")
             return
         try:
             self.enterprise_service.remove_employee(eid, cid, manager_id=self.current_user.id)
             self.store.save_log(LogEntry(actor_id=self.current_user.id, action="remove_employee",
                                         payload={"enterprise_id": eid, "client_id": cid}))
-            messagebox.showinfo("Удаление", "Клиент удалён из предприятия.", parent=self.parent)
+            self.show_info("Удаление", "Клиент удалён из предприятия.")
             self.refresh_enterprises()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def refresh_payroll_requests(self):
         if not self.payroll_tree:
@@ -474,7 +480,7 @@ class ManagerGUI:
     def manager_approve_selected_payroll(self):
         sel = self.payroll_tree.selection()
         if not sel:
-            messagebox.showwarning("Одобрение", "Выберите заявку.", parent=self.parent)
+            self.show_warning("Одобрение", "Выберите заявку.")
             return
         rid = sel[0]
 
@@ -484,16 +490,16 @@ class ManagerGUI:
                 ent_id = e.id
                 break
         if ent_id is None:
-            messagebox.showerror("Ошибка", "Заявка не найдена.", parent=self.parent)
+            self.show_error("Ошибка", "Заявка не найдена.")
             return
         try:
             self.enterprise_service.approve_payroll_request(ent_id, rid, manager_id=self.current_user.id)
             self.store.save_log(LogEntry(actor_id=self.current_user.id, action="approve_payroll_request",
                                         payload={"enterprise_id": ent_id, "req_id": rid}))
-            messagebox.showinfo("Одобрение", "Заявка одобрена менеджером.", parent=self.parent)
+            self.show_info("Одобрение", "Заявка одобрена менеджером.")
             self.refresh_payroll_requests()
         except Exception as e:
-            messagebox.showerror("Ошибка", str(e), parent=self.parent)
+            self.show_error("Ошибка", str(e))
 
     def manager_block_unblock_account(self):
         w = tk.Toplevel(self.parent)
@@ -568,40 +574,28 @@ class ManagerGUI:
                 txt.insert("end", f"  {tx.timestamp} {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}\n")
         txt.config(state="disabled")
 
-class AdminGUI:
+class AdminGUI(RoleGUIBase):
     """Интерфейс и методы для админа"""
     def __init__(self, parent, store, admin_service, current_user):
-        self.parent = parent
-        self.store = store
+        super().__init__(parent, store, current_user)
         self.admin_service = admin_service
-        self.current_user = current_user
 
-        self.main_frame = None
         self.logs_tree = None
 
         self.build_admin_ui()
 
-    def destroy(self):
-        try:
-            if self.main_frame:
-                self.main_frame.destroy()
-                self.main_frame = None
-        except Exception:
-            pass
-
     def build_admin_ui(self):
-        self.main_frame = tk.Frame(self.parent)
-        self.main_frame.pack(fill="both", expand=True)
+        frame = self.build_main_frame()
 
-        tk.Label(self.main_frame, text="Логи действий (последние):").pack(anchor="w")
-        self.logs_tree = ttk.Treeview(self.main_frame, columns=("actor", "action", "payload", "time"), show="headings")
+        tk.Label(frame, text="Логи действий (последние):").pack(anchor="w")
+        self.logs_tree = ttk.Treeview(frame, columns=("actor", "action", "payload", "time"), show="headings")
         self.logs_tree.heading("actor", text="Actor")
         self.logs_tree.heading("action", text="Action")
         self.logs_tree.heading("payload", text="Payload")
         self.logs_tree.heading("time", text="Timestamp")
         self.logs_tree.pack(fill="both", expand=True)
-        tk.Button(self.main_frame, text="Обновить логи", command=self.refresh_logs).pack(pady=6)
-        tk.Button(self.main_frame, text="Показать транзакции и отменить (undo)",
+        tk.Button(frame, text="Обновить логи", command=self.refresh_logs).pack(pady=6)
+        tk.Button(frame, text="Показать транзакции и отменить (undo)",
                   command=self.admin_tx_undo_dialog).pack(pady=4)
         self.refresh_logs()
 

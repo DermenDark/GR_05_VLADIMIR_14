@@ -2,8 +2,26 @@ from typing import List, Optional
 from data.DataStore import ( User, Bank, Account, Deposit, 
                   Transaction, Enterprise, LogEntry, 
                   DataStore, gen_id)
+import getpass
+import json
+def input_nonempty(prompt: str) -> str:
+    while True:
+        s = input(prompt).strip()
+        if s:
+            return s
+        print("Поле не может быть пустым. Повторите ввод.")
 
-# Services ( Single Responsibility)
+def input_positive_float(prompt: str) -> float:
+    while True:
+        s = input(prompt).replace(",", ".").strip()
+        try:
+            v = float(s)
+            if v > 0:
+                return v
+            print("Введите число > 0.")
+        except:
+            print("Невалидный ввод. Введите число.")
+# Services
 class AutoService:
     def __init__(self, store: DataStore):
         self.store = store
@@ -234,7 +252,7 @@ class AdminService:
         return rev
 
 # Application / Core
-class CoreApp:
+class CLIApp:
     def __init__(self):
         self.store = DataStore()
         self.auth = AutoService(self.store)
@@ -266,411 +284,412 @@ class CoreApp:
 
         dep_a = self.bank_service.create_deposit(b1.id, c1.id, principal=500.0, rate_pct=5.0, term_months=12)
         ent = self.enterprise_service.create_enterprise("ООО Рога и Копыта", manager_id=mgr.id, funds=10000.0)
+        ent1 = self.enterprise_service.create_enterprise("ООО MMM", manager_id=mgr.id, funds=35000.0)
         self.store.save_log(LogEntry(actor_id="system", action="seeded_demo", 
                                      payload={"banks": [b1.to_dict(), b2.to_dict()], "users": [c1.to_dict(), c2.to_dict()]}))
-(
-    # def run(self):
-    #     print("=== Система: Управление финансовой системой (консольная демонстрация) ===")
-    #     while True:
-    #         if not self.current_user:
-    #             print("\n1) Войти\n2) Зарегистрироваться (клиент)\n3) Выход")
-    #             choice = input("Выберите: ").strip()
-    #             if choice == "1":
-    #                 self.menu_login()
-    #             elif choice == "2":
-    #                 self.menu_register()
-    #             elif choice == "3":
-    #                 print("Выход. До свидания.")
-    #                 break
-    #             else:
-    #                 print("Неправильный выбор.")
-    #         else:
-    #             role = self.current_user.role
-    #             if role == "client":
-    #                 self.menu_client()
-    #             elif role == "manager":
-    #                 self.menu_manager()
-    #             elif role == "admin":
-    #                 self.menu_admin()
-    #             else:
-    #                 print("Неизвестная роль. Выход.")
-    #                 break
+        
 
-    # def menu_login(self):
-    #     login = input_nonempty("Логин: ")
-    #     password = getpass.getpass("Пароль: ")
-    #     user = self.auth.authenticate(login, password)
-    #     if user is None:
-    #         print("Аутентификация не удалась (возможно, нужно подтверждение менеджера или неверный пароль).")
-    #         return
-    #     self.current_user = user
-    #     print(f"Вход выполнен. Привет, {user.full_name} ({user.role}).")
+    def run(self):
+        print("=== Система: Управление финансовой системой (консольная демонстрация) ===")
+        while True:
+            if not self.current_user:
+                print("\n1) Войти\n2) Зарегистрироваться (клиент)\n3) Выход")
+                choice = input("Выберите: ").strip()
+                if choice == "1":
+                    self.menu_login()
+                elif choice == "2":
+                    self.menu_register()
+                elif choice == "3":
+                    print("Выход. До свидания.")
+                    break
+                else:
+                    print("Неправильный выбор.")
+            else:
+                role = self.current_user.role
+                if role == "client":
+                    self.menu_client()
+                elif role == "manager":
+                    self.menu_manager()
+                elif role == "admin":
+                    self.menu_admin()
+                else:
+                    print("Неизвестная роль. Выход.")
+                    break
 
-    # def menu_register(self):
-    #     print("=== Регистрация клиента ===")
-    #     login = input_nonempty("Логин: ")
-    #     full_name = input_nonempty("ФИО: ")
-    #     password = getpass.getpass("Пароль (мин 4): ")
-    #     try:
-    #         user = self.auth.register_client(login=login, full_name=full_name, password=password)
-    #         print("Зарегистрировано. Ожидает подтверждения менеджера. Когда менеджер подтвердит, вы сможете войти.")
-    #         print(f"Ваш идентификатор: {user.id}")
-    #     except Exception as e:
-    #         print("Ошибка регистрации:", str(e))
+    def menu_login(self):
+        login = input_nonempty("Логин: ")
+        password = getpass.getpass("Пароль: ")
+        user = self.auth.authenticate(login, password)
+        if user is None:
+            print("Аутентификация не удалась (возможно, нужно подтверждение менеджера или неверный пароль).")
+            return
+        self.current_user = user
+        print(f"Вход выполнен. Привет, {user.full_name} ({user.role}).")
 
-    # # Client menu
-    # def menu_client(self):
-    #     user = self.current_user
-    #     assert user and user.role == "client"
-    #     print("\n--- Клиентское меню ---")
-    #     print("1) Просмотреть банки")
-    #     print("2) Открыть счет")
-    #     print("3) Закрыть счет")
-    #     print("4) Перевести средства")
-    #     print("5) Просмотр истории счетов")
-    #     print("6) Создать вклад")
-    #     print("7) Закрыть вклад")
-    #     print("8) Перевести на вклад / со вклада")
-    #     print("9) Посмотреть предприятия")
-    #     print("10) Подать заявку на зарплатный проект")
-    #     print("11) Получить зарплату (после одобрения менеджером)")
-    #     print("0) Выйти (Logout)")
-    #     c = input("Выберите: ").strip()
-    #     try:
-    #         if c == "1":
-    #             self.client_view_banks()
-    #         elif c == "2":
-    #             self.client_open_account()
-    #         elif c == "3":
-    #             self.client_close_account()
-    #         elif c == "4":
-    #             self.client_transfer()
-    #         elif c == "5":
-    #             self.client_view_history()
-    #         elif c == "6":
-    #             self.client_create_deposit()
-    #         elif c == "7":
-    #             self.client_close_deposit()
-    #         elif c == "8":
-    #             self.client_transfer_to_from_deposit()
-    #         elif c == "9":
-    #             self.client_view_enterprises()
-    #         elif c == "10":
-    #             self.client_submit_payroll()
-    #         elif c == "11":
-    #             self.client_get_salary()
-    #         elif c == "0":
-    #             print("Выход.")
-    #             self.current_user = None
-    #         else:
-    #             print("Неверный выбор.")
-    #     except Exception as e:
-    #         print("Ошибка:", e)
+    def menu_register(self):
+        print("=== Регистрация клиента ===")
+        login = input_nonempty("Логин: ")
+        full_name = input_nonempty("ФИО: ")
+        password = getpass.getpass("Пароль (мин 4): ")
+        try:
+            user = self.auth.register_client(login=login, full_name=full_name, password=password)
+            print("Зарегистрировано. Ожидает подтверждения менеджера. Когда менеджер подтвердит, вы сможете войти.")
+            print(f"Ваш идентификатор: {user.id}")
+        except Exception as e:
+            print("Ошибка регистрации:", str(e))
 
-    # def client_view_banks(self):
-    #     print("Банки в системе:")
-    #     for b in self.store.banks.values():
-    #         print(f"- {b.name} (id={b.id})")
+    # Client menu
+    def menu_client(self):
+        user = self.current_user
+        assert user and user.role == "client"
+        print("\n--- Клиентское меню ---")
+        print("1) Просмотреть банки")
+        print("2) Открыть счет")
+        print("3) Закрыть счет")
+        print("4) Перевести средства")
+        print("5) Просмотр истории счетов")
+        print("6) Создать вклад")
+        print("7) Закрыть вклад")
+        print("8) Перевести на вклад / со вклада")
+        print("9) Посмотреть предприятия")
+        print("10) Подать заявку на зарплатный проект")
+        print("11) Получить зарплату (после одобрения менеджером)")
+        print("0) Выйти (Logout)")
+        c = input("Выберите: ").strip()
+        try:
+            if c == "1":
+                self.client_view_banks()
+            elif c == "2":
+                self.client_open_account()
+            elif c == "3":
+                self.client_close_account()
+            elif c == "4":
+                self.client_transfer()
+            elif c == "5":
+                self.client_view_history()
+            elif c == "6":
+                self.client_create_deposit()
+            elif c == "7":
+                self.client_close_deposit()
+            elif c == "8":
+                self.client_transfer_to_from_deposit()
+            elif c == "9":
+                self.client_view_enterprises()
+            elif c == "10":
+                self.client_submit_payroll()
+            elif c == "11":
+                self.client_get_salary()
+            elif c == "0":
+                print("Выход.")
+                self.current_user = None
+            else:
+                print("Неверный выбор.")
+        except Exception as e:
+            print("Ошибка:", e)
 
-    # def client_open_account(self):
-    #     print("Открытие счета. Выберите банк (id):")
-    #     for b in self.store.banks.values():
-    #         print(f"{b.id}: {b.name}")
-    #     bid = input_nonempty("bank_id: ")
-    #     initial = input_positive_float("Начальный депозит: ")
-    #     acc = self.bank_service.open_account(bid, self.current_user.id, initial=initial)
-    #     print("Счет открыт:", acc.id)
+    def client_view_banks(self):
+        print("Банки в системе:")
+        for b in self.store.banks.values():
+            print(f"- {b.name} (id={b.id})")
 
-    # def client_close_account(self):
-    #     print("Ваши счета:")
-    #     my_accs = [acc for acc in self.store.accounts_index.values() if acc.owner_id == self.current_user.id]
-    #     if not my_accs:
-    #         print("У вас нет счетов.")
-    #         return
-    #     for acc in my_accs:
-    #         print(f"{acc.id}: Bank {self.store.banks[acc.bank_id].name} Balance={acc.balance} Blocked={acc.blocked}")
-    #     aid = input_nonempty("Введите id счета для закрытия: ")
-    #     self.bank_service.close_account(aid, actor_id=self.current_user.id)
-    #     print("Счет закрыт.")
+    def client_open_account(self):
+        print("Открытие счета. Выберите банк (id):")
+        for b in self.store.banks.values():
+            print(f"{b.id}: {b.name}")
+        bid = input_nonempty("bank_id: ")
+        initial = input_positive_float("Начальный депозит: ")
+        acc = self.bank_service.open_account(bid, self.current_user.id, initial=initial)
+        print("Счет открыт:", acc.id)
 
-    # def client_transfer(self):
-    #     print("Перевод средств.")
-    #     # list user's accounts and deposits
-    #     my_accounts = [a for a in self.store.accounts_index.values() if a.owner_id == self.current_user.id]
-    #     my_deposits = [d for d in self.store.deposits_index.values() if d.owner_id == self.current_user.id]
-    #     print("Ваши счета:")
-    #     for a in my_accounts:
-    #         print(f"{a.id}: Balance={a.balance} Bank={self.store.banks[a.bank_id].name} Blocked={a.blocked}")
-    #     print("Ваши вклады:")
-    #     for d in my_deposits:
-    #         print(f"{d.id}: Principal={d.principal} Bank={self.store.banks[d.bank_id].name} Blocked={d.blocked}")
-    #     src_type = input_nonempty("Источник (account/deposit): ")
-    #     src_id = input_nonempty("id источника: ")
-    #     dst_type = input_nonempty("Назначение (account/deposit/enterprise): ")
-    #     dst_id = input_nonempty("id назначения: ")
-    #     amount = input_positive_float("Сумма: ")
-    #     tx = self.tx_service.transfer(src_type, src_id, dst_type, dst_id, amount, actor_id=self.current_user.id)
-    #     print("Перевод выполнен. tx_id:", tx.id)
+    def client_close_account(self):
+        print("Ваши счета:")
+        my_accs = [acc for acc in self.store.accounts_index.values() if acc.owner_id == self.current_user.id]
+        if not my_accs:
+            print("У вас нет счетов.")
+            return
+        for acc in my_accs:
+            print(f"{acc.id}: Bank {self.store.banks[acc.bank_id].name} Balance={acc.balance} Blocked={acc.blocked}")
+        aid = input_nonempty("Введите id счета для закрытия: ")
+        self.bank_service.close_account(aid, actor_id=self.current_user.id)
+        print("Счет закрыт.")
 
-    # def client_view_history(self):
-    #     print("История по вашим счетам и вкладам:")
-    #     for acc in [a for a in self.store.accounts_index.values() if a.owner_id == self.current_user.id]:
-    #         print(f"\nСчет {acc.id} (Bank {self.store.banks[acc.bank_id].name}):")
-    #         for tx in acc.history:
-    #             print(f"  {tx.timestamp}: {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}")
-    #     for dep in [d for d in self.store.deposits_index.values() if d.owner_id == self.current_user.id]:
-    #         print(f"\nВклад {dep.id} (Bank {self.store.banks[dep.bank_id].name}):")
-    #         for tx in dep.history:
-    #             print(f"  {tx.timestamp}: {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}")
+    def client_transfer(self):
+        print("Перевод средств.")
+        # list user's accounts and deposits
+        my_accounts = [a for a in self.store.accounts_index.values() if a.owner_id == self.current_user.id]
+        my_deposits = [d for d in self.store.deposits_index.values() if d.owner_id == self.current_user.id]
+        print("Ваши счета:")
+        for a in my_accounts:
+            print(f"{a.id}: Balance={a.balance} Bank={self.store.banks[a.bank_id].name} Blocked={a.blocked}")
+        print("Ваши вклады:")
+        for d in my_deposits:
+            print(f"{d.id}: Principal={d.principal} Bank={self.store.banks[d.bank_id].name} Blocked={d.blocked}")
+        src_type = input_nonempty("Источник (account/deposit): ")
+        src_id = input_nonempty("id источника: ")
+        dst_type = input_nonempty("Назначение (account/deposit/enterprise): ")
+        dst_id = input_nonempty("id назначения: ")
+        amount = input_positive_float("Сумма: ")
+        tx = self.tx_service.transfer(src_type, src_id, dst_type, dst_id, amount, actor_id=self.current_user.id)
+        print("Перевод выполнен. tx_id:", tx.id)
 
-    # def client_create_deposit(self):
-    #     print("Создание вклада.")
-    #     for b in self.store.banks.values():
-    #         print(f"{b.id}: {b.name}")
-    #     bid = input_nonempty("bank_id: ")
-    #     principal = input_positive_float("Сумма вклада: ")
-    #     rate = input_positive_float("Годовой процент (например 5.0): ")
-    #     term = int(input_nonempty("Срок в месяцах (целое число): "))
-    #     dep = self.bank_service.create_deposit(bid, self.current_user.id, principal, rate, term)
-    #     print("Вклад создан:", dep.id)
+    def client_view_history(self):
+        print("История по вашим счетам и вкладам:")
+        for acc in [a for a in self.store.accounts_index.values() if a.owner_id == self.current_user.id]:
+            print(f"\nСчет {acc.id} (Bank {self.store.banks[acc.bank_id].name}):")
+            for tx in acc.history:
+                print(f"  {tx.timestamp}: {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}")
+        for dep in [d for d in self.store.deposits_index.values() if d.owner_id == self.current_user.id]:
+            print(f"\nВклад {dep.id} (Bank {self.store.banks[dep.bank_id].name}):")
+            for tx in dep.history:
+                print(f"  {tx.timestamp}: {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}")
 
-    # def client_close_deposit(self):
-    #     print("Ваши вклады:")
-    #     my_deps = [d for d in self.store.deposits_index.values() if d.owner_id == self.current_user.id]
-    #     for d in my_deps:
-    #         print(f"{d.id}: principal={d.principal} bank={self.store.banks[d.bank_id].name} blocked={d.blocked}")
-    #     did = input_nonempty("id вклада для закрытия: ")
-    #     self.bank_service.close_deposit(did, actor_id=self.current_user.id)
-    #     print("Вклад закрыт.")
+    def client_create_deposit(self):
+        print("Создание вклада.")
+        for b in self.store.banks.values():
+            print(f"{b.id}: {b.name}")
+        bid = input_nonempty("bank_id: ")
+        principal = input_positive_float("Сумма вклада: ")
+        rate = input_positive_float("Годовой процент (например 5.0): ")
+        term = int(input_nonempty("Срок в месяцах (целое число): "))
+        dep = self.bank_service.create_deposit(bid, self.current_user.id, principal, rate, term)
+        print("Вклад создан:", dep.id)
 
-    # def client_transfer_to_from_deposit(self):
-    #     print("Перевод между счетом и вкладом.")
-    #     src_type = input_nonempty("Источник (account/deposit): ")
-    #     src_id = input_nonempty("id источника: ")
-    #     dst_type = input_nonempty("Назначение (account/deposit): ")
-    #     dst_id = input_nonempty("id назначения: ")
-    #     amount = input_positive_float("Сумма: ")
-    #     tx = self.tx_service.transfer(src_type, src_id, dst_type, dst_id, amount, actor_id=self.current_user.id)
-    #     print("Операция выполнена. tx_id:", tx.id)
+    def client_close_deposit(self):
+        print("Ваши вклады:")
+        my_deps = [d for d in self.store.deposits_index.values() if d.owner_id == self.current_user.id]
+        for d in my_deps:
+            print(f"{d.id}: principal={d.principal} bank={self.store.banks[d.bank_id].name} blocked={d.blocked}")
+        did = input_nonempty("id вклада для закрытия: ")
+        self.bank_service.close_deposit(did, actor_id=self.current_user.id)
+        print("Вклад закрыт.")
 
-    # def client_view_enterprises(self):
-    #     print("Доступные предприятия (для подачи на зарплатный проект):")
-    #     for e in self.enterprise_service.list_available_for_client(self.current_user.id):
-    #         print(f"{e.id}: {e.name} Funds={e.funds}")
+    def client_transfer_to_from_deposit(self):
+        print("Перевод между счетом и вкладом.")
+        src_type = input_nonempty("Источник (account/deposit): ")
+        src_id = input_nonempty("id источника: ")
+        dst_type = input_nonempty("Назначение (account/deposit): ")
+        dst_id = input_nonempty("id назначения: ")
+        amount = input_positive_float("Сумма: ")
+        tx = self.tx_service.transfer(src_type, src_id, dst_type, dst_id, amount, actor_id=self.current_user.id)
+        print("Операция выполнена. tx_id:", tx.id)
 
-    # def client_submit_payroll(self):
-    #     self.client_view_enterprises()
-    #     eid = input_nonempty("Введите id предприятия для подачи заявки: ")
-    #     amount = input_positive_float("Желаемая сумма зарплаты: ")
-    #     req_id = self.enterprise_service.submit_payroll_request(eid, self.current_user.id, amount)
-    #     print("Заявка отправлена. req_id:", req_id)
+    def client_view_enterprises(self):
+        print("Доступные предприятия (для подачи на зарплатный проект):")
+        for e in self.enterprise_service.list_available_for_client(self.current_user.id):
+            print(f"{e.id}: {e.name} Funds={e.funds}")
 
-    # def client_get_salary(self):
-    #     print("Список предприятий с одобренными заявками на вас:")
-    #     for e in self.store.enterprises.values():
-    #         for rid, req in e.payroll_requests.items():
-    #             if req["client_id"] == self.current_user.id and req.get("approved"):
-    #                 print(f"{e.id}:{e.name} request {rid} amount {req['amount']}")
-    #     eid = input_nonempty("Введите id предприятия (откуда получать): ")
-    #     rid = input_nonempty("Введите id заявки (req_id): ")
-    #     ent = self.store.enterprises[eid]
-    #     if rid not in ent.payroll_requests:
-    #         print("Нет такой заявки.")
-    #         return
-    #     req = ent.payroll_requests[rid]
-    #     if not req.get("approved"):
-    #         print("Заявка ещё не одобрена менеджером.")
-    #         return
-    #     amount = float(req["amount"])
+    def client_submit_payroll(self):
+        self.client_view_enterprises()
+        eid = input_nonempty("Введите id предприятия для подачи заявки: ")
+        amount = input_positive_float("Желаемая сумма зарплаты: ")
+        req_id = self.enterprise_service.submit_payroll_request(eid, self.current_user.id, amount)
+        print("Заявка отправлена. req_id:", req_id)
 
-    #     my_accounts = [a for a in self.store.accounts_index.values() if a.owner_id == self.current_user.id]
-    #     if not my_accounts:
-    #         print("У вас нет счёта для получения зарплаты. Сначала откройте счёт.")
-    #         return
-    #     print("Выберите счёт для зачисления:")
-    #     for a in my_accounts:
-    #         print(f"{a.id}: Balance={a.balance} Bank={self.store.banks[a.bank_id].name}")
-    #     aid = input_nonempty("account id: ")
+    def client_get_salary(self):
+        print("Список предприятий с одобренными заявками на вас:")
+        for e in self.store.enterprises.values():
+            for rid, req in e.payroll_requests.items():
+                if req["client_id"] == self.current_user.id and req.get("approved"):
+                    print(f"{e.id}:{e.name} request {rid} amount {req['amount']}")
+        eid = input_nonempty("Введите id предприятия (откуда получать): ")
+        rid = input_nonempty("Введите id заявки (req_id): ")
+        ent = self.store.enterprises[eid]
+        if rid not in ent.payroll_requests:
+            print("Нет такой заявки.")
+            return
+        req = ent.payroll_requests[rid]
+        if not req.get("approved"):
+            print("Заявка ещё не одобрена менеджером.")
+            return
+        amount = float(req["amount"])
 
-    #     tx = self.tx_service.transfer("enterprise", eid, "account", aid, amount, actor_id=self.current_user.id)
-    #     print("Зарплата получена. tx_id:", tx.id)
+        my_accounts = [a for a in self.store.accounts_index.values() if a.owner_id == self.current_user.id]
+        if not my_accounts:
+            print("У вас нет счёта для получения зарплаты. Сначала откройте счёт.")
+            return
+        print("Выберите счёт для зачисления:")
+        for a in my_accounts:
+            print(f"{a.id}: Balance={a.balance} Bank={self.store.banks[a.bank_id].name}")
+        aid = input_nonempty("account id: ")
 
-    #     del ent.payroll_requests[rid]
-    #     self.store.save_log(LogEntry(actor_id=self.current_user.id, action="receive_salary", 
-    #                                  payload={"enterprise_id": eid, "account_id": aid, "amount": amount}))
+        tx = self.tx_service.transfer("enterprise", eid, "account", aid, amount, actor_id=self.current_user.id)
+        print("Зарплата получена. tx_id:", tx.id)
 
-    # # Manager menu
-    # def menu_manager(self):
-    #     user = self.current_user
-    #     assert user and user.role == "manager"
-    #     print("\n--- Менеджерское меню ---")
-    #     print("1) Подтвердить регистрацию клиента")
-    #     print("2) Просмотреть предприятия и сотрудников")
-    #     print("3) Добавить клиента в предприятие (сделать сотрудником)")
-    #     print("4) Удалить клиента из предприятия")
-    #     print("5) Подтвердить заявку на зарплатный проект")
-    #     print("6) Блокировка/разблокировка счетов и вкладов клиента")
-    #     print("7) Просмотр истории движений счетов клиентов")
-    #     print("0) Выйти (Logout)")
-    #     c = input("Выберите: ").strip()
-    #     try:
-    #         if c == "1":
-    #             self.manager_confirm_client()
-    #         elif c == "2":
-    #             self.manager_view_enterprises()
-    #         elif c == "3":
-    #             self.manager_add_employee()
-    #         elif c == "4":
-    #             self.manager_remove_employee()
-    #         elif c == "5":
-    #             self.manager_approve_payroll()
-    #         elif c == "6":
-    #             self.manager_block_unblock()
-    #         elif c == "7":
-    #             self.manager_view_client_history()
-    #         elif c == "0":
-    #             print("Выход.")
-    #             self.current_user = None
-    #         else:
-    #             print("Неверный выбор.")
-    #     except Exception as e:
-    #         print("Ошибка:", e)
+        del ent.payroll_requests[rid]
+        self.store.save_log(LogEntry(actor_id=self.current_user.id, action="receive_salary", 
+                                     payload={"enterprise_id": eid, "account_id": aid, "amount": amount}))
 
-    # def manager_confirm_client(self):
-    #     # list unconfirmed clients
-    #     unconfirmed = [u for u in self.store.users.values() if u.role == "client" and not u.confirmed]
-    #     if not unconfirmed:
-    #         print("Нет клиентов, ожидающих подтверждения.")
-    #         return
-    #     for u in unconfirmed:
-    #         print(f"{u.id}: {u.full_name} (login={u.login})")
-    #     uid = input_nonempty("Введите id клиента для подтверждения: ")
-    #     if uid not in self.store.users:
-    #         print("Не найден.")
-    #         return
-    #     user = self.store.users[uid]
-    #     user.confirmed = True
-    #     self.store.save_log(LogEntry(actor_id=self.current_user.id, action="confirm_client", 
-    #                                  payload={"client_id": uid}))
-    #     print("Клиент подтвержден.")
+    # Manager menu
+    def menu_manager(self):
+        user = self.current_user
+        assert user and user.role == "manager"
+        print("\n--- Менеджерское меню ---")
+        print("1) Подтвердить регистрацию клиента")
+        print("2) Просмотреть предприятия и сотрудников")
+        print("3) Добавить клиента в предприятие (сделать сотрудником)")
+        print("4) Удалить клиента из предприятия")
+        print("5) Подтвердить заявку на зарплатный проект")
+        print("6) Блокировка/разблокировка счетов и вкладов клиента")
+        print("7) Просмотр истории движений счетов клиентов")
+        print("0) Выйти (Logout)")
+        c = input("Выберите: ").strip()
+        try:
+            if c == "1":
+                self.manager_confirm_client()
+            elif c == "2":
+                self.manager_view_enterprises()
+            elif c == "3":
+                self.manager_add_employee()
+            elif c == "4":
+                self.manager_remove_employee()
+            elif c == "5":
+                self.manager_approve_payroll()
+            elif c == "6":
+                self.manager_block_unblock()
+            elif c == "7":
+                self.manager_view_client_history()
+            elif c == "0":
+                print("Выход.")
+                self.current_user = None
+            else:
+                print("Неверный выбор.")
+        except Exception as e:
+            print("Ошибка:", e)
 
-    # def manager_view_enterprises(self):
-    #     for e in self.store.enterprises.values():
-    #         print(f"{e.id}: {e.name} Funds={e.funds} Manager={e.manager_id}")
-    #         print(" Employees:")
-    #         for emp in e.employees:
-    #             u = self.store.users.get(emp)
-    #             print(f"   - {emp}: {u.full_name if u else 'unknown'}")
+    def manager_confirm_client(self):
+        # list unconfirmed clients
+        unconfirmed = [u for u in self.store.users.values() if u.role == "client" and not u.confirmed]
+        if not unconfirmed:
+            print("Нет клиентов, ожидающих подтверждения.")
+            return
+        for u in unconfirmed:
+            print(f"{u.id}: {u.full_name} (login={u.login})")
+        uid = input_nonempty("Введите id клиента для подтверждения: ")
+        if uid not in self.store.users:
+            print("Не найден.")
+            return
+        user = self.store.users[uid]
+        user.confirmed = True
+        self.store.save_log(LogEntry(actor_id=self.current_user.id, action="confirm_client", 
+                                     payload={"client_id": uid}))
+        print("Клиент подтвержден.")
 
-    # def manager_add_employee(self):
-    #     self.manager_view_enterprises()
-    #     eid = input_nonempty("enterprise id: ")
-    #     print("Клиенты:")
-    #     for u in self.store.users.values():
-    #         if u.role == "client":
-    #             print(f"{u.id}: {u.full_name} confirmed={u.confirmed}")
-    #     cid = input_nonempty("client id для добавления: ")
-    #     self.enterprise_service.add_employee(eid, cid, manager_id=self.current_user.id)
-    #     print("Клиент добавлен в предприятие.")
+    def manager_view_enterprises(self):
+        for e in self.store.enterprises.values():
+            print(f"{e.id}: {e.name} Funds={e.funds} Manager={e.manager_id}")
+            print(" Employees:")
+            for emp in e.employees:
+                u = self.store.users.get(emp)
+                print(f"   - {emp}: {u.full_name if u else 'unknown'}")
 
-    # def manager_remove_employee(self):
-    #     self.manager_view_enterprises()
-    #     eid = input_nonempty("enterprise id: ")
-    #     cid = input_nonempty("client id для удаления: ")
-    #     self.enterprise_service.remove_employee(eid, cid, manager_id=self.current_user.id)
-    #     print("Клиент удалён из предприятия.")
+    def manager_add_employee(self):
+        self.manager_view_enterprises()
+        eid = input_nonempty("enterprise id: ")
+        print("Клиенты:")
+        for u in self.store.users.values():
+            if u.role == "client":
+                print(f"{u.id}: {u.full_name} confirmed={u.confirmed}")
+        cid = input_nonempty("client id для добавления: ")
+        self.enterprise_service.add_employee(eid, cid, manager_id=self.current_user.id)
+        print("Клиент добавлен в предприятие.")
 
-    # def manager_approve_payroll(self):
-    #     print("Заявки на зарплатный проект:")
-    #     for e in self.store.enterprises.values():
-    #         for rid, req in e.payroll_requests.items():
-    #             print(f"Enterprise {e.id}:{e.name} request {rid} client {req['client_id']} amount {req['amount']} approved={req.get('approved')}")
-    #     eid = input_nonempty("enterprise id: ")
-    #     rid = input_nonempty("req_id: ")
-    #     self.enterprise_service.approve_payroll_request(eid, rid, manager_id=self.current_user.id)
-    #     print("Заявка одобрена менеджером. Клиент может получить зарплату (через интерфейс клиента).")
+    def manager_remove_employee(self):
+        self.manager_view_enterprises()
+        eid = input_nonempty("enterprise id: ")
+        cid = input_nonempty("client id для удаления: ")
+        self.enterprise_service.remove_employee(eid, cid, manager_id=self.current_user.id)
+        print("Клиент удалён из предприятия.")
 
-    # def manager_block_unblock(self):
-    #     print("1) Заблокировать/разблокировать счет")
-    #     print("2) Заблокировать/разблокировать вклад")
-    #     c = input("Выберите: ").strip()
-    #     if c == "1":
-    #         for a in self.store.accounts_index.values():
-    #             print(f"{a.id}: owner={a.owner_id} Balance={a.balance} blocked={a.blocked}")
-    #         aid = input_nonempty("account id: ")
-    #         a = self.bank_service.get_account(aid)
-    #         a.blocked = not a.blocked
-    #         self.store.save_log(LogEntry(actor_id=self.current_user.id, action="toggle_block_account", 
-    #                                      payload={"account_id": aid, "new_state": a.blocked}))
-    #         print("Новый статус:", a.blocked)
-    #     elif c == "2":
-    #         for d in self.store.deposits_index.values():
-    #             print(f"{d.id}: owner={d.owner_id} principal={d.principal} blocked={d.blocked}")
-    #         did = input_nonempty("deposit id: ")
-    #         d = self.bank_service._get_deposit(did)
-    #         d.blocked = not d.blocked
-    #         self.store.save_log(LogEntry(actor_id=self.current_user.id, action="toggle_block_deposit", 
-    #                                      payload={"deposit_id": did, "new_state": d.blocked}))
-    #         print("Новый статус:", d.blocked)
-    #     else:
-    #         print("Неверный выбор.")
+    def manager_approve_payroll(self):
+        print("Заявки на зарплатный проект:")
+        for e in self.store.enterprises.values():
+            for rid, req in e.payroll_requests.items():
+                print(f"Enterprise {e.id}:{e.name} request {rid} client {req['client_id']} amount {req['amount']} approved={req.get('approved')}")
+        eid = input_nonempty("enterprise id: ")
+        rid = input_nonempty("req_id: ")
+        self.enterprise_service.approve_payroll_request(eid, rid, manager_id=self.current_user.id)
+        print("Заявка одобрена менеджером. Клиент может получить зарплату (через интерфейс клиента).")
 
-    # def manager_view_client_history(self):
-    #     cid = input_nonempty("Введите id клиента для просмотра истории: ")
-    #     print(f"История для клиента {cid}:")
-    #     for acc in [a for a in self.store.accounts_index.values() if a.owner_id == cid]:
-    #         print(f"\nСчет {acc.id}:")
-    #         for tx in acc.history:
-    #             print(f"  {tx.timestamp}: {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}")
+    def manager_block_unblock(self):
+        print("1) Заблокировать/разблокировать счет")
+        print("2) Заблокировать/разблокировать вклад")
+        c = input("Выберите: ").strip()
+        if c == "1":
+            for a in self.store.accounts_index.values():
+                print(f"{a.id}: owner={a.owner_id} Balance={a.balance} blocked={a.blocked}")
+            aid = input_nonempty("account id: ")
+            a = self.bank_service.get_account(aid)
+            a.blocked = not a.blocked
+            self.store.save_log(LogEntry(actor_id=self.current_user.id, action="toggle_block_account", 
+                                         payload={"account_id": aid, "new_state": a.blocked}))
+            print("Новый статус:", a.blocked)
+        elif c == "2":
+            for d in self.store.deposits_index.values():
+                print(f"{d.id}: owner={d.owner_id} principal={d.principal} blocked={d.blocked}")
+            did = input_nonempty("deposit id: ")
+            d = self.bank_service._get_deposit(did)
+            d.blocked = not d.blocked
+            self.store.save_log(LogEntry(actor_id=self.current_user.id, action="toggle_block_deposit", 
+                                         payload={"deposit_id": did, "new_state": d.blocked}))
+            print("Новый статус:", d.blocked)
+        else:
+            print("Неверный выбор.")
 
-    # # Admin menu
-    # def menu_admin(self):
-    #     user = self.current_user
-    #     assert user and user.role == "admin"
-    #     print("\n--- Админское меню ---")
-    #     print("1) Просмотр всех логов")
-    #     print("2) Отмена (undo) транзакции")
-    #     print("3) Сброс состояния в файл (dump)")
-    #     print("0) Выйти (Logout)")
-    #     c = input("Выберите: ").strip()
-    #     try:
-    #         if c == "1":
-    #             self.admin_view_logs()
-    #         elif c == "2":
-    #             self.admin_undo_tx()
-    #         elif c == "3":
-    #             self.store.dump_to_file()
-    #         elif c == "0":
-    #             print("Выход.")
-    #             self.current_user = None
-    #         else:
-    #             print("Неверный выбор.")
-    #     except Exception as e:
-    #         print("Ошибка:", e)
+    def manager_view_client_history(self):
+        cid = input_nonempty("Введите id клиента для просмотра истории: ")
+        print(f"История для клиента {cid}:")
+        for acc in [a for a in self.store.accounts_index.values() if a.owner_id == cid]:
+            print(f"\nСчет {acc.id}:")
+            for tx in acc.history:
+                print(f"  {tx.timestamp}: {tx.id} {tx.src_type}:{tx.src_id} -> {tx.dst_type}:{tx.dst_id} amount={tx.amount}")
 
-    # def admin_view_logs(self):
-    #     logs = self.admin_service.view_logs()
-    #     for l in logs:
-    #         print(f"{l.timestamp} | {l.actor_id} | {l.action} | {json.dumps(l.payload, ensure_ascii=False)}")
+    # Admin menu
+    def menu_admin(self):
+        user = self.current_user
+        assert user and user.role == "admin"
+        print("\n--- Админское меню ---")
+        print("1) Просмотр всех логов")
+        print("2) Отмена (undo) транзакции")
+        print("3) Сброс состояния в файл (dump)")
+        print("0) Выйти (Logout)")
+        c = input("Выберите: ").strip()
+        try:
+            if c == "1":
+                self.admin_view_logs()
+            elif c == "2":
+                self.admin_undo_tx()
+            elif c == "3":
+                self.store.dump_to_file()
+            elif c == "0":
+                print("Выход.")
+                self.current_user = None
+            else:
+                print("Неверный выбор.")
+        except Exception as e:
+            print("Ошибка:", e)
 
-    # def admin_undo_tx(self):
-    #     txid = input_nonempty("Введите tx_id для отмены: ")
-    #     rev = self.admin_service.undo_transaction(txid, actor_id=self.current_user.id)
-    #     print("Создан обратный перевод (undo). undo_tx_id:", rev.id)
+    def admin_view_logs(self):
+        logs = self.admin_service.view_logs()
+        for l in logs:
+            print(f"{l.timestamp} | {l.actor_id} | {l.action} | {json.dumps(l.payload, ensure_ascii=False)}")
 
-    # def admin_service(self) -> AdminService:
-    #     return self.admin_service_ref() if hasattr(self, "admin_service_ref") else self.admin_service
+    def admin_undo_tx(self):
+        txid = input_nonempty("Введите tx_id для отмены: ")
+        rev = self.admin_service.undo_transaction(txid, actor_id=self.current_user.id)
+        print("Создан обратный перевод (undo). undo_tx_id:", rev.id)
+
+    def admin_service(self) -> AdminService:
+        return self.admin_service_ref() if hasattr(self, "admin_service_ref") else self.admin_service
 
 
-# def main():
-#     root = CLIApp()
-#     root.run()
+def main():
+    root = CLIApp()
+    root.run()
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
 
 # менедж:     логин manager, пароль mgrpass
 # админ:        логин admin, пароль adminpass
 # клиент        (одобрен): логин alice, пароль alice123 (есть счёт и вклад)
 # клиент        (неподтверждён): логин bob, пароль bob123 (нужно подтверждение менеджера)
-)
