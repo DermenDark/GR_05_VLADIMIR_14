@@ -1,0 +1,253 @@
+{
+  "users": {
+    "usr_eb5ada3f": {
+      "id": "usr_eb5ada3f",
+      "login": "manager",
+      "full_name": "Менеджер Demo",
+      "role": "manager",
+      "confirmed": true
+    },
+    "usr_fa1070a1": {
+      "id": "usr_fa1070a1",
+      "login": "admin",
+      "full_name": "Админ Demo",
+      "role": "admin",
+      "confirmed": true
+    },
+    "usr_b7ddb100": {
+      "id": "usr_b7ddb100",
+      "login": "alice",
+      "full_name": "Alice Client",
+      "role": "client",
+      "confirmed": true
+    },
+    "usr_37120a44": {
+      "id": "usr_37120a44",
+      "login": "bob",
+      "full_name": "Bob Client",
+      "role": "client",
+      "confirmed": false
+    }
+  },
+  "banks": {
+    "bank_407ddd98": {
+      "meta": {
+        "id": "bank_407ddd98",
+        "name": "DemoBank A"
+      },
+      "accounts": {
+        "acc_ceef437d": {
+          "id": "acc_ceef437d",
+          "bank_id": "bank_407ddd98",
+          "owner_id": "usr_b7ddb100",
+          "balance": 1000.0,
+          "blocked": false
+        }
+      },
+      "deposits": {
+        "dep_dda50828": {
+          "id": "dep_dda50828",
+          "bank_id": "bank_407ddd98",
+          "owner_id": "usr_b7ddb100",
+          "principal": 500.0,
+          "rate_pct": 5.0,
+          "term_months": 12,
+          "blocked": false
+        }
+      }
+    },
+    "bank_4a600c09": {
+      "meta": {
+        "id": "bank_4a600c09",
+        "name": "Local Credit"
+      },
+      "accounts": {
+        "acc_2823202d": {
+          "id": "acc_2823202d",
+          "bank_id": "bank_4a600c09",
+          "owner_id": "usr_37120a44",
+          "balance": 50.0,
+          "blocked": false
+        }
+      },
+      "deposits": {}
+    }
+  },
+  "enterprises": {
+    "ent_35900de7": {
+      "id": "ent_35900de7",
+      "name": "ООО Рога и Копыта",
+      "funds": 10000.0
+    }
+  },
+  "logs": [
+    {
+      "id": "log_338d31d7",
+      "actor_id": "usr_eb5ada3f",
+      "action": "create_user",
+      "payload": {
+        "id": "usr_eb5ada3f",
+        "login": "manager",
+        "full_name": "Менеджер Demo",
+        "role": "manager",
+        "confirmed": true
+      },
+      "timestamp": "2026-03-03T23:07:00.205476"
+    },
+    {
+      "id": "log_6e3ce293",
+      "actor_id": "usr_fa1070a1",
+      "action": "create_user",
+      "payload": {
+        "id": "usr_fa1070a1",
+        "login": "admin",
+        "full_name": "Админ Demo",
+        "role": "admin",
+        "confirmed": true
+      },
+      "timestamp": "2026-03-03T23:07:00.205494"
+    },
+    {
+      "id": "log_9af55533",
+      "actor_id": "system",
+      "action": "create_bank",
+      "payload": {
+        "id": "bank_407ddd98",
+        "name": "DemoBank A"
+      },
+      "timestamp": "2026-03-03T23:07:00.205503"
+    },
+    {
+      "id": "log_229e59e6",
+      "actor_id": "system",
+      "action": "create_bank",
+      "payload": {
+        "id": "bank_4a600c09",
+        "name": "Local Credit"
+      },
+      "timestamp": "2026-03-03T23:07:00.205509"
+    },
+    {
+      "id": "log_d5d2a331",
+      "actor_id": "usr_b7ddb100",
+      "action": "register_client",
+      "payload": {
+        "id": "usr_b7ddb100",
+        "login": "alice",
+        "full_name": "Alice Client",
+        "role": "client",
+        "confirmed": false
+      },
+      "timestamp": "2026-03-03T23:07:00.205518"
+    },
+    {
+      "id": "log_29e83bc5",
+      "actor_id": "usr_37120a44",
+      "action": "register_client",
+      "payload": {
+        "id": "usr_37120a44",
+        "login": "bob",
+        "full_name": "Bob Client",
+        "role": "client",
+        "confirmed": false
+      },
+      "timestamp": "2026-03-03T23:07:00.205525"
+    },
+    {
+      "id": "log_3540a921",
+      "actor_id": "usr_eb5ada3f",
+      "action": "confirm_client",
+      "payload": {
+        "client_id": "usr_b7ddb100"
+      },
+      "timestamp": "2026-03-03T23:07:00.205529"
+    },
+    {
+      "id": "log_5299fca1",
+      "actor_id": "usr_b7ddb100",
+      "action": "open_account",
+      "payload": {
+        "id": "acc_ceef437d",
+        "bank_id": "bank_407ddd98",
+        "owner_id": "usr_b7ddb100",
+        "balance": 1000.0,
+        "blocked": false
+      },
+      "timestamp": "2026-03-03T23:07:00.205539"
+    },
+    {
+      "id": "log_8a9877d7",
+      "actor_id": "usr_37120a44",
+      "action": "open_account",
+      "payload": {
+        "id": "acc_2823202d",
+        "bank_id": "bank_4a600c09",
+        "owner_id": "usr_37120a44",
+        "balance": 50.0,
+        "blocked": false
+      },
+      "timestamp": "2026-03-03T23:07:00.205546"
+    },
+    {
+      "id": "log_d095c224",
+      "actor_id": "usr_b7ddb100",
+      "action": "create_deposit",
+      "payload": {
+        "id": "dep_dda50828",
+        "bank_id": "bank_407ddd98",
+        "owner_id": "usr_b7ddb100",
+        "principal": 500.0,
+        "rate_pct": 5.0,
+        "term_months": 12,
+        "blocked": false
+      },
+      "timestamp": "2026-03-03T23:07:00.205557"
+    },
+    {
+      "id": "log_0d9d4f92",
+      "actor_id": "usr_eb5ada3f",
+      "action": "create_enterprise",
+      "payload": {
+        "id": "ent_35900de7",
+        "name": "ООО Рога и Копыта",
+        "funds": 10000.0
+      },
+      "timestamp": "2026-03-03T23:07:00.205567"
+    },
+    {
+      "id": "log_a5db37b6",
+      "actor_id": "system",
+      "action": "seeded_demo",
+      "payload": {
+        "banks": [
+          {
+            "id": "bank_407ddd98",
+            "name": "DemoBank A"
+          },
+          {
+            "id": "bank_4a600c09",
+            "name": "Local Credit"
+          }
+        ],
+        "users": [
+          {
+            "id": "usr_b7ddb100",
+            "login": "alice",
+            "full_name": "Alice Client",
+            "role": "client",
+            "confirmed": true
+          },
+          {
+            "id": "usr_37120a44",
+            "login": "bob",
+            "full_name": "Bob Client",
+            "role": "client",
+            "confirmed": false
+          }
+        ]
+      },
+      "timestamp": "2026-03-03T23:07:00.205571"
+    }
+  ],
+  "transactions": {}
+}
