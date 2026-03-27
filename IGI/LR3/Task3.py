@@ -1,4 +1,4 @@
-def task3_main(analyse_str:str):
+def task3_funk(analyse_str:str):
     """
     Main function for task 3.
     Count commas and spaces in user input string.
@@ -17,19 +17,11 @@ def task3_main(analyse_str:str):
 
 def input_menu_task3():
     """Menu for Task 3. Choose to run or exit."""
-    print("""
-Task 3. Не использовать регулярные выражения.
-    В соответствии с заданием своего варианта
-    составить программу для анализа текста, 
-    вводимого с клавиатуры.
-condition:            
-    В строке, вводимой с клавиатуры, подсчитать количество про-
-    бельных символов и запятых.
-          
+    while True:
+        print("""         
 ==== Task 3 Menu ====
 1 - Run
 0 - Exit""")
-    while True:
         try:
             choice = int(input("Select option: "))
             if choice in (0, 1):
@@ -38,8 +30,16 @@ condition:
         except ValueError:
             print("Input is not number.")
 
-def task3_runner():
+def task3_main():
     """Run Task 3 with menu."""
+    print('''
+Task 3. Не использовать регулярные выражения.
+    В соответствии с заданием своего варианта
+    составить программу для анализа текста, 
+    вводимого с клавиатуры.
+condition:            
+    В строке, вводимой с клавиатуры, подсчитать количество про-
+    бельных символов и запятых.''')
     while True:
         choice = input_menu_task3()
 
@@ -49,6 +49,6 @@ def task3_runner():
 
         elif choice == 1:
             analyse_str = input("Input your string: ")
-            count_coma, count_space = task3_main(analyse_str)
+            count_coma, count_space = task3_funk(analyse_str)
             print(f"count_coma: {count_coma}")
             print(f"count_space: {count_space}")

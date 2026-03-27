@@ -1,3 +1,4 @@
+
 def get_words(text: str):
     """Convert text to list of words, remove commas and dots."""
     return text.replace(",", " ").replace(".", " ").replace("!", " ").replace("?", " ").split()
@@ -45,21 +46,13 @@ when suddenly a White Rabbit with pink eyes ran close by her.'''
 
 def input_menu_task4():
     """Menu for Task 4. Run specific analysis or exit."""
-    print("""
-Задание 4. Не использовать регулярные выражения. 
-    Дана строка текста, в которой слова разделены пробелами и запятыми.
-    В соответствии с заданием своего варианта составьте программу
-    для анализа строки, инициализированной в коде программы.
-condition:
-    а) определить число слов, длина которых меньше 7 символов;
-    б) найти самое короткое слово, заканчивающееся на букву 'a';
-    в) вывести все слова в порядке убывания их длин.
-Options:
+    while True:
+        print("""
+ ==== Task 4 Menu ====
     1 - Count words shorter than 7 characters
     2 - Find shortest word with 'a'
     3 - Show all words sorted by length descending
     0 - Exit""")
-    while True:
         try:
             choice = int(input(": "))
             if choice in (0, 1, 2, 3):
@@ -70,6 +63,15 @@ Options:
 
 def task4_main():
     """Run Task 4 with menu for individual analysis."""
+    print('''
+Задание 4. Не использовать регулярные выражения. 
+    Дана строка текста, в которой слова разделены пробелами и запятыми.
+    В соответствии с заданием своего варианта составьте программу
+    для анализа строки, инициализированной в коде программы.
+condition:
+    а) определить число слов, длина которых меньше 7 символов;
+    б) найти самое короткое слово, заканчивающееся на букву 'a';
+    в) вывести все слова в порядке убывания их длин.''') 
     while True:
         choice = input_menu_task4()
 

@@ -24,19 +24,12 @@ def subtract_from_10000(seq_iterator: Iterator):
 
 def input_menu():
     """Select input type."""
-    print("""
-Task 2. В соответствии с заданием своего варианта
-    составить программу для нахождения суммы
-    последовательности чисел.
-condition:          
-    Организовать цикл, который принимает целые числа и вычитает их из 10000.
-    Окончание – получение отрицательного итога.
-          
+    while True:
+        print("""
 ==== Task 2 Menu ====
 1 - Use default list
 2 - Input from keyboard
 0 - Exit""")
-    while True:
         try:
             choice = int(input("Select option: "))
             if choice in (0, 1, 2):
@@ -47,6 +40,13 @@ condition:
 
 def task2_main():
     """Main function for task 2."""
+    print("""
+Task 2. В соответствии с заданием своего варианта
+    составить программу для нахождения суммы
+    последовательности чисел.
+condition:
+    Организовать цикл, который принимает целые числа и вычитает их из 10000.
+    Окончание – получение отрицательного итога.""")
     while True:
         choice = input_menu()
 

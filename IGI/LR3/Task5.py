@@ -1,8 +1,5 @@
 from iter_input import from_user_input
 
-from iter_input import from_user_input
-
-# ================== CORE TASK 5 FUNCTION ==================
 def process_number_list():
     """
     Main business function for Task 5.
@@ -54,6 +51,21 @@ def process_number_list():
 
 def input_menu_task5():
     """Menu for Task 5."""
+    while True:
+        print("""
+ ==== Task 5 Menu ====
+1 - Run
+0 - Exit""")
+        try:
+            choice = int(input("Select option: "))
+            if choice in (0, 1):
+                return choice
+            print("Incorrect input. Choose 0 or 1.")
+        except ValueError:
+            print("Input is not number.")
+
+def task5_main():
+    """Run Task 5 with menu."""
     print("""
 Задание 5. В соответствии с заданием своего варианта составить программу
     для обработки вещественных списков.
@@ -66,22 +78,7 @@ condition:
     Найти номер минимального отрицательного 
     элемента списка и сумму элементов списка,
     расположенных между первым и вторым 
-    отрицательными элементами
-          
-Options:
-1 - Run
-0 - Exit""")
-    while True:
-        try:
-            choice = int(input("Select option: "))
-            if choice in (0, 1):
-                return choice
-            print("Incorrect input. Choose 0 or 1.")
-        except ValueError:
-            print("Input is not number.")
-
-def task5_main():
-    """Run Task 5 with menu."""
+    отрицательными элементами""")
     while True:
         choice = input_menu_task5()
 

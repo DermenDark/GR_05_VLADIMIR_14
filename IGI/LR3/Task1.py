@@ -4,13 +4,15 @@ from validation import validate_input_num
 stripe = "-"*65
 task_description = '''
 Task 1. В соответствии с заданием своего варианта составить программу
-для вычисления значения функции c помощью разложения функции в степенной ряд.
-Задать точность вычислений eps.
- x – значение аргумента, 
- F(x) – значение функции, 
- n – количество просуммированных членов ряда, 
- Math F(x) – значение функции.
+    для вычисления значения функции c помощью разложения функции в степенной ряд.
+    Задать точность вычислений eps.
+    x – значение аргумента, 
+    F(x) – значение функции, 
+    n – количество просуммированных членов ряда, 
+    Math F(x) – значение функции.
+'''
 
+task_menu = '''
  ==== Task 1 Menu ====
 1 - Run
 0 - Exit
@@ -69,8 +71,9 @@ def input_menu():
 
 def task1_main():
     """Run task 1: input, calculate, print result."""
+    print(task_description)
     while True:
-        print(task_description)
+        print(task_menu)
         try:
             choice = int(input("Select option: "))
         except ValueError:
