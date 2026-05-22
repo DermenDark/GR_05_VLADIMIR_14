@@ -5,3 +5,5 @@ matplotlib>=3.8,<4
 gunicorn>=22,<23
 pytest>=8,<9
 pytest-django>=4.9,<5
+gunicorn
+psycopg2-binary

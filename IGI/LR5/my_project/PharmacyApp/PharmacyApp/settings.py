@@ -25,8 +25,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-c!(ib@c9n7n^*e0txtq*@esmvf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "1") == "1"
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,0.0.0.0,web").split(",") if host.strip()]
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -81,13 +80,13 @@ WSGI_APPLICATION = "PharmacyApp.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DB", "pharmacy"),
-        "USER": os.getenv("POSTGRES_USER", "pharmacy"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "pharmacy"),
-        "HOST": os.getenv("POSTGRES_HOST", "db"),
-        "PORT": os.getenv("POSTGRES_PORT", "5432"),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
 
@@ -126,6 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_URL = '/static/'
 
