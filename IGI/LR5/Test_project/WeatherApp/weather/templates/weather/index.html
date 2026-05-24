@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-4 offset-4">
+        <form action="">
+            <label for="city">Город</label>
+            <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
+            <input type="submit" value="Узнать" class="mt-2 btn btn-danger">
+        </form>
+
+        <h1>Информация</h1>
+
+        {% for info in all_info %}
+            <div class="alert alert-danger">
+                погода в городе: {{ info.city }} <br>
+                температура: {{ info.temp }}<sup>0</sup> <br>
+                <img src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png"
+                     class="img-thumbnail">
+            </div>
+        {% endfor %}
+    </div>
+</div>
