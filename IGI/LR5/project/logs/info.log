@@ -318,3 +318,431 @@
 2026-05-22 00:37:45,877 | INFO | info | Открыта главная страница пользователем вукф
 2026-05-22 00:37:50,310 | INFO | info | Открыта главная страница пользователем AnonymousUser
 2026-05-22 00:38:03,993 | INFO | info | Открыта главная страница пользователем Vlad
+2026-09-18 18:28:23,180 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 18:28:26,931 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 18:29:07,885 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 18:29:51,096 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 18:31:24,522 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:06:57,178 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:07:22,172 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:09:14,661 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:09:28,038 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:09:38,707 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:09:58,385 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:10:34,382 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:13:09,871 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:13:10,027 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:16:18,528 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 19:16:18,679 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:16:21,486 | INFO | info | Открыт список новостей пользователем volodya.shirko@gmail.com
+2026-09-18 19:16:22,037 | INFO | info | Открыт словарь терминов пользователем volodya.shirko@gmail.com
+2026-09-18 19:18:05,903 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 19:18:44,630 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 19:18:45,592 | INFO | info | Открыт список новостей пользователем volodya.shirko@gmail.com
+2026-09-18 19:18:53,825 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-18 19:27:10,222 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:27:10,413 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:38:02,107 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:38:02,296 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:12,627 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:12,826 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:13,679 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:13,843 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:14,521 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:14,673 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:15,673 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:15,831 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:27,436 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:27,644 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:28,617 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:28,785 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:54,670 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:54,823 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:55,603 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:55,749 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:49:56,378 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:49:56,533 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:50:23,612 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:50:23,792 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:50:24,678 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:50:24,814 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:51:03,172 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:51:03,331 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:51:03,686 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:51:03,837 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:51:07,697 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:51:07,849 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:53:48,620 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:53:48,787 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:53:50,224 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:53:50,378 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:53:53,304 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:53:53,462 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:53:53,988 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:53:54,137 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:53:54,424 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:53:54,568 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:18,385 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:18,539 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:19,313 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:19,471 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:27,563 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:27,711 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:33,552 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:33,706 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:38,780 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:38,936 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:42,109 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:42,266 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:47,441 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:47,601 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:50,025 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:50,183 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:50,810 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:50,963 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:51,419 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:51,562 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:58,353 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:58,513 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:54:58,710 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:54:58,860 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:02,881 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:03,046 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:03,478 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:03,639 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:03,871 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:04,017 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:04,232 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:04,379 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:05,483 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:05,632 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:08,115 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:08,278 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:18,643 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:18,802 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:21,716 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:21,866 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:27,309 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:27,472 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:28,689 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:28,847 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:29,507 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:29,659 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:29,917 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:30,066 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:30,811 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:30,959 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:31,770 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:31,923 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:37,878 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:38,038 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:38,707 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:38,857 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:39,772 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:39,911 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:40,949 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:41,104 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:42,018 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:42,171 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:42,991 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:43,148 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:44,222 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:44,386 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:45,325 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:45,489 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:46,465 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:46,613 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:55:51,215 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:55:51,364 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:05,667 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:05,820 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:13,088 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:13,239 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:19,647 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:19,802 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:20,650 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:20,804 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:21,122 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:21,273 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:23,358 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:23,511 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:26,596 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:26,754 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:27,179 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:27,328 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:27,527 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:27,658 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:30,008 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:30,402 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:39,017 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:39,168 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:42,083 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:42,226 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:42,765 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:43,200 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:45,698 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:45,859 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:46,832 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:46,981 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:53,204 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:53,366 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:57:57,751 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:57:57,902 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:58:02,502 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:58:02,661 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:58:05,858 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:58:05,994 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:58:06,513 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:58:06,671 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:59:36,092 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:59:36,240 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:59:43,410 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:59:43,555 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:59:49,013 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:59:49,165 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:59:52,415 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:59:52,573 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 19:59:57,185 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 19:59:57,339 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:00,759 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:00,914 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:08,586 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:08,746 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:12,471 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:12,625 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:13,843 | INFO | info | Открыта админ-страница новостей пользователем Volody
+2026-09-18 20:00:15,409 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:15,563 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:24,251 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:24,424 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:24,727 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:24,880 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:25,610 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:25,770 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:00:27,435 | INFO | info | Открыт словарь терминов пользователем Volody
+2026-09-18 20:00:29,050 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:00:29,201 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:29,355 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:29,523 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:32,466 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:32,614 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:34,246 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:34,405 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:37,400 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:37,559 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:42,169 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:42,342 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:44,984 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:45,149 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:47,421 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:47,568 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:50,128 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:50,283 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:50,912 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:51,068 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:51,723 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:51,874 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:52,745 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-18 20:03:54,525 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:54,682 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:55,690 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:55,849 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:03:56,712 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:03:56,864 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:04:22,566 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:04:22,741 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:04:25,097 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:04:25,263 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:04:27,937 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:04:28,097 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:04:28,975 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:04:29,138 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:04:32,782 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:04:32,944 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:06:01,036 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:06:01,196 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:14,951 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:15,128 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:20,190 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:20,355 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:23,233 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:23,391 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:24,045 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:24,210 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:26,900 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:27,065 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:27,538 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:27,682 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:29,910 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:30,058 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:34,102 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:34,246 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:36,269 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:36,409 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:37,245 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:37,394 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:38,149 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:38,299 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:39,530 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-18 20:07:40,266 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:40,415 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:41,208 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:41,357 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:47,457 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:47,601 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:07:58,357 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:07:58,503 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:08:03,322 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:08:04,000 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:08:08,549 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:08:08,550 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:29,266 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:29,460 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:36,382 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:36,551 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:36,916 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:37,066 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:40,566 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:40,727 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:45,191 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:45,369 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:46,083 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:46,250 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:46,496 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:46,642 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:46,874 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:47,032 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:49,455 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:49,622 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:55,263 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:55,430 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:55,844 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:56,003 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:56,203 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:56,344 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:58,570 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:58,719 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:59,037 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:59,196 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:11:59,678 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:11:59,824 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:00,043 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:00,184 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:02,613 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:02,775 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:03,149 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:03,304 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:03,722 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:03,879 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:09,817 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:09,975 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:10,813 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:10,966 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:11,447 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:11,594 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:16,833 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:16,984 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:17,534 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:17,683 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:20,595 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:20,763 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:21,662 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:21,809 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:22,171 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:22,315 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:22,755 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:22,899 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:25,851 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:26,014 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:12:26,767 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:12:26,926 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:13:35,384 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:13:35,522 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:13:42,130 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:13:42,278 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:13:45,521 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:13:45,660 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:13:52,486 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:13:52,640 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:00,310 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:00,458 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:03,763 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:03,912 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:04,673 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:04,815 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:08,553 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:08,704 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:09,312 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:09,452 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:16,983 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:17,114 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:21,986 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:22,134 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:24,250 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:24,387 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:27,367 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:27,501 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:28,071 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:28,209 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:14:33,050 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:14:33,192 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:17:08,403 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:17:08,543 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:17:14,202 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:17:14,350 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:17:21,616 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:17:21,767 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:18:04,619 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:18:04,762 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:18:07,561 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:18:07,823 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:18:11,450 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:18:11,599 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:21:00,360 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:21:00,600 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:22:03,676 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:22:03,909 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:22:35,872 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:22:36,118 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:24:00,675 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-18 20:24:00,830 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:24:09,142 | INFO | info | Открыта новость id=3 пользователем Volody
+2026-09-18 20:24:41,445 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-18 20:24:55,861 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 20:24:56,034 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:25:36,793 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 20:25:36,957 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:26:07,391 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:07,567 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:26:10,362 | INFO | info | Открыта страница политики конфиденциальности пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:35,921 | INFO | info | Открыт список новостей пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:37,289 | INFO | info | Открыт словарь терминов пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:39,643 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:41,820 | INFO | info | Открыта форма создания отзыва пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:55,984 | INFO | info | Открыта форма создания отзыва пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:55,999 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 20:26:59,945 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 20:27:02,479 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 20:27:30,635 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-18 20:27:31,896 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-18 20:27:57,195 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-18 20:27:57,350 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-18 20:28:22,392 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 20:28:23,770 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-18 20:28:26,328 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-18 20:28:38,794 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-18 20:28:42,766 | INFO | info | Открыта новость id=2 пользователем AnonymousUser
+2026-09-18 20:28:46,217 | INFO | info | Открыта новость id=1 пользователем AnonymousUser
+2026-09-18 20:28:57,808 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-18 20:29:06,195 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-18 20:29:13,417 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-18 20:29:15,347 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-18 20:29:15,762 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-18 20:29:17,176 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-19 14:05:59,482 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-19 14:06:23,606 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-19 14:06:24,073 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-19 14:06:24,934 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-19 14:06:26,569 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-19 14:06:29,150 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-19 14:06:30,832 | INFO | info | Открыт список новостей пользователем AnonymousUser

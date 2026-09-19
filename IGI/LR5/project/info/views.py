@@ -43,7 +43,8 @@ def index(request):
             api_error = "Ошибка подключения к API погоды"
             logger.error("Ошибка API погоды: %s", exc)
 
-        api_url2 = "https://api.api-ninjas.com/v1/dayinhistory"
+        # api_url2 = "https://api.api-ninjas.com/v1/dayinhistory" потом поменять
+        api_url2 = "h"
         try:
             response2 = requests.get(
                 api_url2,

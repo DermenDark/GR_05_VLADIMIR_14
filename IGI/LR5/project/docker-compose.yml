@@ -33,6 +33,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
+      - .:/app
       - media_data:/app/image_for_project
       - static_data:/app/staticfiles
     depends_on:
