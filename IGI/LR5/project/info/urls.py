@@ -7,6 +7,7 @@ urlpatterns_public = [
     re_path(r'^news/(?P<pk>\d+)/$', views.news_detail, name='news_detail'),
     re_path(r'^reviews/$', views.reviews, name='reviews'),
     re_path(r'^terms/$', views.terms, name='terms'),
+    re_path(r'^terms/(?P<pk>\d+)/$', views.term_detail, name="term_detail"),
     re_path(r'^politic/$', views.politic, name='politic'),
 ]
 

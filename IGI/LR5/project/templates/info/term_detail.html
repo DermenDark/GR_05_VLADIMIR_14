@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ term.question }}{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>{{ term.question }}</h1>
+
+    <h3>Краткий ответ</h3>
+    <p>{{ term.answer }}</p>
+
+    {% if term.detailed_answer %}
+        <h3>Развернутый ответ</h3>
+        <p>{{ term.detailed_answer }}</p>
+    {% endif %}
+
+    <p>
+        <small>
+            Добавлено: {{ term.created_at }}
+        </small>
+    </p>
+
+    <a href="{% url 'terms' %}">
+        Вернуться к словарю
+    </a>
+</div>
+
+{% endblock %}

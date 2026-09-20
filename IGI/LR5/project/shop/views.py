@@ -118,11 +118,10 @@ def cart_item_delete(request, item_id):
     logger.warning("Позиция id=%s удалена из корзины пользователем %s", item_id, request.user)
     return redirect("shop:cart")
 
-
 @login_required(login_url="login_view")
 @transaction.atomic
 def checkout(request):
-    logger.info("Попытка оформить заказ пользователем %s", request.user)
+    logger.info("Открыта страница оплаты пользователем %s", request.user)
 
     cart, _ = Cart.objects.get_or_create(user=request.user)
     items = cart.items.select_related("medication").all()
@@ -133,31 +132,50 @@ def checkout(request):
 
     for item in items:
         if item.quantity > item.medication.count:
-            messages.error(request, f"Недостаточно товара: {item.medication.name}")
+            messages.error(
+                request,
+                f"Недостаточно товара: {item.medication.name}"
+            )
             return redirect("shop:cart")
 
-    order = Order.objects.create(
-        user=request.user,
-        total_cost=cart.total_cost,
-        status=Order.Status.NEW,
-    )
-
-    for item in items:
-        OrderItem.objects.create(
-            order=order,
-            medication=item.medication,
-            quantity=item.quantity,
-            price=item.medication.cost,
+    if request.method == "POST":
+        order = Order.objects.create(
+            user=request.user,
+            total_cost=cart.total_cost,
+            status=Order.Status.NEW,
         )
 
-        item.medication.count -= item.quantity
-        item.medication.save()
+        for item in items:
+            OrderItem.objects.create(
+                order=order,
+                medication=item.medication,
+                quantity=item.quantity,
+                price=item.medication.cost,
+            )
 
-    items.delete()
+            item.medication.count -= item.quantity
+            item.medication.save(update_fields=["count"])
 
-    messages.success(request, f"Заказ #{order.id} успешно оформлен.")
-    return redirect("shop:profile")
+        items.delete()
 
+        messages.success(
+            request,
+            f"Заказ #{order.id} успешно оплачен."
+        )
+
+        logger.info(
+            "Заказ #%s оплачен пользователем %s",
+            order.id,
+            request.user
+        )
+
+        return redirect("shop:profile")
+
+    return render(request, "shop/payment.html", {
+        "cart": cart,
+        "items": items,
+        "total_cost": cart.total_cost,
+    })
 
 @login_required(login_url="login_view")
 @permission_required("shop.view_order", raise_exception=True)

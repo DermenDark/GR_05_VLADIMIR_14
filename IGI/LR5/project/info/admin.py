@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import AboutCompany, News, Review, Term
+from .models import AboutCompany, News, Partner, Review, Term
 
 
 @admin.register(AboutCompany)
@@ -28,3 +28,25 @@ class TermAdmin(admin.ModelAdmin):
     list_display = ("id", "question", "created_at")
     search_fields = ("question", "answer")
     list_filter = ("created_at",)
+
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "name",
+        "website_url",
+        "is_active",
+        "sort_order",
+    )
+    search_fields = (
+        "name",
+        "description",
+        "website_url",
+    )
+    list_filter = (
+        "is_active",
+    )
+    list_editable = (
+        "is_active",
+        "sort_order",
+    )

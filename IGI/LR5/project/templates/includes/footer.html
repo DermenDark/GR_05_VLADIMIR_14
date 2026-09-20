@@ -18,6 +18,45 @@
 
         <button>Отправить</button>
     </div>
+
+<footer>
+
+    <div>
+        <h1>Наши партнеры</h1>
+            {% for partner in partners %}
+
+                <a
+                    href="{{ partner.website_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    {% if partner.logo %}
+                        <img
+                            src="{{ partner.logo.url }}"
+                            alt="{{ partner.name }}"
+                            width="150"
+                        >
+
+                    {% elif partner.logo_url %}
+                        <img
+                            src="{{ partner.logo_url }}"
+                            alt="{{ partner.name }}"
+                            width="150"
+                        >
+
+                    {% else %}
+                        {{ partner.name }}
+                    {% endif %}
+
+                </a>
+
+            {% empty %}
+
+                <p>Партнеры пока не добавлены.</p>
+
+            {% endfor %}
+    </div>
     <a href="/politic/">Политика конфиденциальности</a>
 </footer>
 </body>

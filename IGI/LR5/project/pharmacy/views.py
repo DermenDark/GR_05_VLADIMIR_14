@@ -55,6 +55,15 @@ def catalog(request):
         "all_categors": all_categories,
     })
 
+def medication_detail(request, pk):
+    medication = get_object_or_404(
+        Medication.objects.select_related("category"),
+        pk=pk
+    )
+
+    return render(request, "pharmacy/medication_detail.html", {
+        "medication": medication,
+    })
 
 @login_required
 @permission_required("pharmacy.add_medication", raise_exception=True)

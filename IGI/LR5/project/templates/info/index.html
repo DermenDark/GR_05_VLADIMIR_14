@@ -61,8 +61,25 @@
             <p>{{ company.text }}</p>
 
             {% if company.video_url %}
-                <p><a href="{{ company.video_url }}" target="_blank">Смотреть видео</a></p>
+                <h3>Видео о компании</h3>
+
+                <iframe
+                    width="850"
+                    height="500"
+                    src="{{ company.video_url }}?origin={{ request.scheme }}://{{ request.get_host }}"
+                    title="Видео о компании"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             {% endif %}
+            <section>
+                <h2>Видео</h2>
+                <video controls width="800">
+                    <source src="{% static 'videos/pharmacy_fixed.mp4' %}" type="video/mp4">
+                    Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+            </section>
 
             {% if company.history %}
                 <h3>История компании</h3>

@@ -7,7 +7,7 @@ import requests
 from django.shortcuts import get_object_or_404, render
 
 from .help_funk.filter import filter_news, filter_reviews, filter_terms
-from .models import AboutCompany, News, Review, Term
+from .models import AboutCompany, News, Partner, Review, Term
 
 logger = logging.getLogger("info")
 
@@ -111,6 +111,11 @@ def terms(request):
     terms_list = filter_terms(request, terms_list)
     return render(request, "info/terms.html", {"terms": terms_list})
 
+def term_detail(request, pk):
+    term = get_object_or_404(Term, pk=pk)
+    return render(request, "info/term_detail.html", {
+        "term": term
+    })
 
 def politic(request):
     logger.info("Открыта страница политики конфиденциальности пользователем %s", request.user)

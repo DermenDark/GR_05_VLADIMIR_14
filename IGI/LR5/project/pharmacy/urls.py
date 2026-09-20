@@ -3,6 +3,7 @@ from . import cud_views, views
 
 urlpatterns_catalog = [
     re_path(r'^$', views.catalog, name='catalog'),
+    re_path(r'^medications/(?P<pk>\d+)/$', views.medication_detail, name='medication_detail'),
     re_path(r'^create/$', views.create_medication, name='med_create'),
     re_path(r'^edit/(?P<pk>\d+)/$', views.edit_medication, name='med_edit'),
     re_path(r'^delete/(?P<pk>\d+)/$', views.delete_medication, name='med_delete'),

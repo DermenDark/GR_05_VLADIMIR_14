@@ -25,7 +25,7 @@
         <button type="submit">Поиск</button>
     </form>
 
-    <div style="margin: 15px 0;">
+    <div>
         <a href="?category="><b>ВСЕ</b></a>
         {% for info in all_categors %}
             <a href="?category={{ info.id }}"><b>{{ info.name }}</b></a>
@@ -37,8 +37,12 @@
     {% endif %}
 
     {% for info in all_info %}
-        <div style="border:1px solid #ccc; padding:12px; margin-bottom:12px;">
-            <div><b>Название:</b> {{ info.name }}</div>
+        <div>
+            <a href="{% url 'medication_detail' info.id %}">
+                <b>Название:</b>
+                    {{ info.name }}
+                </a>
+
             {% if info.photo %}
                 <img src="{{ info.photo.url }}" alt="{{ info.name }}" style="max-width:100px;">
             {% endif %}
@@ -54,15 +58,15 @@
                 {% endif %}
             </div>
 
-            <div style="margin-top:10px;">
+            <div>
                 {% if info.count %}
-                    <a href="{% url 'shop:add_to_cart' info.id %}">Купить</a>
+                    <a href="{% url 'shop:add_to_cart' info.id %}">Добавить в корзину</a>
                 {% else %}
                     <span>Нет в наличии</span>
                 {% endif %}
             </div>
 
-            <div style="margin-top:10px;">
+            <div>
                 {% if perms.pharmacy.change_medication %}
                     <a href="{% url 'med_edit' info.id %}">Редактировать</a>
                 {% endif %}
@@ -71,6 +75,7 @@
                     <a href="{% url 'med_delete' info.id %}">Удалить</a>
                 {% endif %}
             </div>
+            </a>
         </div>
     {% empty %}
         <div>Нет лекарств.</div>

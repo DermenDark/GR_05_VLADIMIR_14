@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}{{ medication.name }}{% endblock %}
+{% block content %}
+<div>
+    <h1>{{ medication.name }}</h1>
+
+    {% if medication.photo %}
+        <div>
+            <img
+                src="{{ medication.photo.url }}"
+                alt="{{ medication.name }}"
+                width="200"
+            >
+        </div>
+    {% endif %}
+
+    <p>
+        <strong>Категория:</strong>
+        {{ medication.category.name }}
+    </p>
+
+    <p>
+        <strong>Описание:</strong>
+        {{ medication.description }}
+    </p>
+
+    <p>
+        <strong>Цена:</strong>
+        {{ medication.cost }}
+    </p>
+
+    <p>
+        <strong>В наличии:</strong>
+        {% if medication.count %}
+            Да
+        {% else %}
+            Нет
+        {% endif %}
+    </p>
+    {% if medication.count %}
+        <p>
+            <a href="{% url 'shop:add_to_cart' medication.id %}">
+                Добавить в корзину
+            </a>
+        </p>
+    {% else %}
+        <p>Нет в наличии.</p>
+    {% endif %}
+    <p>
+        <a href="{% url 'catalog' %}">
+            Вернуться в каталог
+        </a>
+    </p>
+</div>
+{% endblock %}

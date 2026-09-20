@@ -15,8 +15,12 @@
     {% endif %}
 
     {% for item in terms %}
-        <div style="margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
-            <h3>{{ item.question }}</h3>
+        <div>
+            <h3>
+                <a href="{% url 'term_detail' item.id %}">
+                    {{ item.question }}
+                </a>
+            </h3>
             <p>{{ item.answer }}</p>
             <p><small>{{ item.created_at }}</small></p>
 

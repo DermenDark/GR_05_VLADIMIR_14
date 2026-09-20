@@ -36,7 +36,10 @@
 
     <section>
         <p>
-            <a href="{% url 'shop:checkout' %}">Оформить заказ</a>
+            {% if items %}
+                <a href="{% url 'shop:checkout' %}">Оплатить</a>
+            {% else %}
+            {% endif %}
         </p>
     </section>
 </div>

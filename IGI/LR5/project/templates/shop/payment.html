@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Оплата товаров{% endblock %}
+{% block content %}
+
+<div>
+    <h1>Оплата товаров</h1>
+    <section>
+        {% for item in items %}
+            <div>
+                <h3>{{ item.medication.name }}</h3>
+                <p>Цена: {{ item.medication.cost }}</p>
+                <p>Количество: {{ item.quantity }}</p>
+                <p>Сумма: {{ item.subtotal }}</p>
+            </div>
+
+            <hr>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2>Итого: {{ total_cost }}</h2>
+    </section>
+
+    <section>
+        <form method="post">
+            {% csrf_token %}
+
+            <h3>Способ оплаты</h3>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment_method"
+                    value="card"
+                    checked
+                >
+                Банковская карта
+            </label>
+
+            <br>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment_method"
+                    value="cash"
+                >
+                Оплата при получении
+            </label>
+
+            <br><br>
+
+            <button type="submit">
+                Оплатить {{ total_cost }}
+            </button>
+        </form>
+    </section>
+
+    <p>
+        <a href="{% url 'shop:cart' %}">
+            Вернуться в корзину
+        </a>
+    </p>
+</div>
+
+{% endblock %}

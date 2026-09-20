@@ -32,14 +32,14 @@
         {% endif %}
     {% else %}
         <div style="margin: 15px 0;">
-            <a href="{% url 'login_view' %}" style="padding:8px 15px; text-decoration:none; border-radius:3px; margin-right:10px;">
+            <a href="{% url 'login_view' %}">
                 Добавить отзыв
             </a>
         </div>
     {% endif %}
 
     {% for item in reviews %}
-        <div style="margin-top: 15px; padding: 10px; border: 1px solid #ccc;">
+        <div>
             <h3>{{ item.name }}</h3>
             <p>Оценка: {{ item.rating }}/5</p>
             <p>{{ item.text }}</p>
