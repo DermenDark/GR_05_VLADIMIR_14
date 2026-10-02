@@ -2,8 +2,8 @@
 {% block title %}Словарь{% endblock %}
 
 {% block content %}
-<div>
-    <h1>Словарь терминов</h1>
+<section aria-labelledby="terms-title">
+    <h1 id="terms-title">Словарь терминов</h1>
 
     <form method="get">
         <input type="text" name="q" placeholder="Поиск по вопросу..." class="input">
@@ -15,8 +15,8 @@
     {% endif %}
 
     {% for item in terms %}
-        <div>
-            <h3>
+        <article aria-labelledby="term-{{ item.id }}-title">
+            <h3 id="term-{{ item.id }}-title">
                 <a href="{% url 'term_detail' item.id %}">
                     {{ item.question }}
                 </a>
@@ -31,9 +31,9 @@
             {% if perms.pharmacy.delete_term %}
                 <a href="{% url 'term_delete' item.id %}">Удалить</a>
             {% endif %}
-        </div>
+        </article>
     {% empty %}
         <p>Термины пока не добавлены.</p>
     {% endfor %}
-</div>
+</section>
 {% endblock %}

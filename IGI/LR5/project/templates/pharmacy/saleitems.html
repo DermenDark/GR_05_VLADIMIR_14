@@ -32,13 +32,13 @@
     {% endif %}
 
     {% for item in saleitems %}
-        <div>
-            <h3>{{ item.medication.name }}</h3>
+        <article aria-labelledby="saleitem-{{ item.id }}-title">
+            <h2 id="saleitem-{{ item.id }}-title">{{ item.medication.name }}</h2>
 
             <p>Продажа №{{ item.sale.id }}</p>
             <p>Количество: {{ item.count }}</p>
 
-            <div>
+            <p>
                 {% if perms.pharmacy.change_saleitem %}
                     <a href="{% url 'saleitem_edit' item.id %}">Редактировать</a>
                 {% endif %}
@@ -46,8 +46,8 @@
                 {% if perms.pharmacy.delete_saleitem %}
                     <a href="{% url 'saleitem_delete' item.id %}">Удалить</a>
                 {% endif %}
-            </div>
-        </div>
+            </p>
+        </article>
     {% empty %}
         <p>Нет позиций продаж</p>
     {% endfor %}

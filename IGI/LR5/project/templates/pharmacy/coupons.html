@@ -2,8 +2,8 @@
 {% block title %}Купоны{% endblock %}
 
 {% block content %}
-<div>
-    <h1>Купоны</h1>
+<section aria-labelledby="coupons-page-title">
+    <h1 id="coupons-page-title">Купоны</h1>
 
     <form method="get">
         <select name="is_active">
@@ -23,24 +23,20 @@
     {% endif %}
 
     {% for coupon in coupons %}
-        <div>
-            <div>
-                <b>Скидка:</b> {{ coupon.discount_percent }}%
-            </div>
+        <article aria-labelledby="coupon-{{ coupon.id }}-title">
+            <p><strong>Скидка:</strong> {{ coupon.discount_percent }}%</p>
 
-            <div>
-                <b>Сумма скидки:</b> {{ coupon.discount_cost }}
-            </div>
+            <p><strong>Сумма скидки:</strong> {{ coupon.discount_cost }}</p>
 
-            <div>
+            <p>
                 {% if coupon.is_active %}
-                    <b>Активен</b>
+                    <strong>Активен</strong>
                 {% else %}
-                    <b>Неактивен</b>
+                    <strong>Неактивен</strong>
                 {% endif %}
-            </div>
+            </p>
 
-            <div>
+            <p>
                 {% if perms.pharmacy.change_coupons %}
                     <a href="{% url 'coupons_edit' coupon.id %}">Редактировать</a>
                 {% endif %}
@@ -48,10 +44,10 @@
                 {% if perms.pharmacy.delete_coupons %}
                     <a href="{% url 'coupons_delete' coupon.id %}">Удалить</a>
                 {% endif %}
-            </div>
-        </div>
+            </p>
+        </article>
     {% empty %}
-        <div>Нет купонов.</div>
+        <p>Нет купонов.</p>
     {% endfor %}
-</div>
+</section>
 {% endblock %}

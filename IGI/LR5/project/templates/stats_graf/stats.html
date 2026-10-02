@@ -105,7 +105,7 @@
 
   <section>
     <h2>Общая выручка</h2>
-    <p><b>{{ total_revenue }}</b></p>
+    <p><strong>{{ total_revenue }}</strong></p>
 
     <h3>Статистика по продажам</h3>
     <p>Среднее: {{ sales_mean|default:"—" }}</p>
@@ -135,13 +135,13 @@
   <section>
     <h2>Популярные категории</h2>
     {% if most_popular_category %}
-      <p>Самый популярный тип товаров: <b>{{ most_popular_category.medication__category__name|default:"Без категории" }}</b></p>
+      <p>Самый популярный тип товаров: <strong>{{ most_popular_category.medication__category__name|default:"Без категории" }}</strong></p>
     {% else %}
       <p>Данных нет.</p>
     {% endif %}
 
     {% if most_profitable_category %}
-      <p>Самый прибыльный тип товаров: <b>{{ most_profitable_category.medication__category__name|default:"Без категории" }}</b></p>
+      <p>Самый прибыльный тип товаров: <strong>{{ most_profitable_category.medication__category__name|default:"Без категории" }}</strong></p>
     {% endif %}
 
     <table border="1" cellpadding="5">

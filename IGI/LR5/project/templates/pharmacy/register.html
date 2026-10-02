@@ -2,7 +2,8 @@
 {% block title %}Регистрация{% endblock %}
 
 {% block content %}
-    <h1>Регистрация</h1>
+    <section aria-labelledby="register-title">
+        <h1 id="register-title">Регистрация</h1>
 
     <form method="post" action="{% url 'register_view' %}">
         {% csrf_token %}
@@ -10,7 +11,7 @@
         <input type="hidden" name="next" value="{{ request.GET.next|default:'about_company' }}">
 
         {% if register_form.non_field_errors %}
-            <div style="color: red;">
+            <div role="alert" style="color: red;">
                 {{ register_form.non_field_errors }}
             </div>
         {% endif %}
@@ -47,10 +48,10 @@
 
         <button type="submit">Зарегистрироваться</button>
     </form>
+    </section>
 
     <p>
         Уже есть аккаунт?
         <a href="{% url 'login_view' %}">Войти</a>
     </p>
-</body>
 {% endblock %}

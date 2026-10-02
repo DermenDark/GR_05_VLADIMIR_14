@@ -2,162 +2,156 @@
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-<div>
+<section id="home-content">
     <h1>Главная страница</h1>
     {% load static %}
     <picture>
-        <source
-            media="(max-width: 750px)"
-            srcset="{% static 'images/banners/small.png' %}">
-        <source
-            media="(max-width: 1300px)"
-            srcset="{% static 'images/banners/medium.png' %}">
-        <img
-            src="{% static 'images/banners/large.png' %}"
-            alt="Реклама аптеки"
-            style="width: 100%; height: auto;">
+        <source media="(max-width: 750px)" srcset="{% static 'images/banners/small.png' %}">
+        <source media="(max-width: 1300px)" srcset="{% static 'images/banners/medium.png' %}">
+        <img src="{% static 'images/banners/large.png' %}" alt="Реклама аптеки" style="width: 100%; height: auto;">
     </picture>
 
     {% if request.user.is_authenticated %}
-            <section>
-                <h2>Погода</h2>
-                <form method="get">
-                    <label for="city">Город</label>
-                    <input type="text" id="city" name="city" placeholder="Введите город">
-                    <button type="submit">Узнать</button>
-                </form>
+    <aside aria-labelledby="weather-title">
+        <h2 id="weather-title">Погода</h2>
+        <form method="get">
+            <label for="city">Город</label>
+            <input type="text" id="city" name="city" placeholder="Введите город">
+            <button type="submit">Узнать</button>
+        </form>
 
-                {% if api_error %}
-                    <div class="alert alert-warning">{{ api_error }}</div>
-                {% endif %}
-
-                {% if weather %}
-                    <div class="alert alert-danger">
-                        Погода в городе: {{ weather.city }}<br>
-                        Температура: {{ weather.temp }}<sup>0</sup><br>
-                        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather">
-                    </div>
-                {% endif %}
-
-                {% if history_day2 %}
-                    <h3>Сегодня в истории</h3>
-                    <p>{{ history_day2 }}</p>
-                {% endif %}
-            </section>
+        {% if api_error %}
+        <div class="alert alert-warning">{{ api_error }}</div>
         {% endif %}
+
+        {% if weather %}
+        <div class="alert alert-danger">
+            Погода в городе: {{ weather.city }}<br>
+            Температура: {{ weather.temp }}<sup>0</sup><br>
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather">
+        </div>
+        {% endif %}
+
+        {% if history_day2 %}
+        <h3>Сегодня в истории</h3>
+        <p>{{ history_day2 }}</p>
+        {% endif %}
+    </aside>
+    {% endif %}
     {% if latest_news %}
-        <section>
-            <h2>Последняя статья</h2>
-            <h3>{{ latest_news.title }}</h3>
-            <p>{{ latest_news.short_content }}</p>
-            <p><small>{{ latest_news.created_at|date:"d/m/Y" }}</small></p>
-            <a href="{% url 'news_detail' latest_news.id %}">Читать далее</a>
-        </section>
+    <article aria-labelledby="latest-news-title">
+        <h2 id="latest-news-title">Последняя статья</h2>
+        <h3>{{ latest_news.title }}</h3>
+        <p>{{ latest_news.short_content }}</p>
+        <p><small>{{ latest_news.created_at|date:"d/m/Y" }}</small></p>
+        <a href="{% url 'news_detail' latest_news.id %}">Читать далее</a>
+    </article>
     {% endif %}
 
     {% if company %}
-        <section>
-            <h2>О компании</h2>
-            <p>{{ company.text }}</p>
+    <section>
+        <h2>О компании</h2>
+        <p>{{ company.text }}</p>
 
-            {% if company.video_url %}
-                <h3>Видео о компании</h3>
+        {% if company.video_url %}
+        <h3>Видео о компании</h3>
 
-                <iframe
-                    width="850"
-                    height="500"
-                    src="{{ company.video_url }}?origin={{ request.scheme }}://{{ request.get_host }}"
-                    title="Видео о компании"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allow="autoplay; encrypted-media; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-            {% endif %}
-            <section>
-                <h2>Видео</h2>
-                <video controls width="800">
-                    <source src="{% static 'videos/pharmacy_fixed.mp4' %}" type="video/mp4">
-                    Ваш браузер не поддерживает воспроизведение видео.
-                </video>
-            </section>
-
-            {% if company.history %}
-                <h3>История компании</h3>
-                <p>{{ company.history }}</p>
-            {% endif %}
-
-            {% if company.requisites %}
-                <h3>Реквизиты</h3>
-                <p>{{ company.requisites }}</p>
-            {% endif %}
-        </section>
-    {% else %}
-        <p>Информация о компании пока не добавлена.</p>
-        {% if user.is_authenticated and user.is_staff %}
-            <p>
-                <a href="{% url 'about_company_create' %}">Создать запись</a>
-            </p>
+        <iframe width="850" height="500"
+            src="{{ company.video_url }}?origin={{ request.scheme }}://{{ request.get_host }}" title="Видео о компании"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
         {% endif %}
+        <section>
+            <h2>Видео</h2>
+            <video controls
+                width="800"
+                preload="metadata"
+                playsinline
+                controlslist="nodownload"
+                disablepictureinpicture>
+                <source src="{% static 'videos/pharmacy_fixed.mp4' %}" type="video/mp4">
+                Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+        </section>
+
+        {% if company.history %}
+        <h3>История компании</h3>
+        <p>{{ company.history }}</p>
+        {% endif %}
+
+        {% if company.requisites %}
+        <h3>Реквизиты</h3>
+        <p>{{ company.requisites }}</p>
+        {% endif %}
+    </section>
+    {% else %}
+    <p>Информация о компании пока не добавлена.</p>
+    {% if user.is_authenticated and user.is_staff %}
+    <p>
+        <a href="{% url 'about_company_create' %}">Создать запись</a>
+    </p>
+    {% endif %}
     {% endif %}
     {% if user.is_authenticated and user.is_staff %}
-        <p>
-            <a href="{% url 'about_company_edit' company.id %}">Редактировать</a>
-            |
-            <a href="{% url 'about_company_delete' company.id %}">Удалить</a>
-        </p>
+    <p>
+        <a href="{% url 'about_company_edit' company.id %}">Редактировать</a>
+        |
+        <a href="{% url 'about_company_delete' company.id %}">Удалить</a>
+    </p>
     {% endif %}
     {% if today %}
-        <section style="margin-top: 30px;">
+    <section style="margin-top: 30px;">
         <h2>Календарь</h2>
-        <p><b>{{ month_name }} {{ today.year }}</b></p>
+        <p><strong>{{ month_name }} {{ today.year }}</strong></p>
 
-        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+        <table class="calendar-table" style="border-collapse: collapse; text-align: center;">
             <thead>
                 <tr>
                     {% for day in weekday_names %}
-                        <th>{{ day }}</th>
+                    <th>{{ day }}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
                 {% for week in month_matrix %}
-                    <tr>
-                        {% for day in week %}
-                            <td>
-                                {% if day %}
-                                    {% if day == today.day %}
-                                        <strong>{{ day }}</strong>
-                                    {% else %}
-                                        {{ day }}
-                                    {% endif %}
-                                {% endif %}
-                            </td>
-                        {% endfor %}
-                    </tr>
+                <tr>
+                    {% for day in week %}
+                    <td>
+                        {% if day %}
+                        {% if day == today.day %}
+                        <strong>{{ day }}</strong>
+                        {% else %}
+                        {{ day }}
+                        {% endif %}
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
 
         <p style="margin-top: 10px;">Сегодня: {{ today|date:"d.m.Y" }}</p>
-        </section>
+    </section>
     {% endif %}
-        {% if server_now %}
+    {% if server_now %}
     <section style="margin-top: 30px;">
         <h2>Часовые пояса</h2>
 
         <p>
-            <b>Сервер:</b>
+            <strong>Сервер:</strong>
             {{ server_now|date:"d.m.Y H:i:s" }}
             ({{ server_tz_name }})
         </p>
 
         <p>
-            <b>Клиент:</b>
+            <strong>Клиент:</strong>
             <span id="client-timezone">определяется...</span>
         </p>
 
         <p>
-            <b>Время клиента:</b>
+            <strong>Время клиента:</strong>
             <span id="client-now">определяется...</span>
         </p>
     </section>
@@ -175,6 +169,6 @@
                 }).format(now);
         })();
     </script>
-{% endif %}
-</div>
+    {% endif %}
+</section>
 {% endblock %}

@@ -2,8 +2,8 @@
 {% block title %}Вакансии{% endblock %}
 
 {% block content %}
-<div>
-    <h1>Вакансии</h1>
+<section aria-labelledby="vacancies-title">
+    <h1 id="vacancies-title">Вакансии</h1>
 
     <form method="get">
         <input type="text" name="q" placeholder="Поиск по названию..." class="input">
@@ -25,28 +25,28 @@
     {% endif %}
 
     {% for vacancy in vacancies %}
-        <div>
-            <div>
-                <b>Название:</b> {{ vacancy.title }}
-            </div>
+        <article aria-labelledby="vacancy-{{ vacancy.id }}-title">
+            <h2 id="vacancy-{{ vacancy.id }}-title">{{ vacancy.title }}</h2>
 
-            <div>
-                <b>Описание:</b> {{ vacancy.description }}
-            </div>
+            <p>
+                <strong>Описание:</strong> {{ vacancy.description }}
+            </p>
 
-            <div>
-                <b>Дата:</b> {{ vacancy.created_at }}
-            </div>
+            <p>
+                <strong>Дата:</strong>
+                <time datetime="{{ vacancy.created_at|date:'c' }}">{{ vacancy.created_at }}</time>
+            </p>
 
-            <div>
+            <p>
+                <strong>Статус:</strong>
                 {% if vacancy.is_active %}
-                    <b>Активна</b>
+                    Активна
                 {% else %}
-                    <b>Неактивна</b>
+                    Неактивна
                 {% endif %}
-            </div>
+            </p>
 
-            <div>
+            <p>
                 {% if perms.pharmacy.change_vacancy %}
                     <a href="{% url 'vacancy_edit' vacancy.id %}">Редактировать</a>
                 {% endif %}
@@ -54,10 +54,10 @@
                 {% if perms.pharmacy.delete_vacancy %}
                     <a href="{% url 'vacancy_delete' vacancy.id %}">Удалить</a>
                 {% endif %}
-            </div>
-        </div>
+            </p>
+        </article>
     {% empty %}
-        <div>Нет вакансий.</div>
+        <p>Нет вакансий.</p>
     {% endfor %}
-</div>
+</section>
 {% endblock %}

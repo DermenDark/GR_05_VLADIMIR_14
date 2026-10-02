@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "info",
     "shop",
     "stats_graf",
+    "spec_lab"
 ]
 
 MEDIA_URL = '/media/'

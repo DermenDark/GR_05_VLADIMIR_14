@@ -1,25 +1,26 @@
 {% extends 'base.html' %}
 {% block title %}{{ medication.name }}{% endblock %}
 {% block content %}
-<div>
-    <h1>{{ medication.name }}</h1>
+<article itemscope itemtype="https://schema.org/Product" aria-labelledby="medication-title">
+    <h1 id="medication-title" itemprop="name">{{ medication.name }}</h1>
 
     {% if medication.photo %}
-        <div>
+        <figure>
             <img
                 src="{{ medication.photo.url }}"
                 alt="{{ medication.name }}"
                 width="200"
             >
-        </div>
+            <figcaption>{{ medication.name }}</figcaption>
+        </figure>
     {% endif %}
 
-    <p>
+    <p itemprop="category">
         <strong>Категория:</strong>
         {{ medication.category.name }}
     </p>
 
-    <p>
+    <p itemprop="description">
         <strong>Описание:</strong>
         {{ medication.description }}
     </p>
@@ -51,5 +52,5 @@
             Вернуться в каталог
         </a>
     </p>
-</div>
+</article>
 {% endblock %}

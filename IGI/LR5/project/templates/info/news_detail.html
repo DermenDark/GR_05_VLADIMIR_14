@@ -2,16 +2,17 @@
 {% block title %}{{ news.title }}{% endblock %}
 
 {% block content %}
-<div>
-    <h1>{{ news.title }}</h1>
+<article aria-labelledby="news-detail-title">
+    <h1 id="news-detail-title">{{ news.title }}</h1>
 
     {% if news.image %}
-        <div>
+        <figure>
             <img src="{{ news.image.url }}" alt="{{ news.title }}" style="max-width: 300px;">
-        </div>
+            <figcaption>{{ news.title }}</figcaption>
+        </figure>
     {% endif %}
 
     <p>{{ news.content }}</p>
-    <p><small>{{ news.created_at }}</small></p>
-</div>
+    <p><time datetime="{{ news.created_at|date:'c' }}">{{ news.created_at }}</time></p>
+</article>
 {% endblock %}

@@ -1,0 +1,422 @@
+{% extends 'base.html' %}
+{% block title %}Специальная страница{% endblock %}
+
+{% block content %}
+<article id="semantic-lab" class="semantic-lab" lang="ru" dir="ltr" title="Демонстрация семантической HTML5-разметки"
+    data-page="semantic-lab" translate="yes" spellcheck tabindex="0">
+    <section id="text-semantics" class="demo-section" data-demo="text-semantics">
+        <h1>ВСЕЕЕ ТЕГИ! </h1>
+        <small id="unical_place" class="muted-text" title="Дополнительная информация">
+            А может и не все...
+        </small>
+        <p id="intro-text">
+            Какой-то документ и
+            <strong>важный текст</strong>,
+            <em>текст</em>,
+            <mark title="Выделенный фрагмент">I am boy.</mark>.
+        </p>
+
+        <p>
+            <small id="unical_place" class="muted-text" title="Дополнительная информация">
+                Мелкий шрифт: заберут дом и все деньги, за красивые глаза.
+            </small>
+        </p>
+
+        <p>
+            <dfn title="важный этап">1 лабораторная работа</dfn> — для всех!!!
+        </p>
+
+        <p>
+            И сказал Лючио:
+            <q cite="https://example.com/source">
+                Тебе следовало бы считать меня врагом, потому что тот,<wbr>
+                кто льстит человеку за его добродетели или потворствует<wbr>
+                ему в его пороках, есть худший враг того человека
+            </q>.
+        </p>
+
+        <p>
+            Источник высказывания: <cite>Скорбь сатаны</cite>.
+        </p>
+
+        <p>
+            <time datetime="2026-09-17" title="17 сентября 2026">17 сентября 2026</time>
+        </p>
+
+        <p id="language-example" class="language-example" data-example="inline">
+            <span title="Пример текста">Обычный контейнер</span>.
+            <abbr title="HyperText Markup Language">HTML</abbr> — язык разметки.
+        </p>
+    </section>
+
+    <section id="code-semantics" class="demo-section" data-demo="code">
+        <h2>Семантические элементы для кода</h2>
+
+        <pre class="code-example" title="Пример кода на C" data-language="c" translate="no" spellcheck="false">
+            <code>
+            int main()
+            {
+                const int8_t A[8]  = {  5, -10,  20, -30,  40, -50,  60, -70 };
+                const int8_t B[8]  = { -2,   3,  -4,   5,  -6,   7,  -8,   9 };
+                const int8_t C[8]  = {  4,   6,  -3,  -2,   5,  -4,   3,  -6 };
+                const int16_t D[8] = {  1,  -2,   7,  -8,   9, -10,  11, -12 };
+                int32_t F[8] = {};
+                return 0;
+            }
+
+            &lt;section&gt;
+            </code>
+        </pre>
+
+        <p><var>int32_t F[8] = {};</var></p>
+        <p><samp>return 0;</samp></p>
+        <p><kbd title="Клавиатурная комбинация">Ctrl + D</kbd></p>
+    </section>
+
+    <aside id="global-attributes" class="demo-aside" title="Примеры глобальных атрибутов" data-demo="global-attributes"
+        tabindex="0">
+        <p id="editable-note" class="note" title="Это текст."
+        translate="yes" spellcheck="true" style="margin: 0;">
+            ФФФФФФФФФФФФФФЫВВВВВВВВВВВВВВВВВ
+        </p>
+    </aside>
+
+    <section id="text-blocks" class="demo-section">
+        <h2>Текстовые блоки</h2>
+
+        <pre id="poem-pre" class="poem" data-format="pre">
+            Белый снег укрыл дома,
+            Вновь пришла за ним весна,
+            Лето жаркое придет,
+            Осень листья принесет.
+        </pre>
+
+        <p id="poem-paragraph">
+            Белый снег укрыл дома, вновь пришла за ним весна,<wbr>
+            лето жаркое придет, осень листья принесет.
+        </p>
+
+        <hr>
+    </section>
+
+    <section id="links-demo" class="demo-section" aria-labelledby="links-title">
+        <h2 id="links-title">Ссылки</h2>
+
+        <p>
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
+                title="Открыть Google в новой вкладке" data-link-type="external">
+                Перейти на Google
+            </a>
+        </p>
+
+        <p>
+            <a href="{% url 'catalog' %}" title="Переход во внутренний каталог">
+                Перейти в каталог
+            </a>
+        </p>
+
+        <p>
+            <a href="#unical_place" title="Перейти к элементу по идентификатору">
+                Перейти к определенному месту
+            </a>
+        </p>
+
+        <p>
+            <a href="mailto:example@mail.ru" title="Отправить электронное письмо">
+                Написать на email
+            </a>
+        </p>
+
+        <p>
+            <a href="tel:+375333160871" title="Позвонить по телефону">
+                Позвонить
+            </a>
+        </p>
+
+        {% load static %}
+        <p>
+            <a href="{% static 'images/favicon.png' %}" download title="Скачать изображение">
+                Скачать
+            </a>
+        </p>
+
+        <p>
+            <a href="{% static 'images/favicon.png' %}" download="favn.png"
+                title="Скачать изображение под указанным именем">
+                Скачать как favn.png
+            </a>
+        </p>
+    </section>
+
+    <section id="lists-demo" class="demo-section">
+        <h2>Списки</h2>
+
+        <ul id="unordered-list" class="demo-list">
+            <li>АААА</li>
+            <li>ББББ</li>
+            <li>ВВВВ</li>
+        </ul>
+
+        <ol id="ordered-list" start="3" reversed class="demo-list">
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+        </ol>
+
+        <dl id="definition-list" class="demo-list">
+            <dt>Термин</dt>
+            <dd>Определение</dd>
+            <dt>Термин</dt>
+            <dd>Определение</dd>
+        </dl>
+    </section>
+
+    <section id="tables-demo" class="demo-section">
+        <h2>Таблицы</h2>
+
+        <table class="demo-table" id="simple-table" summary="Таблица продаж за первый квартал: план и факт по месяцам" rules="all">
+            <caption>План сдачи работ</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Ссылка</th>
+                    <th scope="col">Дедлайн</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="{% url 'catalog' %}">Каталог</a></td>
+                    <td>октябрь</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="{% url 'news' %}">Новости</a></td>
+                    <td>ноябрь</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="{% url 'reviews' %}">Отзывы</a></td>
+                    <td>11 ноября</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table class="demo-table" id="sales-table" title="Пример сложной таблицы" style="border-collapse: collapse;">
+            <caption>Продажи за квартал</caption>
+            <thead>
+                <tr>
+                    <th id="h-month" scope="col" rowspan="2">Месяц</th>
+                    <th id="h-revenue" scope="colgroup" colspan="2">Выручка, ₽</th>
+                    <th id="h-comment" scope="col" rowspan="2">Комментарий</th>
+                </tr>
+                <tr>
+                    <th id="h-plan" scope="col">План</th>
+                    <th id="h-fact" scope="col">Факт</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="r-jan" scope="row">Январь</th>
+                    <td headers="r-jan h-plan h-revenue">120 000</td>
+                    <td headers="r-jan h-fact h-revenue">135 400</td>
+                    <td headers="r-jan h-comment">Перевыполнение плана</td>
+                </tr>
+                <tr>
+                    <th id="r-feb" scope="row">Февраль</th>
+                    <td headers="r-feb h-plan h-revenue">130 000</td>
+                    <td headers="r-feb h-fact h-revenue">128 900</td>
+                    <td headers="r-feb h-comment">Небольшое отставание</td>
+                </tr>
+                <tr>
+                    <th id="r-mar" scope="row">Март</th>
+                    <td headers="r-mar h-plan h-revenue">140 000</td>
+                    <td headers="r-mar h-fact h-revenue">152 300</td>
+                    <td headers="r-mar h-comment">Рекордный месяц</td>
+                </tr>
+                <tr>
+                    <th id="r-total" scope="row" colspan="3"><strong>Итого за квартал</strong></th>
+                    <td headers="r-total h-revenue h-plan h-fact">416 600</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="controls-demo" class="demo-section">
+        <h2>Элементы управления и валидация</h2>
+
+        <form id="control-form" class="control-form" method="get" action="/search/" data-form-purpose="validation">
+            <fieldset id="controls-fieldset" class="controls" title="Набор элементов управления">
+                <legend>Просто куча инпутов</legend>
+
+                <p>
+                    <label for="demo-text">Текст</label>
+                    <input type="text" id="demo-text" name="demo_text" placeholder="Введите текст" required
+                        minlength="2" maxlength="100">
+                </p>
+
+                <p>
+                    <label for="demo-number">Номер</label>
+                    <input type="number" id="demo-number" name="demo_number" min="1" max="10" value="5" required>
+                </p>
+
+                <p>
+                    <label for="demo-range">Ползунок</label>
+                    <input type="range" id="demo-range" name="demo_range" min="0" max="100" value="60">
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" name="demo_check" value="1" checked>
+                        checkbox
+                    </label>
+                </p>
+
+                <fieldset>
+                    <legend>Радиокнопки</legend>
+                    <label>
+                        <input type="radio" name="fam" value="O">
+                        radio1
+                    </label>
+                    <label>
+                        <input type="radio" name="fam" value="A" checked>
+                        radio2
+                    </label>
+                </fieldset>
+
+                <p>
+                    <label for="demo-textarea">Комментарий</label>
+                    <textarea id="demo-textarea" name="comment" rows="4" minlength="4" maxlength="500"
+                        required>Текст</textarea>
+                </p>
+
+                <p>
+                    <label for="demo-select">Тема</label>
+                    <select id="demo-select" name="theme" required>
+                        <option value="" selected disabled>Выберите тему</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="theme-input">Тема с подсказкой</label>
+                    <input id="theme-input" name="theme_input" list="input_value" placeholder="Начните вводить…">
+                </p>
+
+                <datalist id="input_value">
+                    <option value="HTML"></option>
+                    <option value="CSS"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                </datalist>
+
+                <button type="submit" id="validate-button" accesskey="v"
+                    title="Отправить форму и выполнить встроенную валидацию">
+                    Проверить
+                </button>
+
+                <button type="reset" data-action="reset">Сбросить</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <section id="search-demo" class="demo-section">
+        <h2>Поиск по каталогу</h2>
+
+        <form action="/search/" method="get" id="catalog-search-form" class="catalog-search-form">
+            <fieldset>
+                <legend>Поиск по каталогу</legend>
+
+                <p>
+                    <label for="query">Запрос:</label>
+                    <input type="text" id="query" name="q" placeholder="Аспирин" required minlength="2" maxlength="100">
+                </p>
+
+                <p>
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+375291234567" pattern="\+?[0-9]{10,15}"
+                        title="Введите от 10 до 15 цифр, можно с +">
+                </p>
+
+                <p>
+                    <label for="category">Категория:</label>
+                    <select id="category" name="category">
+                        <option value="">Все категории</option>
+                        <option value="meds">Лекарства</option>
+                        <option value="vitamins">Витамины</option>
+                        <option value="care">Средства ухода</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="min_price">Цена от:</label>
+                    <input type="number" id="min_price" name="min_price" min="0" step="10" value="0">
+                </p>
+
+                <p>
+                    <label for="max_price">Цена до:</label>
+                    <input type="number" id="max_price" name="max_price" min="0" step="10" value="1000">
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" name="in_stock" value="1">
+                        Только в наличии
+                    </label>
+                </p>
+
+                <p>
+                    <label for="sort">Сортировка:</label>
+                    <select id="sort" name="sort">
+                        <option value="name">По названию</option>
+                        <option value="price_asc">Сначала дешёвые</option>
+                        <option value="price_desc">Сначала дорогие</option>
+                    </select>
+                </p>
+
+                <button type="submit">Найти</button>
+                <button type="reset">Сбросить</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <section id="media-demo" class="demo-section">
+        <h2>Мультимедиа</h2>
+
+        <audio controls title="Аудиозапись">
+            <source src="{% static 'videos/gimn.mp3' %}" type="audio/mpeg">
+            Ваш браузер не поддерживает воспроизведение аудио.
+        </audio>
+
+        <figure>
+            <svg width="100" height="100" aria-label="Красный круг" role="img">
+                <circle cx="50" cy="50" r="40" fill="red"></circle>
+            </svg>
+            <figcaption>Круг</figcaption>
+        </figure>
+
+        <figure>
+            <svg width="100" height="100" aria-label="Зелёный прямоугольник" role="img">
+                <rect x="10" y="10" width="80" height="80" fill="green"></rect>
+            </svg>
+            <figcaption>Прямоугольник</figcaption>
+        </figure>
+
+        <figure>
+            <svg width="100" height="100" aria-label="Синий треугольник" role="img">
+                <polygon points="50,10 90,90 10,90" fill="blue"></polygon>
+            </svg>
+            <figcaption>Треугольник</figcaption>
+        </figure>
+
+        <figure>
+            <svg width="120" height="80" aria-label="Оранжевый эллипс" role="img">
+                <ellipse cx="60" cy="40" rx="55" ry="35" fill="orange"></ellipse>
+            </svg>
+            <figcaption>Эллипс</figcaption>
+        </figure>
+    </section>
+</article>
+{% endblock %}

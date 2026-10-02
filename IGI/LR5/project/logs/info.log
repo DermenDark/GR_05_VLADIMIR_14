@@ -945,3 +945,269 @@
 2026-09-20 14:42:34,959 | INFO | info | Открыт список отзывов пользователем Volody
 2026-09-20 14:44:07,920 | INFO | info | Открыта главная страница пользователем Volody
 2026-09-20 14:44:08,073 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-20 15:02:30,618 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-20 15:02:32,760 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-20 15:02:32,931 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-20 15:02:34,342 | INFO | info | Открыт словарь терминов пользователем Volody
+2026-09-20 15:02:36,250 | INFO | info | Открыт список отзывов пользователем Volody
+2026-09-20 15:02:38,460 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-20 15:02:38,838 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-20 21:43:38,084 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-20 21:43:43,453 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-20 21:49:21,809 | INFO | stats_graf | Открыта страница статистики пользователем Volody
+2026-09-20 21:49:31,651 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-20 21:49:32,014 | INFO | info | Открыт словарь терминов пользователем Volody
+2026-09-20 21:59:01,916 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-20 22:03:52,591 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-20 22:04:24,715 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-20 22:04:28,965 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-20 22:04:31,042 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-20 22:04:32,238 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-20 22:04:34,127 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-20 22:04:35,496 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-20 22:04:43,694 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-20 22:12:57,191 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-20 22:12:57,960 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 10:57:00,093 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 10:58:44,540 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-21 10:59:13,788 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-21 11:00:46,288 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:00:48,485 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:00:49,753 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:00:50,450 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:00:56,415 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:00:57,966 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:04:02,382 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:04:04,217 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:04:06,504 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:12:35,232 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:12:36,979 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:12:37,757 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-21 11:12:54,113 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-21 11:13:53,116 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-21 11:14:50,068 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-21 11:14:54,405 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-21 11:15:10,709 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:44:56,946 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:44:57,003 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:46:20,267 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:46:20,307 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:00,719 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:00,764 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:04,971 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:27,112 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:28,615 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:29,665 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:51:30,422 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:53:14,135 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:53:35,965 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:53:37,329 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:53:39,489 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:53:40,110 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:53:41,106 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-24 22:53:42,376 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-24 22:55:44,828 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-24 22:55:45,054 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-24 22:57:00,486 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-24 22:57:00,636 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-24 22:57:23,211 | INFO | info | Открыта админ-страница новостей пользователем volodya.shirko@gmail.com
+2026-09-24 22:57:53,843 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-24 22:58:56,607 | INFO | info | Открыт список отзывов пользователем volodya.shirko@gmail.com
+2026-09-24 22:59:01,864 | INFO | info | Открыт список новостей пользователем volodya.shirko@gmail.com
+2026-09-24 22:59:02,320 | INFO | info | Открыт словарь терминов пользователем volodya.shirko@gmail.com
+2026-09-24 23:10:45,172 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-24 23:10:45,398 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-24 23:55:31,949 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-24 23:55:32,126 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-24 23:55:37,658 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-24 23:55:37,805 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 00:00:45,252 | INFO | info | Открыт список новостей пользователем volodya.shirko@gmail.com
+2026-09-25 00:25:46,909 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:46,950 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:46,962 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:46,974 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:46,986 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:46,999 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,012 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,027 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,043 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,056 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,072 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,084 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:25:47,097 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:33:36,183 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:33:46,151 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:36:19,905 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 00:38:57,779 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-25 00:38:58,830 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-25 00:43:26,546 | INFO | info | Открыт словарь терминов пользователем volodya.shirko@gmail.com
+2026-09-25 00:43:27,221 | INFO | info | Открыт список новостей пользователем volodya.shirko@gmail.com
+2026-09-25 01:00:07,920 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-25 01:00:08,118 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:00:24,592 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 01:00:33,751 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-25 01:00:37,592 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-25 01:00:37,749 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:01:30,095 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 01:02:33,756 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:02:33,960 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:17:16,305 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:17:16,469 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:17:21,632 | INFO | info | Открыта форма редактирования AboutCompany id=1 пользователем Volody
+2026-09-25 01:17:21,632 | INFO | info | images/favicon.png
+2026-09-25 01:17:21,632 | INFO | info | images/favicon.png
+2026-09-25 01:17:21,632 | INFO | info | /media/images/favicon.png
+2026-09-25 01:17:21,633 | INFO | info | MEDIA_ROOT=/app/media
+2026-09-25 01:17:21,633 | INFO | info | exists=True
+2026-09-25 01:17:21,633 | INFO | info | logo.path=/app/media/images/favicon.png
+2026-09-25 01:17:21,633 | INFO | info | logo exists=False
+2026-09-25 01:19:29,216 | INFO | info | Открыта форма редактирования AboutCompany id=1 пользователем Volody
+2026-09-25 01:19:29,216 | INFO | info | images/favicon.png
+2026-09-25 01:19:29,216 | INFO | info | images/favicon.png
+2026-09-25 01:19:29,217 | INFO | info | /media/images/favicon.png
+2026-09-25 01:19:29,217 | INFO | info | MEDIA_ROOT=/app/media
+2026-09-25 01:19:29,217 | INFO | info | exists=True
+2026-09-25 01:19:29,217 | INFO | info | logo.path=/app/media/images/favicon.png
+2026-09-25 01:19:29,217 | INFO | info | logo exists=False
+2026-09-25 01:19:29,237 | INFO | info | Изменен объект AboutCompany id=1 пользователем Volody
+2026-09-25 01:19:29,261 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:19:29,437 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:19:42,183 | INFO | info | Открыта форма редактирования AboutCompany id=1 пользователем Volody
+2026-09-25 01:19:42,184 | INFO | info | images/favicon.png
+2026-09-25 01:19:42,184 | INFO | info | images/favicon.png
+2026-09-25 01:19:42,184 | INFO | info | /media/images/favicon.png
+2026-09-25 01:19:42,184 | INFO | info | MEDIA_ROOT=/app/media
+2026-09-25 01:19:42,184 | INFO | info | exists=True
+2026-09-25 01:19:42,184 | INFO | info | logo.path=/app/media/images/favicon.png
+2026-09-25 01:19:42,184 | INFO | info | logo exists=False
+2026-09-25 01:19:49,888 | INFO | info | Открыт словарь терминов пользователем Volody
+2026-09-25 01:19:52,263 | INFO | info | Открыта форма редактирования термина id=15 пользователем Volody
+2026-09-25 01:19:59,614 | INFO | info | Открыта форма редактирования термина id=15 пользователем Volody
+2026-09-25 01:20:15,786 | INFO | info | Открыт словарь терминов пользователем Volody
+2026-09-25 01:20:28,459 | INFO | info | Открыт список отзывов пользователем Volody
+2026-09-25 01:20:30,897 | INFO | info | Открыта форма редактирования отзыва id=15 пользователем Volody
+2026-09-25 01:20:38,286 | INFO | stats_graf | Открыта страница статистики пользователем Volody
+2026-09-25 01:20:56,887 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:20:57,095 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:20:57,311 | INFO | info | Открыта админ-страница новостей пользователем Volody
+2026-09-25 01:20:58,070 | INFO | info | Открыта админ-страница словаря пользователем Volody
+2026-09-25 01:20:58,594 | INFO | info | Открыта админ-страница отзывов пользователем Volody
+2026-09-25 01:21:01,696 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:21:15,169 | INFO | info | Открыта новость id=14 пользователем Volody
+2026-09-25 01:21:19,093 | INFO | info | Открыта форма редактирования новости id=14 пользователем Volody
+2026-09-25 01:21:32,736 | INFO | info | Открыта форма редактирования новости id=14 пользователем Volody
+2026-09-25 01:21:32,760 | INFO | info | Изменен объект News id=14 пользователем Volody
+2026-09-25 01:21:32,772 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:21:39,493 | INFO | info | Открыта новость id=14 пользователем Volody
+2026-09-25 01:22:42,614 | INFO | info | Открыта форма редактирования новости id=15 пользователем Volody
+2026-09-25 01:22:42,631 | INFO | info | Открыта форма редактирования новости id=15 пользователем Volody
+2026-09-25 01:22:47,412 | INFO | info | Открыта форма редактирования новости id=15 пользователем Volody
+2026-09-25 01:22:47,417 | INFO | info | Изменен объект News id=15 пользователем Volody
+2026-09-25 01:22:47,429 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:23:03,651 | INFO | info | Открыта форма редактирования новости id=13 пользователем Volody
+2026-09-25 01:23:07,935 | INFO | info | Открыта форма редактирования новости id=13 пользователем Volody
+2026-09-25 01:23:07,938 | INFO | info | Изменен объект News id=13 пользователем Volody
+2026-09-25 01:23:07,950 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:23:40,232 | INFO | info | Открыта форма редактирования новости id=12 пользователем Volody
+2026-09-25 01:23:43,729 | INFO | info | Открыта форма редактирования новости id=12 пользователем Volody
+2026-09-25 01:23:43,732 | INFO | info | Изменен объект News id=12 пользователем Volody
+2026-09-25 01:23:43,744 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:24:28,907 | INFO | info | Открыта форма редактирования новости id=11 пользователем Volody
+2026-09-25 01:24:32,539 | INFO | info | Открыта форма редактирования новости id=11 пользователем Volody
+2026-09-25 01:24:32,543 | INFO | info | Изменен объект News id=11 пользователем Volody
+2026-09-25 01:24:32,554 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:24:55,958 | INFO | info | Открыта форма редактирования новости id=10 пользователем Volody
+2026-09-25 01:25:00,315 | INFO | info | Открыта форма редактирования новости id=10 пользователем Volody
+2026-09-25 01:25:00,317 | INFO | info | Изменен объект News id=10 пользователем Volody
+2026-09-25 01:25:00,329 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:25:17,968 | INFO | info | Открыта форма редактирования новости id=9 пользователем Volody
+2026-09-25 01:25:21,836 | INFO | info | Открыта форма редактирования новости id=9 пользователем Volody
+2026-09-25 01:25:21,840 | INFO | info | Изменен объект News id=9 пользователем Volody
+2026-09-25 01:25:21,856 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:25:48,252 | INFO | info | Открыта форма редактирования новости id=8 пользователем Volody
+2026-09-25 01:25:52,669 | INFO | info | Открыта форма редактирования новости id=8 пользователем Volody
+2026-09-25 01:25:52,672 | INFO | info | Изменен объект News id=8 пользователем Volody
+2026-09-25 01:25:52,687 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:25:57,367 | INFO | info | Открыта новость id=8 пользователем Volody
+2026-09-25 01:26:10,696 | INFO | info | Открыта новость id=14 пользователем Volody
+2026-09-25 01:26:10,714 | INFO | info | Открыта новость id=15 пользователем Volody
+2026-09-25 01:26:14,402 | INFO | info | Открыта новость id=15 пользователем Volody
+2026-09-25 01:27:02,700 | INFO | info | Открыта форма редактирования новости id=7 пользователем Volody
+2026-09-25 01:27:02,714 | INFO | info | Открыта форма редактирования новости id=7 пользователем Volody
+2026-09-25 01:27:06,137 | INFO | info | Открыта форма редактирования новости id=7 пользователем Volody
+2026-09-25 01:27:06,141 | INFO | info | Изменен объект News id=7 пользователем Volody
+2026-09-25 01:27:06,153 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:27:39,529 | INFO | info | Открыта форма редактирования новости id=5 пользователем Volody
+2026-09-25 01:27:43,598 | INFO | info | Открыта форма редактирования новости id=5 пользователем Volody
+2026-09-25 01:27:43,602 | INFO | info | Изменен объект News id=5 пользователем Volody
+2026-09-25 01:27:43,617 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:27:47,652 | INFO | info | Открыта форма редактирования новости id=6 пользователем Volody
+2026-09-25 01:28:14,741 | INFO | info | Открыта форма редактирования новости id=6 пользователем Volody
+2026-09-25 01:28:14,745 | INFO | info | Изменен объект News id=6 пользователем Volody
+2026-09-25 01:28:14,758 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:28:44,039 | INFO | info | Открыта форма редактирования новости id=4 пользователем Volody
+2026-09-25 01:29:12,630 | INFO | info | Открыта форма редактирования новости id=4 пользователем Volody
+2026-09-25 01:29:12,634 | INFO | info | Изменен объект News id=4 пользователем Volody
+2026-09-25 01:29:12,645 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:29:20,459 | INFO | info | Открыта форма редактирования новости id=1 пользователем Volody
+2026-09-25 01:29:50,478 | INFO | info | Открыта форма редактирования новости id=1 пользователем Volody
+2026-09-25 01:29:50,484 | INFO | info | Изменен объект News id=1 пользователем Volody
+2026-09-25 01:29:50,499 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:29:57,539 | INFO | info | Открыта форма редактирования новости id=2 пользователем Volody
+2026-09-25 01:30:16,245 | INFO | info | Открыта форма редактирования новости id=2 пользователем Volody
+2026-09-25 01:30:16,250 | INFO | info | Изменен объект News id=2 пользователем Volody
+2026-09-25 01:30:16,270 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:30:41,483 | INFO | info | Открыта форма редактирования новости id=3 пользователем Volody
+2026-09-25 01:30:45,332 | INFO | info | Открыта форма редактирования новости id=3 пользователем Volody
+2026-09-25 01:30:45,337 | INFO | info | Изменен объект News id=3 пользователем Volody
+2026-09-25 01:30:45,353 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:31:27,557 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:31:27,733 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:31:37,840 | INFO | info | Открыта форма редактирования AboutCompany id=1 пользователем Volody
+2026-09-25 01:31:37,840 | INFO | info | images/favicon.png
+2026-09-25 01:31:37,841 | INFO | info | images/favicon.png
+2026-09-25 01:31:37,841 | INFO | info | /media/images/favicon.png
+2026-09-25 01:31:37,841 | INFO | info | MEDIA_ROOT=/app/media
+2026-09-25 01:31:37,841 | INFO | info | exists=True
+2026-09-25 01:31:37,841 | INFO | info | logo.path=/app/media/images/favicon.png
+2026-09-25 01:31:37,841 | INFO | info | logo exists=False
+2026-09-25 01:31:40,933 | INFO | info | Открыта форма редактирования AboutCompany id=1 пользователем Volody
+2026-09-25 01:31:40,933 | INFO | info | images/favicon.png
+2026-09-25 01:31:40,934 | INFO | info | images/favicon.png
+2026-09-25 01:31:40,934 | INFO | info | /media/images/favicon.png
+2026-09-25 01:31:40,934 | INFO | info | MEDIA_ROOT=/app/media
+2026-09-25 01:31:40,934 | INFO | info | exists=True
+2026-09-25 01:31:40,935 | INFO | info | logo.path=/app/media/images/favicon.png
+2026-09-25 01:31:40,935 | INFO | info | logo exists=False
+2026-09-25 01:31:40,938 | INFO | info | Изменен объект AboutCompany id=1 пользователем Volody
+2026-09-25 01:31:40,956 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:31:41,145 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:36:03,107 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:36:03,279 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:36:22,745 | INFO | info | Открыта главная страница пользователем Volody
+2026-09-25 01:36:22,900 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 01:47:51,617 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:47:52,828 | INFO | info | Открыт список отзывов пользователем Volody
+2026-09-25 01:48:29,558 | INFO | info | Открыт список новостей пользователем Volody
+2026-09-25 01:48:43,208 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 01:48:55,020 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 01:48:59,545 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-25 01:49:36,582 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-25 09:09:13,501 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 09:10:39,134 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 09:11:19,705 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 09:16:16,465 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-25 09:16:18,541 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-25 09:16:22,140 | INFO | info | Открыт список отзывов пользователем AnonymousUser
+2026-09-25 09:19:56,584 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-25 09:19:57,711 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-25 09:20:01,321 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 09:21:47,208 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-25 09:21:47,215 | ERROR | info | Ошибка API погоды: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=London&units=metric&appid=63026ab922acdc159af4d7d5c6adca54 (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -2] Name or service not known)"))
+2026-09-25 09:21:47,215 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 09:29:11,542 | INFO | info | Открыта главная страница пользователем volodya.shirko@gmail.com
+2026-09-25 09:29:14,682 | ERROR | info | Ошибка API-Ninjas: Invalid URL 'h': No scheme supplied. Perhaps you meant https://h?
+2026-09-25 09:53:39,798 | INFO | info | Открыт список новостей пользователем AnonymousUser
+2026-09-25 09:53:40,937 | INFO | info | Открыт словарь терминов пользователем AnonymousUser
+2026-09-25 09:53:42,607 | INFO | info | Открыта главная страница пользователем AnonymousUser
+2026-09-25 10:13:32,481 | INFO | info | Открыта главная страница пользователем AnonymousUser

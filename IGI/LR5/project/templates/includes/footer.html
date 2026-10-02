@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <footer>
-    <div>
-        <h1></h1>
-        <div>© 2026 Pharmacy</div>
+<div class="footer-content">
+    <section aria-labelledby="footer-info-title">
+        <h2 id="footer-info-title">Аптека у Пабло</h2>
+        <p>© 2026 Pharmacy</p>
 
-        <label>
-            Подписка:
-            <input type="email" placeholder="Ваш email" class="input">
-        </label>
-
-        <button>Отправить</button>
-    </div>
-
-<footer>
-
-    <div>
-        <h1>Наши партнеры</h1>
-            {% for partner in partners %}
-
-                <a
-                    href="{{ partner.website_url }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
+        <div class="subscription-controls">
+            <label for="subscription-email">
+                Подписка:
+                <input
+                    type="email"
+                    id="subscription-email"
+                    name="email"
+                    placeholder="Ваш email"
+                    class="input"
                 >
+            </label>
+            <button type="button">Отправить</button>
+        </div>
+    </section>
 
+    <section aria-labelledby="partners-title">
+        <h2 id="partners-title">Наши партнеры</h2>
+        {% for partner in partners %}
+            <article>
+                <a href="{{ partner.website_url }}" target="_blank" rel="noopener noreferrer">
                     {% if partner.logo %}
-                        <img
-                            src="{{ partner.logo.url }}"
-                            alt="{{ partner.name }}"
-                            width="150"
-                        >
-
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" width="150">
                     {% elif partner.logo_url %}
-                        <img
-                            src="{{ partner.logo_url }}"
-                            alt="{{ partner.name }}"
-                            width="150"
-                        >
-
+                        <img src="{{ partner.logo_url }}" alt="{{ partner.name }}" width="150">
                     {% else %}
                         {{ partner.name }}
                     {% endif %}
-
                 </a>
+            </article>
+        {% empty %}
+            <p>Партнеры пока не добавлены.</p>
+        {% endfor %}
+    </section>
 
-            {% empty %}
-
-                <p>Партнеры пока не добавлены.</p>
-
-            {% endfor %}
-    </div>
-    <a href="/politic/">Политика конфиденциальности</a>
-</footer>
-</body>
-</html>
+    <p>
+        <a href="/politic/">Политика конфиденциальности</a>
+    </p>
+</div>

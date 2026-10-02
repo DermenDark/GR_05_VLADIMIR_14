@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^stats/', include('stats_graf.urls')),
+    re_path(r'^spec_lab/', include('spec_lab.urls')),
     re_path(r'^logout/$', auth_views.LogoutView.as_view(next_page='about_company'), name='logout'),
     re_path(r'^', include('pharmacy.urls')),
     re_path(r'^', include('info.urls')),

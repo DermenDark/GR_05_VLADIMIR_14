@@ -4,15 +4,19 @@
 
 {% block content %}
 
-<div>
-    <h1>{{ term.question }}</h1>
+<article aria-labelledby="term-title">
+    <h1 id="term-title">{{ term.question }}</h1>
 
-    <h3>Краткий ответ</h3>
-    <p>{{ term.answer }}</p>
+    <section aria-labelledby="short-answer-title">
+        <h2 id="short-answer-title">Краткий ответ</h2>
+        <p>{{ term.answer }}</p>
+    </section>
 
     {% if term.detailed_answer %}
-        <h3>Развернутый ответ</h3>
-        <p>{{ term.detailed_answer }}</p>
+        <section aria-labelledby="detailed-answer-title">
+            <h2 id="detailed-answer-title">Развернутый ответ</h2>
+            <p>{{ term.detailed_answer }}</p>
+        </section>
     {% endif %}
 
     <p>
@@ -24,6 +28,6 @@
     <a href="{% url 'terms' %}">
         Вернуться к словарю
     </a>
-</div>
+</article>
 
 {% endblock %}
