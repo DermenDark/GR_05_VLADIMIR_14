@@ -70,6 +70,11 @@ def index(request):
     weekday_names = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
     server_now = timezone.localtime(timezone.now())
     server_tz_name = timezone.get_current_timezone_name()
+    history_sentences = [
+        sentence.strip() + "."
+        for sentence in company.history.split(".")
+        if sentence.strip()
+    ]
     return render(request, "info/index.html", {
         "company": company,
         "latest_news": latest_news,
@@ -82,6 +87,7 @@ def index(request):
         "weekday_names": weekday_names,
         "server_now": server_now,
         "server_tz_name": server_tz_name,
+        "history_sentences": history_sentences
     })
 
 

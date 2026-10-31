@@ -1,7 +1,17 @@
-<h1>Форма</h1>
+{% extends "base.html" %}
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Сохранить</button>
-</form>
+{% block content %}
+<section class="section form-section">
+
+    <h1>{{ title|default:"Форма" }}</h1>
+
+    <form method="post" enctype="multipart/form-data" class="common-form">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Сохранить</button>
+    </form>
+
+</section>
+{% endblock %}

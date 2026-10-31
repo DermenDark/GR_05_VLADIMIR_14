@@ -1,59 +1,65 @@
 {% extends 'base.html' %}
 {% block title %}Каталог{% endblock %}
 {% block content %}
-<section aria-labelledby="catalog-title">
+<section id="catalog" aria-labelledby="catalog-title">
     <h1 id="catalog-title">Каталог</h1>
 
-    <section aria-labelledby="catalog-search-title">
+    <section class="filter-panel" aria-labelledby="catalog-search-title">
         <h2 id="catalog-search-title">Поиск</h2>
-        <form method="get">
-        <input type="text" name="q" placeholder="Поиск..." class="input">
 
-        <select name="category">
-            <option value="">Все категории</option>
-            {% for info in all_categors %}
+        <form method="get" class="search-form">
+            <input type="text" name="q" placeholder="Поиск..." class="input">
+
+            <select name="category">
+                <option value="">Все категории</option>
+                {% for info in all_categors %}
                 <option value="{{ info.id }}">{{ info.name }}</option>
-            {% endfor %}
-        </select>
+                {% endfor %}
+            </select>
 
-        <label>
-            <input type="checkbox" name="in_stock" value="1">
-            Только в наличии
-        </label>
+            <label>
+                <input type="checkbox" name="in_stock" value="1">
+                Только в наличии
+            </label>
 
-        <input type="number" name="min_price" placeholder="Цена от">
-        <input type="number" name="max_price" placeholder="Цена до">
+            <input type="number" name="min_price" placeholder="Цена от">
+            <input type="number" name="max_price" placeholder="Цена до">
 
-        <button type="submit">Поиск</button>
+            <button type="submit">Поиск</button>
         </form>
     </section>
 
-    <section aria-labelledby="catalog-categories-title">
+    <section class="filter-panel" aria-labelledby="catalog-categories-title">
         <h2 id="catalog-categories-title">Категории</h2>
-        <div>
-        <a href="?category="><strong>ВСЕ</strong></a>
-        {% for info in all_categors %}
-            <a href="?category={{ info.id }}"><strong>{{ info.name }}</strong></a>
-        {% endfor %}
+
+        <div class="category-links">
+            <a href="?category="><strong>ВСЕ</strong></a>
+
+            {% for info in all_categors %}
+            <a href="?category={{ info.id }}">
+                <strong>{{ info.name }}</strong>
+            </a>
+            {% endfor %}
         </div>
     </section>
 
     {% if perms.pharmacy.add_medication %}
-        <a href="{% url 'med_create' %}">Создать</a>
+    <a class="button" href="{% url 'med_create' %}">Создать</a>
     {% endif %}
-
-    {% for info in all_info %}
-        <article itemscope itemtype="https://schema.org/Product" aria-labelledby="medication-{{ info.id }}-title">
+    <div class="catalog-grid">
+        {% for info in all_info %}
+        <article class="product-card card" itemscope itemtype="https://schema.org/Product"
+            aria-labelledby="medication-{{ info.id }}-title">
             <a itemprop="name" id="medication-{{ info.id }}-title" href="{% url 'medication_detail' info.id %}">
                 <strong>Название:</strong>
                 {{ info.name }}
             </a>
 
             {% if info.photo %}
-                <figure>
-                    <img src="{{ info.photo.url }}" alt="{{ info.name }}" style="max-width:100px;">
-                    <figcaption>{{ info.name }}</figcaption>
-                </figure>
+            <figure>
+                <img src="{{ info.photo.url }}" alt="{{ info.name }}" style="max-width:100px;">
+                <figcaption>{{ info.name }}</figcaption>
+            </figure>
             {% endif %}
             <p itemprop="category"><strong>Категория:</strong> {{ info.category.name }}</p>
             <p><strong>Цена:</strong> {{ info.cost }}</p>
@@ -61,32 +67,33 @@
             <p>
                 <strong>В наличии:</strong>
                 {% if info.count %}
-                    <span>Да</span>
+                <span>Да</span>
                 {% else %}
-                    <span>Нет</span>
+                <span>Нет</span>
                 {% endif %}
             </p>
 
             <p>
                 {% if info.count %}
-                    <a href="{% url 'shop:add_to_cart' info.id %}">Добавить в корзину</a>
+                <a class="button" href="{% url 'shop:add_to_cart' info.id %}">Добавить в корзину</a>
                 {% else %}
-                    <span>Нет в наличии</span>
+                <span>Нет в наличии</span>
                 {% endif %}
             </p>
 
             <p>
                 {% if perms.pharmacy.change_medication %}
-                    <a href="{% url 'med_edit' info.id %}">Редактировать</a>
+                <a href="{% url 'med_edit' info.id %}">Редактировать</a>
                 {% endif %}
 
                 {% if perms.pharmacy.delete_medication %}
-                    <a href="{% url 'med_delete' info.id %}">Удалить</a>
+                <a href="{% url 'med_delete' info.id %}">Удалить</a>
                 {% endif %}
             </p>
         </article>
-    {% empty %}
+        {% empty %}
         <p>Нет лекарств.</p>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

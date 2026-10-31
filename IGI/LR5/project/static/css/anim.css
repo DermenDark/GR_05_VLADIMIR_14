@@ -1,0 +1,413 @@
+.pharmacy-scene {
+    position: relative;
+    height: 330px;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid #c4dfcc;
+    border-radius: 14px;
+    background: linear-gradient(#effaf2 0 68%, #d4e7d8 68%);
+}
+
+.pharmacy-window {
+    position: absolute;
+    top: 12px;
+    right: 7%;
+    width: 46%;
+    height: 57%;
+    border: 5px solid #c2e0c9;
+    border-radius: 12px;
+    background: repeating-linear-gradient(90deg, #fafffb 0 48%, #e1f2e5 49% 51%);
+}
+
+.shelf {
+    position: absolute;
+    z-index: 1;
+    top: 18px;
+    right: 60%;
+    display: flex;
+    gap: 15px;
+}
+
+.shelf-pack {
+    display: flex;
+    width: 100px;
+    height: 120px;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 12px 18px #31563c16;
+}
+
+.shelf-pack svg {
+    width: 100%;
+    height: 100%;
+}
+
+.customer {
+    position: absolute;
+    z-index: 30;
+    bottom: 14px;
+    left: -15%;
+    width: 140px;
+    height: 223px;
+    animation: customer-walk 14s ease-in-out forwards;
+}
+
+.customer-svg {
+    width: 120%;
+    height: 120%;
+    overflow: visible;
+}
+
+.customer-upper {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: straighten-up 14s ease-in-out forwards;
+}
+
+.customer-scarf {
+    transform-box: fill-box;
+    transform-origin: top center;
+    animation: scarf-away 14s ease-in-out forwards;
+}
+
+.face-mouth--happy {
+    opacity: 0;
+    animation: happy-face 14s linear forwards;
+}
+
+.face-mouth--sad {
+    animation: sad-face 14s linear forwards;
+}
+
+.pharmacist {
+    position: absolute;
+    z-index: 2;
+    right: 10%;
+    bottom: 65px;
+    width: 135px;
+    height: 221px;
+}
+
+.pharmacist-svg {
+    width: 120%;
+    height: 120%;
+    overflow: visible;
+}
+
+.pharmacist-eye {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: pharmacist-blink 2.2s infinite;
+}
+
+.pharmacist-delivery-arm {
+    transform-box: fill-box;
+    transform-origin: right center;
+    animation: delivery-arm 14s ease-in-out forwards;
+}
+
+.medicine-flight {
+    position: absolute;
+    z-index: 5;
+    top: 42%;
+    left: 70%;
+    width: 50px;
+    opacity: 0;
+    animation: medicine-fly 14s ease-in-out forwards;
+}
+
+.medicine-flight svg {
+    display: block;
+    width: 100%;
+    filter: drop-shadow(0 4px 3px #31563c20);
+}
+
+.counter {
+    position: absolute;
+    z-index: 4;
+    right: 5%;
+    bottom: 0;
+    width: 44%;
+    height: 91px;
+    border-top: 12px solid #b4d5bb;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(90deg, #9bc4a5, #b1d4b8);
+    box-shadow: inset 0 -10px #6a9b79;
+}
+
+.scene-caption {
+    position: absolute;
+    z-index: 6;
+    bottom: 10px;
+    left: 14px;
+    color: #31563c;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.brand-overlay {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #effaf2;
+    opacity: 0;
+    animation: brand-reveal 14s ease forwards;
+}
+
+.brand-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.brand-icon {
+    display: block;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 12px;
+}
+
+.brand-name {
+    color: #176c42;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -.03em;
+}
+
+.brand-tagline {
+    margin-top: 8px;
+    color: #52765d;
+    font-size: 1rem;
+}
+
+@keyframes customer-walk {
+
+    0%,
+    3% {
+        left: -15%;
+    }
+
+    19% {
+        left: 6%;
+    }
+
+    28%,
+    67% {
+        left: 20%;
+    }
+
+    88%,
+    100% {
+        left: 118%;
+    }
+}
+
+@keyframes straighten-up {
+
+    0%,
+    45% {
+        transform: rotate(17deg);
+    }
+
+    53% {
+        transform: rotate(9deg);
+    }
+
+    62%,
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes scarf-away {
+
+    0%,
+    46% {
+        opacity: 1;
+        transform: scaleY(1) rotate(0);
+    }
+
+    53% {
+        opacity: .65;
+        transform: scaleY(.7) rotate(8deg);
+    }
+
+    61%,
+    100% {
+        opacity: 0;
+        transform: scaleY(.05) rotate(15deg);
+    }
+}
+
+@keyframes medicine-fly {
+
+    0%,
+    25% {
+        left: 70%;
+        top: 42%;
+        opacity: 0;
+        transform: rotate(-28deg) scale(.7);
+    }
+
+    31% {
+        opacity: 1;
+    }
+
+    60%,
+    100% {
+        left: 30%;
+        top: 49%;
+        opacity: 0;
+        transform: rotate(0) scale(.8);
+    }
+}
+
+@keyframes sad-face {
+
+    0%,
+    53% {
+        opacity: 1;
+    }
+
+    62%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes happy-face {
+
+    0%,
+    55% {
+        opacity: 0;
+    }
+
+    64%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes delivery-arm {
+
+    0%,
+    28% {
+        transform: rotate(0);
+    }
+
+    38%,
+    49% {
+        transform: rotate(-12deg);
+    }
+
+    58%,
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes pharmacist-blink {
+
+    0%,
+    44%,
+    49%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    46.5% {
+        transform: scaleY(.08);
+    }
+}
+
+@keyframes brand-reveal {
+
+    0%,
+    88% {
+        opacity: 0;
+    }
+
+    96%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .pharmacy-scene {
+        height: 280px;
+    }
+
+    .customer {
+        width: 105px;
+        height: 167px;
+        bottom: 18px;
+    }
+
+    .pharmacist {
+        width: 95px;
+        height: 155px;
+        right: 7%;
+        bottom: 68px;
+    }
+
+    .shelf {
+        right: 22%;
+        gap: 6px;
+    }
+
+    .shelf-pack {
+        width: 40px;
+        height: 48px;
+    }
+
+    .counter {
+        width: 50%;
+    }
+
+    .medicine-flight {
+        width: 38px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .customer,
+    .customer-upper,
+    .customer-scarf,
+    .face-mouth--happy,
+    .face-mouth--sad,
+    .medicine-flight,
+    .pharmacist-eye,
+    .pharmacist-delivery-arm,
+    .brand-overlay {
+        animation: none;
+    }
+
+    .customer {
+        left: 20%;
+    }
+
+    .customer-upper {
+        transform: none;
+    }
+
+    .customer-scarf,
+    .face-mouth--sad {
+        opacity: 0;
+    }
+
+    .face-mouth--happy,
+    .brand-overlay {
+        opacity: 1;
+    }
+
+    .brand-overlay {
+        background: #effaf2;
+    }
+}

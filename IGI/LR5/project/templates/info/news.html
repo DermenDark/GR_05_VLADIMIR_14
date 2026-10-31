@@ -4,54 +4,58 @@
 {% block content %}
 <section aria-labelledby="news-title">
     <h1 id="news-title">Новости</h1>
+    <section class="filter-panel" aria-label="Поиск вопросов">
+        <form method="get" class="search-form">
+            <input type="text" name="q" placeholder="Поиск по заголовку..." class="input">
 
-    <form method="get">
-    <input type="text" name="q" placeholder="Поиск по заголовку..." class="input">
+            <select name="is_published">
+                <option value="">Все</option>
+                <option value="1">Опубликованные</option>
+                <option value="0">Не опубликованные</option>
+            </select>
 
-        <select name="is_published">
-            <option value="">Все</option>
-            <option value="1">Опубликованные</option>
-            <option value="0">Не опубликованные</option>
-        </select>
+            <input type="date" name="date_from">
+            <input type="date" name="date_to">
 
-        <input type="date" name="date_from">
-        <input type="date" name="date_to">
-
-        <button type="submit">Поиск</button>
-    </form>
+            <button type="submit">Поиск</button>
+        </form>
+    </section>
 
     {% if perms.pharmacy.add_news %}
-        <a href="{% url 'news_create' %}">Создать новость</a>
+    <a href="{% url 'news_create' %}">Создать новость</a>
     {% endif %}
+    <div class="news-grid">
+        {% for item in news %}
+        <article class="news-card card" aria-labelledby="news-{{ item.id }}-title">
+            <div class="news-content">
+                <h2 id="news-{{ item.id }}-title">{{ item.title }}</h2>
+                <p class="article-text">{{ item.short_content }}</p>
 
-    {% for item in news %}
-        <article aria-labelledby="news-{{ item.id }}-title">
-            <h2 id="news-{{ item.id }}-title">{{ item.title }}</h2>
-            <p>{{ item.short_content }}</p>
-
-            {% if item.image %}
+                {% if item.image %}
                 <figure>
                     <img src="{{ item.image.url }}" alt="{{ item.title }}" style="max-width: 250px;">
-                    <figcaption>{{ item.title }}</figcaption>
+                    <figcaption class="news-preview">{{ item.title }}</figcaption>
                 </figure>
-            {% endif %}
+                {% endif %}
 
-            <p>
-                <time datetime="{{ item.created_at|date:'c' }}">{{ item.created_at }}</time>
-            </p>
+                <p>
+                    <time datetime="{{ item.created_at|date:'c' }}">{{ item.created_at }}</time>
+                </p>
 
-            <a href="{% url 'news_detail' item.id %}">Подробнее</a>
+                <a class="button" href="{% url 'news_detail' item.id %}">Читать далее</a>
 
-            {% if perms.pharmacy.change_news %}
+                {% if perms.pharmacy.change_news %}
                 <a href="{% url 'news_edit' item.id %}">Редактировать</a>
-            {% endif %}
+                {% endif %}
 
-            {% if perms.pharmacy.delete_news %}
+                {% if perms.pharmacy.delete_news %}
                 <a href="{% url 'news_delete' item.id %}">Удалить</a>
-            {% endif %}
+                {% endif %}
+            </div>
         </article>
-    {% empty %}
+        {% empty %}
         <p>Новостей пока нет.</p>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

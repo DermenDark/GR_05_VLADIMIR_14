@@ -4,28 +4,29 @@
 {% block content %}
 <section aria-labelledby="vacancies-title">
     <h1 id="vacancies-title">Вакансии</h1>
+    <section class="filter-panel" aria-label="Поиск вопросов">
+        <form class="search-form" method="get">
+            <input type="text" name="q" placeholder="Поиск по названию..." class="input">
 
-    <form method="get">
-        <input type="text" name="q" placeholder="Поиск по названию..." class="input">
+            <select name="is_active">
+                <option value="">Все</option>
+                <option value="1">Активные</option>
+                <option value="0">Неактивные</option>
+            </select>
 
-        <select name="is_active">
-            <option value="">Все</option>
-            <option value="1">Активные</option>
-            <option value="0">Неактивные</option>
-        </select>
+            <input type="date" name="date_from">
+            <input type="date" name="date_to">
 
-        <input type="date" name="date_from">
-        <input type="date" name="date_to">
-
-        <button type="submit">Поиск</button>
-    </form>
+            <button type="submit">Поиск</button>
+        </form>
+    </section>
 
     {% if perms.pharmacy.add_vacancy %}
-        <a href="{% url 'vacancy_create' %}">Создать вакансию</a>
+    <a href="{% url 'vacancy_create' %}">Создать вакансию</a>
     {% endif %}
-
-    {% for vacancy in vacancies %}
-        <article aria-labelledby="vacancy-{{ vacancy.id }}-title">
+    <section class="section" id="vacancies">
+        {% for vacancy in vacancies %}
+        <article class="vacancy card" aria-labelledby="vacancy-{{ vacancy.id }}-title">
             <h2 id="vacancy-{{ vacancy.id }}-title">{{ vacancy.title }}</h2>
 
             <p>
@@ -40,24 +41,28 @@
             <p>
                 <strong>Статус:</strong>
                 {% if vacancy.is_active %}
-                    Активна
+                Активна
                 {% else %}
-                    Неактивна
+                Неактивна
                 {% endif %}
             </p>
+            <p>Консультирование покупателей, работа с ассортиментом и соблюдение правил хранения товаров.</p><a
+                class="button" href="mailto:jobs@example.com">Откликнуться</a>
 
             <p>
                 {% if perms.pharmacy.change_vacancy %}
-                    <a href="{% url 'vacancy_edit' vacancy.id %}">Редактировать</a>
+                <a href="{% url 'vacancy_edit' vacancy.id %}">Редактировать</a>
                 {% endif %}
 
                 {% if perms.pharmacy.delete_vacancy %}
-                    <a href="{% url 'vacancy_delete' vacancy.id %}">Удалить</a>
+                <a href="{% url 'vacancy_delete' vacancy.id %}">Удалить</a>
                 {% endif %}
             </p>
         </article>
-    {% empty %}
+        {% empty %}
         <p>Нет вакансий.</p>
-    {% endfor %}
+        {% endfor %}
+        <div class="clear-fix"></div>
+    </section>
 </section>
 {% endblock %}

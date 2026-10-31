@@ -6,30 +6,29 @@
     <h1 id="contacts-title">Контакты</h1>
 
     {% if perms.pharmacy.add_employee %}
-        <div style="margin-bottom: 10px;">
-            <a href="{% url 'employee_create' %}">Добавить сотрудника</a>
-        </div>
+    <div style="margin-bottom: 10px;">
+        <a href="{% url 'employee_create' %}">Добавить сотрудника</a>
+    </div>
     {% endif %}
-
-    {% for info in employee %}
-        <article aria-labelledby="employee-{{ info.id }}-title">
+    <div class="employee-list">
+        {% for info in employee %}
+        <article class="employee card" aria-labelledby="employee-{{ info.id }}-title">
 
             <h2 id="employee-{{ info.id }}-title">{{ info.name }}</h2>
 
             {% load static %}
 
             {% if info.photo %}
-                <figure>
-                    <img src="{{ info.photo.url }}" alt="{{ info.name }}" style="max-width: 120px;">
-                    <figcaption>{{ info.name }}</figcaption>
-                </figure>
+            <figure>
+                <img src="{{ info.photo.url }}" alt="{{ info.name }}" style="max-width: 120px;">
+                <figcaption>{{ info.name }}</figcaption>
+            </figure>
             {% else %}
-                <figure>
-                    <img src="{% static 'employees/image_for_project/def_ju59XtB.webp' %}"
-                        alt="{{ info.name }}"
-                        style="max-width: 120px;">
-                    <figcaption>{{ info.name }}</figcaption>
-                </figure>
+            <figure>
+                <img src="{% static 'employees/image_for_project/def_ju59XtB.webp' %}" alt="{{ info.name }}"
+                    style="max-width: 120px;">
+                <figcaption>{{ info.name }}</figcaption>
+            </figure>
             {% endif %}
 
             <p>
@@ -45,18 +44,19 @@
             <p>
 
                 {% if perms.pharmacy.change_employee %}
-                    <a href="{% url 'employee_edit' info.id %}">Редактировать</a>
+                <a href="{% url 'employee_edit' info.id %}">Редактировать</a>
                 {% endif %}
 
                 {% if perms.pharmacy.delete_employee %}
-                    <a href="{% url 'employee_delete' info.id %}">Удалить</a>
+                <a href="{% url 'employee_delete' info.id %}">Удалить</a>
                 {% endif %}
 
             </p>
 
         </article>
-    {% empty %}
+        {% empty %}
         <p>Контактная информация пока не добавлена.</p>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

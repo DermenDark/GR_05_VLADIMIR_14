@@ -4,8 +4,8 @@
 {% block content %}
 <section aria-labelledby="reviews-title">
     <h1 id="reviews-title">Отзывы</h1>
-
-    <form method="get">
+<section class="filter-panel" aria-label="Поиск вопросов">
+    <form class="search-form" method="get">
         <input type="text" name="q" placeholder="Поиск по имени..." class="input">
 
         <select name="rating">
@@ -25,36 +25,37 @@
 
         <button type="submit">Поиск</button>
     </form>
-
+</section>
     {% if user.is_authenticated %}
-        {% if perms.info.add_review %}
-            <a href="{% url 'review_create' %}">Добавить отзыв</a>
-        {% endif %}
-    {% else %}
-        <div style="margin: 15px 0;">
-            <a href="{% url 'login_view' %}">
-                Добавить отзыв
-            </a>
-        </div>
+    {% if perms.info.add_review %}
+    <a class="button" href="{% url 'review_create' %}">Добавить отзыв</a>
     {% endif %}
-
-    {% for item in reviews %}
-        <article aria-labelledby="review-{{ item.id }}-title">
+    {% else %}
+    <div>
+        <a class="button" href="{% url 'login_view' %}">
+            Добавить отзыв
+        </a>
+    </div>
+    {% endif %}
+    <section class="section">
+        {% for item in reviews %}
+        <article class="faq-item" aria-labelledby="review-{{ item.id }}-title">
             <h2 id="review-{{ item.id }}-title">{{ item.name }}</h2>
             <p>Оценка: {{ item.rating }}/5</p>
             <p>{{ item.text }}</p>
             <p><time datetime="{{ item.created_at|date:'c' }}">{{ item.created_at }}</time></p>
 
             {% if perms.pharmacy.change_review %}
-                <a href="{% url 'review_edit' item.id %}">Редактировать</a>
+            <a href="{% url 'review_edit' item.id %}">Редактировать</a>
             {% endif %}
 
             {% if perms.pharmacy.delete_review %}
-                <a href="{% url 'review_delete' item.id %}">Удалить</a>
+            <a href="{% url 'review_delete' item.id %}">Удалить</a>
             {% endif %}
         </article>
-    {% empty %}
+        {% empty %}
         <p>Отзывы пока не добавлены.</p>
-    {% endfor %}
+        {% endfor %}
+    </section>
 </section>
 {% endblock %}

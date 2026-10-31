@@ -6,34 +6,28 @@
         <div class="subscription-controls">
             <label for="subscription-email">
                 Подписка:
-                <input
-                    type="email"
-                    id="subscription-email"
-                    name="email"
-                    placeholder="Ваш email"
-                    class="input"
-                >
+                <input type="email" id="subscription-email" name="email" placeholder="Ваш email" class="input">
             </label>
             <button type="button">Отправить</button>
         </div>
     </section>
 
-    <section aria-labelledby="partners-title">
+    <section class="partners" aria-labelledby="partners-title">
         <h2 id="partners-title">Наши партнеры</h2>
         {% for partner in partners %}
-            <article>
-                <a href="{{ partner.website_url }}" target="_blank" rel="noopener noreferrer">
-                    {% if partner.logo %}
-                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" width="150">
-                    {% elif partner.logo_url %}
-                        <img src="{{ partner.logo_url }}" alt="{{ partner.name }}" width="150">
-                    {% else %}
-                        {{ partner.name }}
-                    {% endif %}
-                </a>
-            </article>
+        <article class="partner">
+            <a href="{{ partner.website_url }}" target="_blank" rel="noopener noreferrer">
+                {% if partner.logo %}
+                <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" width="150">
+                {% elif partner.logo_url %}
+                <img src="{{ partner.logo_url }}" alt="{{ partner.name }}" width="150">
+                {% else %}
+                {{ partner.name }}
+                {% endif %}
+            </a>
+        </article>
         {% empty %}
-            <p>Партнеры пока не добавлены.</p>
+        <p>Партнеры пока не добавлены.</p>
         {% endfor %}
     </section>
 

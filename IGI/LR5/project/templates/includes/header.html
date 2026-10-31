@@ -1,13 +1,10 @@
 {% load static %}
 <div class="site-header-content">
-
-        <h2>
-            <img src="{% static 'images/favicon.png' %}" alt="Логотип аптеки" width="60">
-            <a href="{% url 'about_company' %}">Аптека у Пабло</a>
-        </h2>
-
         <nav>
-            <a href="{% url 'about_company' %}" accesskey="q">Главная</a>
+            <h2 class="logo">
+                <img src="{% static 'images/favicon.png' %}" alt="Логотип аптеки" width="60">
+                <a href="{% url 'about_company' %}">Аптека у Пабло</a>
+            </h2>
                 <a href="{% url 'catalog' %}">Каталог</a>
                 <a href="{% url 'news' %}">Новости</a>
                 <a href="{% url 'terms' %}">Словарь</a>
@@ -20,7 +17,7 @@
 
         {% if user.is_authenticated %}
         <nav>
-            <ul>
+            <ul class="auth-links">
                 <li>
                     <a href="{% url 'shop:profile' %}">Профиль</a>
                 </li>
@@ -186,7 +183,7 @@
         {% else %}
 
         <nav>
-            <ul>
+            <ul class="auth-links">
                 <li>
                     <a href="{% url 'login_view' %}">Войти</a>
                 </li>

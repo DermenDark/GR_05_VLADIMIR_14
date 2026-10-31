@@ -10,7 +10,7 @@
         <select name="department">
             <option value="">Все отделы</option>
             {% for department in all_departments %}
-                <option value="{{ department.id }}">{{ department.name }}</option>
+            <option value="{{ department.id }}">{{ department.name }}</option>
             {% endfor %}
         </select>
 
@@ -18,25 +18,24 @@
     </form>
 
     {% if perms.pharmacy.add_employee %}
-        <a href="{% url 'employee_create' %}">Создать сотрудника</a>
+    <a href="{% url 'employee_create' %}">Создать сотрудника</a>
     {% endif %}
-
-    {% for employee in employees %}
-        <article aria-labelledby="employee-{{ employee.id }}-title">
+    <div class="employee-list">
+        {% for employee in employees %}
+        <article class="employee card" aria-labelledby="employee-{{ employee.id }}-title">
             {% load static %}
 
             {% if employee.photo %}
-                <figure>
-                    <img src="{{ employee.photo.url }}" alt="{{ employee.name }}" style="max-width: 120px;">
-                    <figcaption>{{ employee.name }}</figcaption>
-                </figure>
+            <figure>
+                <img src="{{ employee.photo.url }}" alt="{{ employee.name }}" style="max-width: 120px;">
+                <figcaption>{{ employee.name }}</figcaption>
+            </figure>
             {% else %}
-                <figure>
-                    <img src="{% static 'employees/image_for_project/def_ju59XtB.webp' %}"
-                        alt="{{ employee.name }}"
-                        style="max-width: 120px;">
-                    <figcaption>{{ employee.name }}</figcaption>
-                </figure>
+            <figure>
+                <img src="{% static 'employees/image_for_project/def_ju59XtB.webp' %}" alt="{{ employee.name }}"
+                    style="max-width: 120px;">
+                <figcaption>{{ employee.name }}</figcaption>
+            </figure>
             {% endif %}
 
             <h2 id="employee-{{ employee.id }}-title">{{ employee.name }}</h2>
@@ -57,16 +56,17 @@
 
             <p>
                 {% if perms.pharmacy.change_employee %}
-                    <a href="{% url 'employee_edit' employee.id %}">Редактировать</a>
+                <a href="{% url 'employee_edit' employee.id %}">Редактировать</a>
                 {% endif %}
 
                 {% if perms.pharmacy.delete_employee %}
-                    <a href="{% url 'employee_delete' employee.id %}">Удалить</a>
+                <a href="{% url 'employee_delete' employee.id %}">Удалить</a>
                 {% endif %}
             </p>
         </article>
-    {% empty %}
+        {% empty %}
         <p>Нет сотрудников.</p>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

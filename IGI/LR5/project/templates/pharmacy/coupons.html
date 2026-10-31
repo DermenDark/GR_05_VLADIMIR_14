@@ -19,10 +19,10 @@
     </form>
 
     {% if perms.pharmacy.add_coupons %}
-        <a href="{% url 'coupons_create' %}">Создать купон</a>
+    <a href="{% url 'coupons_create' %}">Создать купон</a>
     {% endif %}
-
-    {% for coupon in coupons %}
+    <section class="coupon-list">
+        {% for coupon in coupons %}
         <article aria-labelledby="coupon-{{ coupon.id }}-title">
             <p><strong>Скидка:</strong> {{ coupon.discount_percent }}%</p>
 
@@ -30,24 +30,25 @@
 
             <p>
                 {% if coupon.is_active %}
-                    <strong>Активен</strong>
+                <strong data-status="active">Активен</strong>
                 {% else %}
-                    <strong>Неактивен</strong>
+                <strong data-status="archived">Неактивен</strong>
                 {% endif %}
             </p>
 
             <p>
                 {% if perms.pharmacy.change_coupons %}
-                    <a href="{% url 'coupons_edit' coupon.id %}">Редактировать</a>
+                <a href="{% url 'coupons_edit' coupon.id %}">Редактировать</a>
                 {% endif %}
 
                 {% if perms.pharmacy.delete_coupons %}
-                    <a href="{% url 'coupons_delete' coupon.id %}">Удалить</a>
+                <a href="{% url 'coupons_delete' coupon.id %}">Удалить</a>
                 {% endif %}
             </p>
         </article>
-    {% empty %}
+        {% empty %}
         <p>Нет купонов.</p>
-    {% endfor %}
+        {% endfor %}
+    </section>
 </section>
 {% endblock %}

@@ -1,0 +1,51 @@
+:root {
+    --green: #0fa30a;
+    --green-dark: #116c0f;
+    --mint: #eaf6ef;
+    --ink: #24332b;
+    --paper: #fbfdfb;
+    --border: #c8dbce;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(-90deg, #fcfffc 0%, #a7f79d 100%);
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+main {
+    margin: 12px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.section {
+    margin: 0 0 36px;
+    padding: 26px;
+    background: rgba(255, 255, 255, .92);
+    border-radius: 14px;
+}
+
+.section h2 {
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.site-header-content {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header-content,
+.footer-content {
+    background: var(--green);
+    box-shadow: 0 4px 14px #153c2a30;
+}

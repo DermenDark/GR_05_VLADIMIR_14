@@ -5,17 +5,20 @@
 <section aria-labelledby="terms-title">
     <h1 id="terms-title">Словарь терминов</h1>
 
-    <form method="get">
-        <input type="text" name="q" placeholder="Поиск по вопросу..." class="input">
-        <button type="submit">Поиск</button>
-    </form>
-    
-    {% if perms.pharmacy.add_term %}
-        <a href="{% url 'term_create' %}">Добавить термин</a>
-    {% endif %}
+    <section class="filter-panel" aria-label="Поиск вопросов">
+        <form method="get" class="search-form">
+            <input type="text" name="q" placeholder="Поиск по вопросу..." class="input">
 
-    {% for item in terms %}
-        <article aria-labelledby="term-{{ item.id }}-title">
+            <button type="submit">Поиск</button>
+        </form>
+    </section>
+
+    {% if perms.pharmacy.add_term %}
+    <a href="{% url 'term_create' %}">Добавить термин</a>
+    {% endif %}
+    <section class="section" id="terms">
+        {% for item in terms %}
+        <article class="faq-item" aria-labelledby="term-{{ item.id }}-title">
             <h3 id="term-{{ item.id }}-title">
                 <a href="{% url 'term_detail' item.id %}">
                     {{ item.question }}
@@ -25,15 +28,16 @@
             <p><small>{{ item.created_at }}</small></p>
 
             {% if perms.pharmacy.change_term %}
-                <a href="{% url 'term_edit' item.id %}">Редактировать</a>
+            <a href="{% url 'term_edit' item.id %}">Редактировать</a>
             {% endif %}
 
             {% if perms.pharmacy.delete_term %}
-                <a href="{% url 'term_delete' item.id %}">Удалить</a>
+            <a href="{% url 'term_delete' item.id %}">Удалить</a>
             {% endif %}
         </article>
-    {% empty %}
+        {% empty %}
         <p>Термины пока не добавлены.</p>
-    {% endfor %}
+        {% endfor %}
+    </section>
 </section>
 {% endblock %}

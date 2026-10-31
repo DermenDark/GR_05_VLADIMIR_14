@@ -6,83 +6,89 @@
     <h1 id="benefits-title">Льготы</h1>
 
     {% if perms.pharmacy.add_benefits %}
-        <a href="{% url 'benefits_create' %}">Создать льготу</a>
+    <a href="{% url 'benefits_create' %}">Создать льготу</a>
     {% endif %}
-
+<section class="benefits-list">
     {% for benefit in benefits %}
-        <article aria-labelledby="benefit-{{ benefit.id }}-title">
-            <h2 id="benefit-{{ benefit.id }}-title">{{ benefit.name }}</h2>
-            <p>
-                <strong>Название:</strong> {{ benefit.name }}
-            </p>
+    <article aria-labelledby="benefit-{{ benefit.id }}-title">
+        <h2 id="benefit-{{ benefit.id }}-title">{{ benefit.name }}</h2>
+        <p>
+            <strong>Название:</strong> {{ benefit.name }}
+        </p>
 
-            <p>
-                Минимальный возраст:{{ benefit.min_age }}
-            </p>
+        <p>
+            Минимальный возраст:{{ benefit.min_age }}
+        </p>
 
-            <p>
-                Пенсионер:
-                {% if benefit.is_pensioner %}Да{% else %}Нет{% endif %}
-            </p>
+        <p>
+            Пенсионер:
+            {% if benefit.is_pensioner %}Да{% else %}Нет{% endif %}
+        </p>
 
-            <p>
-                Инвалидность:
-                {% if benefit.is_disability %}Да{% else %}Нет{% endif %}
-            </p>
+        <p>
+            Инвалидность:
+            {% if benefit.is_disability %}Да{% else %}Нет{% endif %}
+        </p>
 
-            <p>
-                Скидка:{{ benefit.discount_percent }}%
-            </p>
+        <p>
+            Скидка:{{ benefit.discount_percent }}%
+        </p>
 
-            <p>
-                Сумма скидки: {{ benefit.discount_cost }}
-            </p>
+        <p>
+            Сумма скидки: {{ benefit.discount_cost }}
+        </p>
 
-            <p>
-                {% if perms.pharmacy.change_benefits %}
-                    <a href="{% url 'benefits_edit' benefit.id %}">Редактировать</a>
-                {% endif %}
+        <p>
+            {% if perms.pharmacy.change_benefits %}
+            <a href="{% url 'benefits_edit' benefit.id %}">Редактировать</a>
+            {% endif %}
 
-                {% if perms.pharmacy.delete_benefits %}
-                    <a href="{% url 'benefits_delete' benefit.id %}">Удалить</a>
-                {% endif %}
-            </p>
-        </article>
+            {% if perms.pharmacy.delete_benefits %}
+            <a href="{% url 'benefits_delete' benefit.id %}">Удалить</a>
+            {% endif %}
+        </p>
+    </article>
     {% empty %}
-        <p>Нет льгот.</p>
+    <p>Нет льгот.</p>
     {% endfor %}
+    </section>
 </section>
 
 <section aria-labelledby="coupons-title">
     <h1 id="coupons-title">Купоны</h1>
 
     {% if perms.pharmacy.add_coupons %}
-        <a href="{% url 'coupons_create' %}">Создать купон</a>
+    <a href="{% url 'coupons_create' %}">Создать купон</a>
     {% endif %}
 
-    {% for coupon in coupons %}
+    <section class="coupon-list">
+        {% for coupon in coupons %}
         <article aria-labelledby="coupon-{{ coupon.id }}-title">
-            <h2 id="coupon-{{ coupon.id }}-title">Купон</h2>
-            <p>
-                <strong>Скидка:</strong> {{ coupon.discount_percent }}%
-            </p>
+            <p><strong>Скидка:</strong> {{ coupon.discount_percent }}%</p>
+
+            <p><strong>Сумма скидки:</strong> {{ coupon.discount_cost }}</p>
 
             <p>
-                <strong>Сумма скидки:</strong> {{ coupon.discount_cost }}
+                {% if coupon.is_active %}
+                <strong data-status="active">Активен</strong>
+                {% else %}
+                <strong data-status="archived">Неактивен</strong>
+                {% endif %}
             </p>
 
             <p>
                 {% if perms.pharmacy.change_coupons %}
-                    <a href="{% url 'coupons_edit' coupon.id %}">Редактировать</a>
+                <a href="{% url 'coupons_edit' coupon.id %}">Редактировать</a>
                 {% endif %}
 
                 {% if perms.pharmacy.delete_coupons %}
-                    <a href="{% url 'coupons_delete' coupon.id %}">Удалить</a>
+                <a href="{% url 'coupons_delete' coupon.id %}">Удалить</a>
                 {% endif %}
             </p>
         </article>
-    {% empty %}
+        {% empty %}
         <p>Нет купонов.</p>
-    {% endfor %}
+        {% endfor %}
+    </section>
 </section>
 {% endblock %}

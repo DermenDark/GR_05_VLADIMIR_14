@@ -1,56 +1,64 @@
 {% extends 'base.html' %}
+
 {% block title %}{{ medication.name }}{% endblock %}
+
 {% block content %}
-<article itemscope itemtype="https://schema.org/Product" aria-labelledby="medication-title">
-    <h1 id="medication-title" itemprop="name">{{ medication.name }}</h1>
+<article class="content-article" itemscope itemtype="https://schema.org/Product" aria-labelledby="medication-title">
+
+    <h1 id="medication-title" itemprop="name">
+        {{ medication.name }}
+    </h1>
 
     {% if medication.photo %}
-        <figure>
-            <img
-                src="{{ medication.photo.url }}"
-                alt="{{ medication.name }}"
-                width="200"
-            >
-            <figcaption>{{ medication.name }}</figcaption>
-        </figure>
+    <figure class="content-figure content-figure--product">
+        <img class="content-image" src="{{ medication.photo.url }}" alt="{{ medication.name }}" itemprop="image">
+        <figcaption>{{ medication.name }}</figcaption>
+    </figure>
     {% endif %}
 
-    <p itemprop="category">
-        <strong>Категория:</strong>
-        {{ medication.category.name }}
-    </p>
+    <div class="content-facts">
 
-    <p itemprop="description">
-        <strong>Описание:</strong>
-        {{ medication.description }}
-    </p>
+        <div class="content-fact">
+            <strong>Категория:</strong>
+            <p itemprop="category">{{ medication.category.name }}</p>
+        </div>
 
-    <p>
-        <strong>Цена:</strong>
-        {{ medication.cost }}
-    </p>
+        <div class="content-fact">
+            <strong>Цена:</strong>
+            <p>{{ medication.cost }}</p>
+        </div>
 
-    <p>
-        <strong>В наличии:</strong>
+        <div class="content-fact">
+            <strong>Наличие:</strong>
+            {% if medication.count %}
+            <p class="content-status content-status--available">
+                В наличии
+            </p>
+            {% else %}
+            <p class="content-status content-status--unavailable">
+                Нет в наличии
+            </p>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <section class="content-section" aria-labelledby="medication-description">
+        <h2 id="medication-description">Описание</h2>
+        <p itemprop="description">{{ medication.description }}</p>
+    </section>
+
+    <div class="content-actions">
         {% if medication.count %}
-            Да
-        {% else %}
-            Нет
+        <a class="button" href="{% url 'shop:add_to_cart' medication.id %}">
+            Добавить в корзину
+        </a>
         {% endif %}
-    </p>
-    {% if medication.count %}
-        <p>
-            <a href="{% url 'shop:add_to_cart' medication.id %}">
-                Добавить в корзину
-            </a>
-        </p>
-    {% else %}
-        <p>Нет в наличии.</p>
-    {% endif %}
-    <p>
-        <a href="{% url 'catalog' %}">
+
+        <a class="button" href="{% url 'catalog' %}">
             Вернуться в каталог
         </a>
-    </p>
+    </div>
+
 </article>
 {% endblock %}

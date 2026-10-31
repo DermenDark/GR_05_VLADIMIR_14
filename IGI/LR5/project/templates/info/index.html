@@ -1,47 +1,185 @@
 {% extends 'base.html' %}
 {% block title %}Главная{% endblock %}
-
+{% load static %}
 {% block content %}
 <section id="home-content">
-    <h1>Главная страница</h1>
+    <h1 id="mybigletter">Главная страница!</h1>
+    <div class="preloader-demo" role="img" aria-label="Вращающаяся пилюля — прелоадер">
+        <span class="pill-bounce">
+            <img class="pill-image" src="{% static 'images/pill.png' %}" alt="">
+        </span>
+
+        <span class="loading-text">Загружаем заботу...</span>
+    </div>
+    <section class="section animation-section" aria-labelledby="animation-title">
+        <h2 id="animation-title">Небольшая история в аптеке</h2>
+
+        <p class="section-intro">
+            Посетитель приходит за помощью, получает лекарство
+            и уходит довольным.
+        </p>
+
+        <div class="pharmacy-scene" role="img"
+            aria-label="Посетитель подходит к аптекарю, получает лекарство, избавляется от шарфа и уходит. Появляется название аптеки.">
+
+            <div class="pharmacy-window"></div>
+
+            <div class="shelf" aria-hidden="true">
+                <span class="shelf-pack">
+                    <svg viewBox="0 0 40 46">
+                        <rect x="5" y="4" width="30" height="38" rx="4" fill="#fff" stroke="#78ae88" stroke-width="2" />
+                        <path d="M20 11v18M11 20h18" stroke="#258653" stroke-width="4" />
+                    </svg>
+                </span>
+
+                <span class="shelf-pack">
+                    <svg viewBox="0 0 40 46">
+                        <rect x="5" y="4" width="30" height="38" rx="4" fill="#e3f4e7" stroke="#78ae88"
+                            stroke-width="2" />
+                        <path d="M12 15h16M12 22h16M12 29h11" stroke="#4f9767" stroke-width="2.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <span class="shelf-pack">
+                    <svg viewBox="0 0 40 46">
+                        <rect x="5" y="4" width="30" height="38" rx="4" fill="#fff" stroke="#78ae88" stroke-width="2" />
+                        <path d="M20 11v18M11 20h18" stroke="#258653" stroke-width="4" />
+                    </svg>
+                </span>
+            </div>
+
+            <div class="customer" aria-hidden="true">
+                <svg class="customer-svg" viewBox="0 0 110 175">
+                    <ellipse cx="55" cy="166" rx="27" ry="5" fill="#42694d" opacity=".18" />
+
+                    <path d="M43 108 L40 137 L30 157" fill="none" stroke="#354c61" stroke-width="13"
+                        stroke-linecap="round" />
+
+                    <path d="M63 108 L69 136 L80 157" fill="none" stroke="#354c61" stroke-width="13"
+                        stroke-linecap="round" />
+
+                    <path d="M18 160h17M70 160h17" fill="none" stroke="#243c50" stroke-width="9"
+                        stroke-linecap="round" />
+
+                    <g class="customer-upper">
+                        <path d="M38 57 Q54 49 70 57 L77 113 L32 113 Z" fill="#648bb7" stroke="#456b93"
+                            stroke-width="2" />
+
+                        <path d="M39 65 Q26 72 31 91 L38 100" fill="none" stroke="#648bb7" stroke-width="12"
+                            stroke-linecap="round" />
+
+                        <path d="M69 65 Q81 76 75 91 L70 99" fill="none" stroke="#648bb7" stroke-width="12"
+                            stroke-linecap="round" />
+
+                        <path d="M38 99l3 5M70 98l-3 6" stroke="#edc09b" stroke-width="8" stroke-linecap="round" />
+
+                        <rect x="48" y="43" width="15" height="17" rx="5" fill="#edc09b" />
+
+                        <g class="customer-scarf">
+                            <path d="M39 48 Q55 57 70 48 L67 65 Q54 72 42 63 Z" fill="#c75b51" />
+
+                            <path d="M55 62 L64 64 L72 105 L59 109 L51 68 Z" fill="#b94e46" />
+
+                            <path d="M59 75l6 1M61 84l6 1M63 93l6 1" stroke="#e89186" stroke-width="2" />
+                        </g>
+
+                        <g class="customer-head">
+                            <circle cx="55" cy="32" r="22" fill="#f1c9a7" stroke="#c99d7e" stroke-width="1.5" />
+
+                            <path d="M33 31 Q30 11 49 8 Q70 4 77 23 L75 33 L69 22 Q52 27 39 21 L36 37 Z"
+                                fill="#aeb5b5" />
+
+                            <path d="M42 30l7 2M62 32l7-2" stroke="#74503b" stroke-width="2.5" stroke-linecap="round" />
+
+                            <circle cx="46" cy="35" r="2.3" fill="#354438" />
+                            <circle cx="64" cy="35" r="2.3" fill="#354438" />
+
+                            <path d="M49 40l5 2" stroke="#c99d7e" stroke-width="1.5" stroke-linecap="round" />
+
+                            <path class="face-mouth--sad" d="M48 49 Q55 41 63 49" fill="none" stroke="#8f4b43"
+                                stroke-width="2.5" stroke-linecap="round" />
+
+                            <path class="face-mouth--happy" d="M47 44 Q55 54 64 44" fill="none" stroke="#8f4b43"
+                                stroke-width="2.5" stroke-linecap="round" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="medicine-flight" aria-hidden="true">
+                <svg viewBox="0 0 44 28">
+                    <g transform="rotate(-28 22 14)">
+                        <rect x="2" y="3" width="40" height="22" rx="11" fill="#fff" stroke="#237448"
+                            stroke-width="2" />
+
+                        <path d="M22 3h9a11 11 0 0 1 0 22h-9z" fill="#4fae77" />
+
+                        <path d="M22 4v20" stroke="#237448" stroke-width="1.5" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="pharmacist" aria-hidden="true">
+                <svg class="pharmacist-svg" viewBox="0 0 110 180">
+                    <path d="M26 75 Q34 65 45 64 L67 64 Q80 68 85 80 L94 154 L15 154 Z" fill="#fff" stroke="#8bb598"
+                        stroke-width="2" />
+
+                    <path d="M45 66l10 15 12-15" fill="#e5f3e8" stroke="#8bb598" stroke-width="2" />
+
+                    <path d="M55 81v61" stroke="#a7cbb0" stroke-width="2" />
+
+                    <path d="M28 82 Q17 94 31 111" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" />
+
+                    <path d="M79 82 Q88 92 77 105" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" />
+
+                    <path class="pharmacist-delivery-arm" d="M78 91 Q66 93 51 103" fill="none" stroke="#edc09b"
+                        stroke-width="8" stroke-linecap="round" />
+
+                    <circle cx="55" cy="38" r="24" fill="#f1c9a7" stroke="#c99d7e" stroke-width="1.5" />
+
+                    <path d="M30 34 Q29 9 54 10 Q80 10 80 34 L73 38 L68 26 Q52 32 37 26 L36 38 Z" fill="#e8f4ea"
+                        stroke="#8bb598" stroke-width="2" />
+
+                    <ellipse class="pharmacist-eye" cx="46" cy="40" rx="2.5" ry="3.5" fill="#354438" />
+                    <ellipse class="pharmacist-eye" cx="64" cy="40" rx="2.5" ry="3.5" fill="#354438" />
+
+                    <path d="M49 52 Q55 57 62 52" fill="none" stroke="#a96857" stroke-width="2"
+                        stroke-linecap="round" />
+
+                    <path d="M48 111h14M55 104v14" stroke="#258653" stroke-width="5" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <div class="counter"></div>
+
+            <span class="scene-caption">История заботы</span>
+
+            <div class="brand-overlay" aria-hidden="true">
+                <div class="brand-card">
+                    <svg class="brand-icon" viewBox="0 0 60 60">
+                        <circle cx="30" cy="30" r="28" fill="#258653" />
+                        <path d="M25 13h10v12h12v10H35v12H25V35H13V25h12z" fill="#fff" />
+                    </svg>
+
+                    <div class="brand-name">Аптека у Пабло</div>
+                    <div class="brand-tagline">Ваша забота — наша работа</div>
+                </div>
+            </div>
+        </div>
+    </section>
     {% load static %}
+    <p class="text-detail">Наша цель — помогать каждому.</p>
     <picture>
         <source media="(max-width: 750px)" srcset="{% static 'images/banners/small.png' %}">
         <source media="(max-width: 1300px)" srcset="{% static 'images/banners/medium.png' %}">
         <img src="{% static 'images/banners/large.png' %}" alt="Реклама аптеки" style="width: 100%; height: auto;">
     </picture>
 
-    {% if request.user.is_authenticated %}
-    <aside aria-labelledby="weather-title">
-        <h2 id="weather-title">Погода</h2>
-        <form method="get">
-            <label for="city">Город</label>
-            <input type="text" id="city" name="city" placeholder="Введите город">
-            <button type="submit">Узнать</button>
-        </form>
-
-        {% if api_error %}
-        <div class="alert alert-warning">{{ api_error }}</div>
-        {% endif %}
-
-        {% if weather %}
-        <div class="alert alert-danger">
-            Погода в городе: {{ weather.city }}<br>
-            Температура: {{ weather.temp }}<sup>0</sup><br>
-            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather">
-        </div>
-        {% endif %}
-
-        {% if history_day2 %}
-        <h3>Сегодня в истории</h3>
-        <p>{{ history_day2 }}</p>
-        {% endif %}
-    </aside>
-    {% endif %}
     {% if latest_news %}
-    <article aria-labelledby="latest-news-title">
-        <h2 id="latest-news-title">Последняя статья</h2>
-        <h3>{{ latest_news.title }}</h3>
+    <article class="latest-news" aria-labelledby="latest-news-title">
+        <span class="tag">Последняя статья</span>
+        <h2>{{ latest_news.title }}</h2>
         <p>{{ latest_news.short_content }}</p>
         <p><small>{{ latest_news.created_at|date:"d/m/Y" }}</small></p>
         <a href="{% url 'news_detail' latest_news.id %}">Читать далее</a>
@@ -51,12 +189,12 @@
     {% if company %}
     <section>
         <h2>О компании</h2>
-        <p>{{ company.text }}</p>
+        <p id="AboutCompani">{{ company.text }}</p>
 
         {% if company.video_url %}
         <h3>Видео о компании</h3>
 
-        <iframe width="850" height="500"
+        <iframe class="media-demo" width="850" height="500"
             src="{{ company.video_url }}?origin={{ request.scheme }}://{{ request.get_host }}" title="Видео о компании"
             referrerpolicy="strict-origin-when-cross-origin"
             allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen>
@@ -64,11 +202,7 @@
         {% endif %}
         <section>
             <h2>Видео</h2>
-            <video controls
-                width="800"
-                preload="metadata"
-                playsinline
-                controlslist="nodownload"
+            <video class="media-demo" controls width="800" preload="metadata" playsinline controlslist="nodownload"
                 disablepictureinpicture>
                 <source src="{% static 'videos/pharmacy_fixed.mp4' %}" type="video/mp4">
                 Ваш браузер не поддерживает воспроизведение видео.
@@ -77,13 +211,38 @@
 
         {% if company.history %}
         <h3>История компании</h3>
-        <p>{{ company.history }}</p>
+        <p class="company-history">
+            {% for sentence in history_sentences %}
+            <span class="history-sentence">{{ sentence }}</span>
+            {% endfor %}
+        </p>
         {% endif %}
 
         {% if company.requisites %}
-        <h3>Реквизиты</h3>
-        <p>{{ company.requisites }}</p>
+        <p class="requisites"><strong>Реквизиты:</strong>{{ company.requisites }}</p>
         {% endif %}
+        <div class="certificate">
+            <span class="certificate-label">СЕРТИФИКАТ</span>
+            <span class="certificate-number">№ 2026-0042</span>
+            <h3>Забота о покупателях</h3>
+            <p>Подтверждение качества сервиса</p>
+            <span class="certificate-stamp">✚</span>
+            <dl class="certificate-meta">
+                <div class="certificate-meta__row">
+                    <dt>Выдан</dt>
+                    <dd><time datetime="2026-10-09">09.10.2026</time></dd>
+                </div>
+                <div class="certificate-meta__row">
+                    <dt>Действует до</dt>
+                    <dd><time datetime="2027-10-09">09.10.2027</time></dd>
+                </div>
+                <div class="certificate-meta__row">
+                    <dt>Организация</dt>
+                    <dd>ООО «Аптека Зелёная»</dd>
+                </div>
+            </dl>
+        </div>
+        </div>
     </section>
     {% else %}
     <p>Информация о компании пока не добавлена.</p>
@@ -155,7 +314,33 @@
             <span id="client-now">определяется...</span>
         </p>
     </section>
+    {% if request.user.is_authenticated %}
+    <aside aria-labelledby="weather-title">
+        <h2 id="weather-title">Погода</h2>
+        <form method="get">
+            <label for="city">Город</label>
+            <input type="text" id="city" name="city" placeholder="Введите город">
+            <button type="submit">Узнать</button>
+        </form>
 
+        {% if api_error %}
+        <div class="alert alert-warning">{{ api_error }}</div>
+        {% endif %}
+
+        {% if weather %}
+        <div class="alert alert-danger">
+            Погода в городе: {{ weather.city }}<br>
+            Температура: {{ weather.temp }}<sup>0</sup><br>
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather">
+        </div>
+        {% endif %}
+
+        {% if history_day2 %}
+        <h3>Сегодня в истории</h3>
+        <p>{{ history_day2 }}</p>
+        {% endif %}
+    </aside>
+    {% endif %}
     <script>
         (function () {
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'не удалось определить';

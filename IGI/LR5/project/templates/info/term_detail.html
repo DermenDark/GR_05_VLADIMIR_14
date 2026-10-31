@@ -4,28 +4,26 @@
 
 {% block content %}
 
-<article aria-labelledby="term-title">
+<article class="content-article" aria-labelledby="term-title">
     <h1 id="term-title">{{ term.question }}</h1>
 
-    <section aria-labelledby="short-answer-title">
+    <section class="content-section" aria-labelledby="short-answer-title">
         <h2 id="short-answer-title">Краткий ответ</h2>
         <p>{{ term.answer }}</p>
     </section>
 
     {% if term.detailed_answer %}
-        <section aria-labelledby="detailed-answer-title">
-            <h2 id="detailed-answer-title">Развернутый ответ</h2>
-            <p>{{ term.detailed_answer }}</p>
-        </section>
+    <section class="content-section" aria-labelledby="detailed-answer-title">
+        <h2 id="detailed-answer-title">Развернутый ответ</h2>
+        <p>{{ term.detailed_answer }}</p>
+    </section>
     {% endif %}
 
-    <p>
-        <small>
-            Добавлено: {{ term.created_at }}
-        </small>
-    </p>
+    <div class="content-meta">
+        <span>Добавлено: {{ term.created_at }}</span>
+    </div>
 
-    <a href="{% url 'terms' %}">
+    <a class="button content-back" href="{% url 'terms' %}">
         Вернуться к словарю
     </a>
 </article>

@@ -16,21 +16,20 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pharmacy} -d ${POSTGRES_DB:-pharmacy}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pharmacy} -d ${POSTGRES_DB:-pharmacy}" ]
       interval: 5s
       timeout: 5s
       retries: 10
 
   web:
-    image: ghcr.io/your-username/pharmacyapp-web:latest
-
     build:
       context: .
       dockerfile: Dockerfile
 
     container_name: pharmacyapp-web
 
-    command: sh -c "python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn PharmacyApp.wsgi:application --bind 0.0.0.0:8000"
+    command: >
+      sh -c " python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000 "
 
     env_file:
       - .env

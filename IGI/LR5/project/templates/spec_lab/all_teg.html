@@ -33,6 +33,9 @@
                 кто льстит человеку за его добродетели или потворствует<wbr>
                 ему в его пороках, есть худший враг того человека
             </q>.
+        <blockquote lang="ru">Информация помогает сделать осознанный выбор, но не заменяет консультацию врача.
+        </blockquote>
+        <blockquote lang="en">Good information supports better decisions.</blockquote>
         </p>
 
         <p>
@@ -75,8 +78,7 @@
 
     <aside id="global-attributes" class="demo-aside" title="Примеры глобальных атрибутов" data-demo="global-attributes"
         tabindex="0">
-        <p id="editable-note" class="note" title="Это текст."
-        translate="yes" spellcheck="true" style="margin: 0;">
+        <p id="editable-note" class="note" title="Это текст." translate="yes" spellcheck="true" style="margin: 0;">
             ФФФФФФФФФФФФФФЫВВВВВВВВВВВВВВВВВ
         </p>
     </aside>
@@ -151,13 +153,13 @@
     <section id="lists-demo" class="demo-section">
         <h2>Списки</h2>
 
-        <ul id="unordered-list" class="demo-list">
+        <ul class="unicode-list" id="unordered-list" class="demo-list">
             <li>АААА</li>
             <li>ББББ</li>
             <li>ВВВВ</li>
         </ul>
 
-        <ol id="ordered-list" start="3" reversed class="demo-list">
+        <ol class="unicode-list" id="ordered-list" start="3" reversed class="demo-list">
             <li>Первый пункт</li>
             <li>Второй пункт</li>
             <li>Третий пункт</li>
@@ -172,9 +174,8 @@
     </section>
 
     <section id="tables-demo" class="demo-section">
-        <h2>Таблицы</h2>
 
-        <table class="demo-table" id="simple-table" summary="Таблица продаж за первый квартал: план и факт по месяцам" rules="all">
+        <table class="demo-table" id="simple-table" summary="Таблица продаж за первый квартал: план и факт по месяцам">
             <caption>План сдачи работ</caption>
             <thead>
                 <tr>
@@ -201,7 +202,7 @@
                 </tr>
             </tbody>
         </table>
-        
+
         <table class="demo-table" id="sales-table" title="Пример сложной таблицы" style="border-collapse: collapse;">
             <caption>Продажи за квартал</caption>
             <thead>
@@ -385,7 +386,7 @@
     <section id="media-demo" class="demo-section">
         <h2>Мультимедиа</h2>
 
-        <audio controls title="Аудиозапись">
+        <audio class="media-demo" controls title="Аудиозапись">
             <source src="{% static 'videos/gimn.mp3' %}" type="audio/mpeg">
             Ваш браузер не поддерживает воспроизведение аудио.
         </audio>
