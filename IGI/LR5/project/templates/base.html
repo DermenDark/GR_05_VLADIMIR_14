@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'css/special.css' %}">
     <link rel="stylesheet" href="{% static 'css/preload.css' %}">
     <link rel="stylesheet" href="{% static 'css/anim.css' %}">
+    <link rel="stylesheet" href="{% static 'css/LR3.css' %}">
     <link rel="icon" href="{% static 'images/favicon.png' %}">
 </head>
 
@@ -38,6 +39,9 @@
     </main>
 
     <footer>{% include 'includes/footer.html' %}</footer>
+
+    {% block scripts %}{% endblock %}
+    <script src="{% static 'js/task2.js' %}" defer></script>
 </body>
 
 </html>

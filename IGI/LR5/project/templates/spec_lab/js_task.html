@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Специальная страница{% endblock %}
+{% load static %}
+{% block content %}
+<div class="task-page">
+    <section id="box" data-bottle="{% static 'images/botle.png' %}"></section>
+
+    <section class="phone-generator">
+
+        <label>
+            <input type="checkbox" id="create_phone">
+            Создать поле телефона
+        </label>
+        <form>
+            <label>
+                name:
+                <input type="text" class="attr-name" value="phone">
+            </label>
+
+            <label>
+                placeholder:
+                <input type="text" class="attr-placeholder" value="+375 (__) ___-__-__">
+            </label>
+
+            <label>
+                value:
+                <input type="text" class="attr-value" value="+375 (29) 123-45-67">
+            </label>
+
+            <label>
+                pattern:
+                <input type="text" class="attr-pattern" value="\+375\s\(\d{2}\)\s\d{3}-\d{2}-\d{2}">
+            </label>
+
+            <label>
+                required:
+                <input type="checkbox" class="attr-required" checked>
+            </label>
+
+            <label>
+                maxlength:
+                <input type="number" class="attr-maxlength" value="19">
+            </label>
+        </form>
+        <section id="place_create"></section>
+    </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/task4.js' %}" defer></script>
+<script src="{% static 'js/task11.js' %}" defer></script>
+{% endblock %}

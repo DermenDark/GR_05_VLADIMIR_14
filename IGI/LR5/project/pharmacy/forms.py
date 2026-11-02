@@ -41,7 +41,7 @@ class RegisterForm(UserCreationForm):
     )
     birth_date = forms.DateField(
         label="Дата рождения",
-        help_text="Выберите дату рождения (18+)",
+        help_text="Укажите дату рождения",
         widget=forms.DateInput(
             attrs={
                 "type": "date",
@@ -72,7 +72,7 @@ class RegisterForm(UserCreationForm):
         today = date.today()
         self.fields["birth_date"].widget.attrs.update({
             "min": (today - timedelta(days=365 * 120)).strftime("%Y-%m-%d"),
-            "max": (today - timedelta(days=365 * 18)).strftime("%Y-%m-%d"),
+            "max": today.strftime("%Y-%m-%d"),
         })
 
     def clean_birth_date(self):
@@ -81,8 +81,6 @@ class RegisterForm(UserCreationForm):
         age = today.year - birth_date.year - (
             (today.month, today.day) < (birth_date.month, birth_date.day)
         )
-        if age < 18:
-            raise ValidationError("Вам должно быть не менее 18 лет.")
         if age > 120:
             raise ValidationError("Проверьте правильность даты рождения.")
         return birth_date

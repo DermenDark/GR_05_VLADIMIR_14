@@ -35,28 +35,29 @@ nav a,
 .auth-links strong {
     display: inline-block;
     padding: 8px 12px;
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
+    outline: 1px solid var(--white);
     border-radius: 6px;
     white-space: nowrap;
-    transition: .2s;
+    transition: .3s;
 }
 
 nav a:hover,
 .auth-links li:hover>strong {
-    background: #168614;
+    background: var(--green);
 }
 
 nav a:active {
-    background: #116c0f;
+    background: var(--green-dark);
 }
 
 nav a:focus {
-    outline: 2px solid #fff;
+    outline: 3px solid var(--white);
 }
 
 nav a:visited {
-    color: #feffcb;
+    color: var(--accent);
 }
 
 .auth-links {
@@ -76,7 +77,7 @@ nav a:visited {
     padding: 6px 0;
     margin: 0;
     list-style: none;
-    background: #ffffff;
+    background: var(--mint-light);
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
@@ -90,13 +91,13 @@ nav a:visited {
 }
 
 .auth-links ul a {
-    color: #1d2e1b;
+    color: var(--ink);
     border-radius: 0;
 }
 
 .auth-links ul a:hover {
-    background: #eef9ec;
-    color: #0fa30a;
+    background: var(--mint);
+    color: var(--green);
 }
 
 .auth-links form {
@@ -107,20 +108,20 @@ nav a:visited {
     padding: 8px 14px;
     border: 0;
     border-radius: 6px;
-    background: #fff;
-    color: #0fa30a;
+    background: var(--mint-light);
+    color: var(--green);
     font-weight: 600;
     cursor: pointer;
     transition: .2s;
 }
 
 .auth-links button:hover {
-    background: #116c0f;
-    color: #fff;
+    background: var(--green-dark);
+    color: var(--white);
 }
 
 .auth-links button:focus {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--white);
     outline-offset: 2px;
 }
 
@@ -131,7 +132,7 @@ button,
     border: 0;
     border-radius: 7px;
     background: var(--green);
-    color: white;
+    color: var(--white);
     font: 500 1rem "Roboto", Arial, sans-serif;
     text-decoration: none;
     cursor: pointer;
@@ -144,7 +145,7 @@ button:hover,
 
 button:focus,
 .button:focus {
-    outline: 3px solid #f4c95d;
+    outline: 3px solid var(--accent);
     outline-offset: 2px;
 }
 
@@ -160,7 +161,7 @@ button:focus,
 
 .partners h2 {
     width: 100%;
-    color: #fffffe;
+    color: var(--white);
 }
 
 .partner {
@@ -170,8 +171,8 @@ button:focus,
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fffefe;
-    border: 2px solid #0d9700;
+    background: var(--mint-light);
+    border: 2px solid var(--green);
     border-radius: 50%;
     box-shadow: 0 10px 25px hsla(111, 100%, 14%, .9);
     transition: .2s;
@@ -179,7 +180,7 @@ button:focus,
 
 .partner:hover {
     transform: translateY(-20px);
-    border-color: #0fa30a;
+    border-color: var(--green);
     box-shadow: 0 30px 50px hsla(111, 100%, 14%, .75);
 }
 
@@ -191,7 +192,7 @@ button:focus,
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    color: #0fa30a;
+    color: var(--green);
     font-weight: 600;
     font-size: .95rem;
     line-height: 1.3;
@@ -209,7 +210,7 @@ button:focus,
 
 a {
     text-decoration: none;
-    color: #116c0f;
+    color: var(--green-dark);
 }
 
 p {
@@ -219,7 +220,7 @@ p {
 .card {
     border: 1px solid var(--border);
     border-radius: 12px;
-    background: white;
+    background: var(--mint-light);
     overflow: hidden;
 }
 
@@ -232,7 +233,7 @@ p {
     align-self: stretch;
     padding: 24px;
     border-radius: 12px;
-    background: #e7f4eb;
+    background: var(--mint);
     border-left: 5px solid var(--green);
 }
 
@@ -247,7 +248,7 @@ p {
 
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -259,10 +260,15 @@ p {
     height: 95%;
     box-sizing: border-box;
     padding: 18px;
+    transform: transform .2s;
 }
 
 .product-card p {
     flex: initial;
+}
+
+.product-card[hidden] {
+    display: none !important;
 }
 
 .product-card strong {
@@ -271,7 +277,7 @@ p {
 
 .requisites {
     padding: 12px;
-    background: #f0f8f2;
+    background: var(--mint-light);
     font-family: Georgia, "Times New Roman", serif;
     font-variant: small-caps;
 }
@@ -284,7 +290,7 @@ p {
     margin: 10px 0 20px;
     border: 3px solid var(--border);
     border-radius: 10px;
-    background: #eaf6ef;
+    background: var(--mint);
 }
 
 .news-grid {
@@ -392,7 +398,7 @@ p {
 
 .policy-box {
     padding: 20px;
-    background: #f1f7f2;
+    background: var(--mint-light);
     border-left: 4px solid var(--green);
 }
 
@@ -400,7 +406,7 @@ p {
 .coupon-list article {
     margin: 8px 0;
     padding: 12px 14px;
-    background: #f3f8f4;
+    background: var(--mint-light);
     border-radius: 10px;
     border-left: 4px solid transparent;
     transition: box-shadow .2s;
@@ -421,11 +427,11 @@ p {
 }
 
 .coupon-list article p strong[data-status="active"] {
-    color: #258653;
+    color: var(--green-dark);
 }
 
 .coupon-list article p strong[data-status="archived"] {
-    color: #7e8781;
+    color: var(--ink);
 }
 
 .clear-fix {
@@ -449,11 +455,11 @@ p {
     display: block;
     margin-bottom: 10px;
     padding: 10px 14px;
-    background-color: #effaf2;
-    border-left: 3px solid #4fae77;
+    background-color: var(--mint-light);
+    border-left: 3px solid var(--green-dark);
     border-radius: 4px;
     line-height: 1.6;
-    color: #31563c;
+    color: var(--ink);
 }
 
 .history-sentence:first-child {
@@ -464,7 +470,7 @@ p {
     max-width: 1000px;
     margin: 0 auto;
     padding: 24px;
-    background: #fff;
+    background: var(--mint-light);
     border: 1px solid var(--border);
     border-radius: 12px;
     box-shadow: 0 4px 13px #193b2810;
@@ -480,7 +486,7 @@ p {
 .content-section {
     margin: 18px 0;
     padding: 18px 20px;
-    background: #f3f8f4;
+    background: var(--mint-light);
     border-left: 4px solid var(--green);
     border-radius: 8px;
 }
@@ -494,7 +500,7 @@ p {
 .content-section p {
     margin: 0;
     line-height: 1.7;
-    color: #31563c;
+    color: var(--ink);
     white-space: pre-line;
 }
 
@@ -503,7 +509,7 @@ p {
     flex-wrap: wrap;
     gap: 8px 18px;
     margin: 22px 0;
-    color: #6b786e;
+    color: var(--ink);
     font-size: 0.9rem;
 }
 
@@ -514,7 +520,7 @@ p {
 .filter-panel {
     margin-bottom: 20px;
     padding: 18px;
-    background: #fff;
+    background: var(--mint-light);
     border-radius: 10px;
 }
 
@@ -535,13 +541,13 @@ p {
 
 .category-links a {
     padding: 9px;
-    background: #f3f8f4;
+    background: var(--mint-light);
     border-radius: 6px;
 }
 
 .category-links a:hover {
     background: var(--green);
-    color: white;
+    color: var(--white);
 }
 
 @media (max-width: 900px) {

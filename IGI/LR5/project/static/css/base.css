@@ -1,22 +1,54 @@
 :root {
     --green: #0fa30a;
     --green-dark: #116c0f;
+    --green-bright-bg: #a7f79d;
     --mint: #eaf6ef;
+    --mint-light: #f3f8f4;
     --ink: #24332b;
     --paper: #fbfdfb;
     --border: #c8dbce;
+    --accent: #f4c95d;
+    --white: #ffffff;
+    --black: #000000;
+    --overlay: rgba(0, 0, 0, .35);
 }
 
 * {
     box-sizing: border-box;
+    
 }
 
 body {
     margin: 0;
-    background: linear-gradient(-90deg, #fcfffc 0%, #a7f79d 100%);
+    background: linear-gradient(-90deg,
+            var(--paper) 0%,
+            var(--green-bright-bg) 100%);
+    color: var(--ink);
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
+}
+
+/* task 2 */
+body.dark-theme {
+    --green: #073a1c;
+    --green-dark: #4fdc4a;
+    --green-bright-bg: #1c3d24;
+
+    /* Фоны */
+    --mint: #1a221d;
+    --mint-light: #212a24;
+    --paper: #121614;
+    --white: #ffffff;
+
+    /* Текст */
+    --ink: #e2ece6;
+
+    --border: #2f3d35;
+    --overlay: rgba(0, 0, 0, .65);
+
+    --accent: #f4c95d;
+    --black: #e2ece6;
 }
 
 main {
@@ -28,7 +60,7 @@ main {
 .section {
     margin: 0 0 36px;
     padding: 26px;
-    background: rgba(255, 255, 255, .92);
+    background: var(--mint-light);
     border-radius: 14px;
 }
 
@@ -46,6 +78,8 @@ main {
 
 .site-header-content,
 .footer-content {
+    margin: 0;
+    padding: 0;
     background: var(--green);
     box-shadow: 0 4px 14px #153c2a30;
 }

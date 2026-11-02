@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Каталог{% endblock %}
+{% load static %}
 {% block content %}
 <section id="catalog" aria-labelledby="catalog-title">
     <h1 id="catalog-title">Каталог</h1>
@@ -95,5 +96,10 @@
         <p>Нет лекарств.</p>
         {% endfor %}
     </div>
+    <div class="pages_button"></div>
 </section>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/task5.js' %}" defer></script>
+<script src="{% static 'js/task6.js' %}" defer></script>
 {% endblock %}

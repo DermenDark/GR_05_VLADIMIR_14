@@ -1,0 +1,227 @@
+.banner {
+    position: relative;
+    margin: 0;
+}
+
+.banner__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.banner__btn:hover {
+    background: var(--overlay);
+}
+
+.banner__btn:focus {
+    outline: none;
+}
+
+.banner__btn--prev {
+    left: 12px;
+}
+
+.banner__btn--next {
+    right: 12px;
+}
+
+.banner__counter {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 24px;
+    color: var(--white);
+    border-radius: 50%;
+    background: var(--overlay);
+    backdrop-filter: blur(4px);
+}
+
+.banner__caption {
+    position: absolute;
+    display: flex;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: var(--white);
+    border-radius: 16px;
+    background: var(--overlay);
+    pointer-events: none;
+}
+
+.banner__dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 12px;
+    padding: 8px 14px;
+    margin: auto;
+    border-radius: 20px;
+    background: var(--green-dark);
+}
+
+.banner__dot {
+    display: block;
+    color: var(--green-dark);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--paper);
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+.banner__dot--active {
+    background: var(--overlay);
+    transform: scale(1.2);
+}
+
+.banner__dot:focus {
+    outline: none;
+}
+
+.banner__btn[hidden],
+.banner__dots[hidden],
+.banner__dot[hidden] {
+    display: none !important;
+}
+
+/* task11 */
+.task-page {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+#box {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    display: grid;
+    grid-auto-rows: 90px;
+    gap: 82px 150px;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bottle {
+    width: 240px;
+    z-index: 0;
+    height: 280px;
+    rotate: 50deg;
+    object-fit: contain;
+    opacity: 0.5;
+    will-change: transform, rotate;
+}
+
+/* task4 */
+.phone-generator {
+    position: relative;
+    z-index: 10;
+}
+
+/* task5 */
+.pages_button {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.pages_button button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #333;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.pages_button button.active {
+    background-color: #333;
+    color: white;
+}
+
+.pages_button button+button {
+    border-left: 0;
+}
+
+.pages_button button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.pages_button button:focus-visible {
+    outline: none;
+}
+
+/* task6 */
+.product-card {
+    transition: transform 0.25s ease;
+}
+
+.product-card::before {
+    content: "";
+
+    position: absolute;
+    inset: -5px;
+
+    background: radial-gradient(circle at var(--posx, 50%) var(--posy, 50%),
+            #39ff14,
+            rgba(57, 255, 20, 0.4),
+            transparent 100%);
+
+    filter: blur(25px);
+
+    opacity: 0;
+
+    z-index: -10;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        filter 0.2s ease;
+}
+
+/* .product-card.is-hovered {
+    transition: transform 0.06s linear;
+} */
+
+.product-card.is-hovered::before {
+    opacity: 0.45;
+}
+
+.product-card.is-clicked::before {
+    opacity: 1;
+    filter: blur(35px);
+}
+
+/* task7 */
+#birth_info {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#birth_info.error {
+    color: red;
+}
+
+#birth_info.success {
+    color: green;
+}

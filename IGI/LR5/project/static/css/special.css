@@ -4,7 +4,7 @@
 }
 
 .demo-table caption {
-    color: #0fa30a;
+    color: var(--green);
     font: bold 1.2rem sans-serif;
     text-align: left;
 }
@@ -12,37 +12,37 @@
 .demo-table th,
 .demo-table td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     text-align: center;
     vertical-align: middle;
 }
 
 .demo-table thead th {
-    background: #0fa30a;
-    color: #fff;
+    background: var(--green);
+    color: var(--white);
 }
 
 .demo-table tbody tr:nth-child(even) {
-    background: #f2f2f2;
+    background: var(--mint-light);
 }
 
 .demo-table tbody tr:hover {
-    background: #e6f7e5;
+    background: var(--mint);
 }
 
 .demo-table td:empty {
-    background: #eee;
+    background: var(--mint-light);
 }
 
 .demo-table a {
-    color: #0fa30a;
+    color: var(--green);
 }
 
 #AboutCompani {
     max-width: 70ch;
     margin: 0 auto;
     padding: 24px;
-    color: #24332b;
+    color: var(--ink);
     font-size: 1rem;
     line-height: 1.7;
     text-align: justify;
@@ -64,16 +64,20 @@
 
 .unicode-list li:nth-child(2) {
     text-decoration: underline;
-    text-decoration-color: #758518;
+    text-decoration-color: var(--accent);
 }
 
 a[href$=".png"]::after {
     content: " ↓";
 }
 
+#styleChange {
+    font-size: 24px;
+}
+
 #mybigletter::first-letter {
     font-size: 3rem;
-    color: var(--green);
+    color: var(--green-dark);
     font-weight: 700;
 }
 
@@ -93,8 +97,8 @@ a[href$=".png"]::after {
 }
 
 ::selection {
-    background: #c4f0d4;
-    color: #123d27;
+    background: var(--mint);
+    color: var(--ink);
 }
 
 .certificate {
@@ -107,7 +111,7 @@ a[href$=".png"]::after {
 
     padding: 36px 26px;
     text-align: center;
-    color: #34533d;
+    color: var(--ink);
 
     background-image:
         url("../images/certificate-bg.svg");
@@ -140,14 +144,14 @@ a[href$=".png"]::after {
     width: 42px;
     height: 42px;
     line-height: 42px;
-    border: 2px solid #a8873b;
+    border: 2px solid var(--accent);
     border-radius: 50%;
 }
 
 .certificate-meta {
     margin: 14px 0 0;
     padding-top: 12px;
-    border-top: 1px dashed rgba(168, 135, 59, .4);
+    border-top: 1px dashed var(--accent);
     font-size: .72rem;
     text-align: left;
 }
@@ -160,13 +164,13 @@ a[href$=".png"]::after {
 }
 
 .certificate-meta dt {
-    color: #7e8781;
+    color: var(--ink);
     letter-spacing: .04em;
 }
 
 .certificate-meta dd {
     margin: 0;
-    color: #34533d;
+    color: var(--ink);
     font-weight: 600;
 }
 

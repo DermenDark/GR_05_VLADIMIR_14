@@ -21,7 +21,7 @@
 .loading-text {
     flex-basis: 100%;
     margin-top: 12px;
-    color: #286b44;
+    color: var(--green-dark);
     font-weight: 700;
     text-align: center;
 }
