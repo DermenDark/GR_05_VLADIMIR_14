@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+
+<h1>Контакты сотрудников</h1>
+
+<section class="filter-panel">
+    <h2>Поиск</h2>
+
+    <form method="get" id="employee-filter" class="search-form">
+        <input type="text" id="employee-search" placeholder="Поиск..." class="input">
+
+        <button type="submit">Найти</button>
+    </form>
+</section>
+
+<button type="button" id="show-add-form">Добавить</button>
+
+<section id="add-employee-panel" hidden>
+
+    <form id="employee-add-form" novalidate>
+
+        <label>
+            ФИО:
+            <input type="text" id="new-name" required>
+        </label>
+
+        <label>
+            Фото:
+            <input type="file" id="new-photo" accept="image/*" required>
+        </label>
+
+        <label>
+            URL:
+            <input type="url" id="new-url" required>
+            <span id="url-result"></span>
+        </label>
+
+        <label>
+            Описание:
+            <textarea id="new-description" required></textarea>
+        </label>
+
+        <label>
+            Телефон:
+            <input type="tel" id="new-phone" required>
+            <span id="phone-result"></span>
+        </label>
+
+        <label>
+            Почта:
+            <input type="email" id="new-email" required>
+        </label>
+
+        <button type="submit" id="add-employee-submit" disabled>
+            Добавить в таблицу
+        </button>
+
+    </form>
+</section>
+
+<div class="preloader-demo" role="status" hidden>
+
+    <span class="pill-bounce">
+        <img class="pill-image" src="{% static 'images/pill.png' %}" alt="">
+    </span>
+
+    <span class="loading-text">Загружаем заботу...</span>
+</div>
+
+<p id="sort-status">Сортировка не выбрана.</p>
+
+<table class="demo-table">
+
+    <thead>
+        <tr class="demo-table-capitals">
+            <th>Фото</th>
+            <th class="capital_table" data-sort="name">Имя</th>
+            <th class="capital_table" data-sort="department">Отдел</th>
+            <th class="capital_table" data-sort="description">Описание</th>
+            <th class="capital_table" data-sort="phone">Телефон</th>
+            <th class="capital_table" data-sort="email">Почта</th>
+            <th>Премировать</th>
+        </tr>
+    </thead>
+
+    <tbody id="employees-table" data-url="{% url 'employees_api' %}">
+    </tbody>
+
+</table>
+
+<div class="pages_button"></div>
+
+<button type="button" id="premiate-selected">Премировать</button>
+
+<p id="premium-result" aria-live="polite"></p>
+
+<section id="employee-details">
+    <h2>Информация о сотруднике</h2>
+    <p>Нажмите на строку таблицы.</p>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{% static 'js/task3.js' %}"></script>
+
+{% endblock %}

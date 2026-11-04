@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import Group
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404, redirect, render
+from django.http import JsonResponse
 
 from .forms import RegisterForm
 from .help_funk.filter import (
@@ -144,6 +145,31 @@ def contacts(request):
         "employee": Employee.objects.select_related("department").all()
     })
 
+def contacts_table(request):
+    logger.info("Открыта страница контактов в виде таблицы пользователем %s", request.user)
+    return render(request, "pharmacy/contacts_table.html")
+
+def employees_api(request):
+    logger.info("Использовалось API для получения данных о сотрудниках %s", request.user)
+    employees = Employee.objects.select_related("department").all()
+
+    data = []
+
+    for employee in employees:
+        data.append({
+            "id": employee.id,
+            "name": employee.name,
+            "department": str(employee.department) if employee.department else "",
+            "photo": request.build_absolute_uri(employee.photo.url)
+                     if employee.photo else "",
+            "description": employee.description or "",
+            "phone": employee.phone,
+            "email": employee.email,
+        })
+
+    return JsonResponse({
+        "employees": data
+    })
 
 def login_view(request):
     login_form = AuthenticationForm(request, data=request.POST or None)

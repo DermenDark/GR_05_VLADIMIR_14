@@ -14,6 +14,7 @@
         <a href="{% url 'promo' %}">Льготы и купоны</a>
         <a href="{% url 'spec_lab' %}">Специальная страница HTML</a>
         <a href="{% url 'spec_lab_js' %}">Специальная страница JS</a>
+        <a href="{% url 'contacts_table' %}">Таблица работников</a>
         <button type="button" id="styleChange">☀</button>
     </nav>
 
@@ -69,7 +70,7 @@
             </li>
             {% endif %}
 
-            {% if perms.pharmacy.view_medication or perms.pharmacy.view_categorymedication or perms.pharmacy.view_supplier %}
+            {% if perms.pharmacy.view_medication or perms.pharmacy.view_categorymedication%}
             <li>
                 <strong>Склад</strong>
                 <ul>
@@ -94,7 +95,7 @@
             </li>
             {% endif %}
 
-            {% if perms.pharmacy.view_sale or perms.pharmacy.view_saleitem or perms.pharmacy.view_coupons or perms.pharmacy.view_benefits %}
+            {% if perms.pharmacy.view_sale or perms.pharmacy.view_saleitem or perms.pharmacy.view_coupons%}
             <li>
                 <strong>Продажи</strong>
                 <ul>
@@ -125,7 +126,7 @@
             </li>
             {% endif %}
 
-            {% if perms.info.view_about_company or perms.info.view_news or perms.info.view_terms or perms.info.view_reviews %}
+            {% if perms.info.view_about_company or perms.info.view_news or perms.info.view_terms%}
             <li>
                 <strong>Контент</strong>
                 <ul>

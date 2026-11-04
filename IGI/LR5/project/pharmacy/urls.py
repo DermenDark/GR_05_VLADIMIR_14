@@ -57,6 +57,8 @@ urlpatterns = [
     re_path(r'^employees/', include(urlpatterns_employees)),
     re_path(r'^management/', include(urlpatterns_other)),
     re_path(r'^contacts/$', views.contacts, name='contacts'),
+    re_path(r'^contacts_table/$', views.contacts_table, name='contacts_table'),
+    re_path(r'^api/employees/$', views.employees_api, name="employees_api"),
     re_path(r'^promo/$', views.promo, name='promo'),
     re_path(r'^vacancies/$', views.vacancies, name='vacancies'),
     re_path(r'^login/$', views.login_view, name='login_view'),

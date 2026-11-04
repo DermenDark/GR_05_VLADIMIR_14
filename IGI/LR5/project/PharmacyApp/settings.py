@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
 ]
-
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 CSRF_TRUSTED_ORIGINS = [
     "https://pharmacy-production-72c4.up.railway.app",
 ]

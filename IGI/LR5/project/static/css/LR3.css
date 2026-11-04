@@ -1,3 +1,4 @@
+/* task1 */
 .banner {
     position: relative;
     margin: 0;
@@ -20,7 +21,8 @@
     background: var(--overlay);
 }
 
-.banner__btn:focus {
+.banner__btn:focus,
+.banner__dot:focus {
     outline: none;
 }
 
@@ -85,15 +87,173 @@
     transform: scale(1.2);
 }
 
-.banner__dot:focus {
-    outline: none;
-}
-
 .banner__btn[hidden],
 .banner__dots[hidden],
 .banner__dot[hidden] {
     display: none !important;
 }
+
+
+/* task3 */
+.earn-checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: green;
+    cursor: pointer;
+}
+
+#add-employee-panel[hidden] {
+    display: none !important;
+}
+
+.pages_button {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 20px 0;
+}
+
+.pages_button button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #333;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.pages_button button+button {
+    border-left: 0;
+}
+
+.pages_button button.active {
+    background-color: #333;
+    color: white;
+}
+
+.pages_button button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.capital_table {
+    cursor: pointer;
+    user-select: none;
+}
+
+.capital_table:hover {
+    background: #d9f2d9;
+}
+
+#employee-add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#employee-add-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#employee-add-form input,
+#employee-add-form textarea {
+    padding: 8px;
+}
+
+.field-invalid {
+    border: 2px solid red !important;
+    background: #ffe0e0;
+}
+
+#add-employee-submit:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+#employee-details {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+/* task4 */
+.phone-generator {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* task6 */
+.product-card {
+    transition: transform 0.25s ease;
+}
+
+.product-card::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    background: radial-gradient(circle at var(--posx, 50%) var(--posy, 50%),
+            #39ff14,
+            rgba(57, 255, 20, 0.4),
+            transparent 100%);
+    filter: blur(25px);
+    opacity: 0;
+    z-index: -10;
+    pointer-events: none;
+    transition:
+        opacity 0.3s ease,
+        filter 0.2s ease;
+}
+
+.product-card.is-hovered::before {
+    opacity: 0.45;
+}
+
+.product-card.is-clicked::before {
+    opacity: 1;
+    filter: blur(35px);
+}
+
+
+/* task7 */
+#birth_info {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#birth_info.error {
+    color: red;
+}
+
+#birth_info.success {
+    color: green;
+}
+
+
+/* task8 */
+#map {
+    width: 100%;
+    height: 450px;
+    margin-top: 15px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+#status {
+    margin: 10px 0;
+}
+
+#map-link {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 
 /* task11 */
 .task-page {
@@ -111,117 +271,19 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-
     display: grid;
     grid-auto-rows: 90px;
     gap: 82px 150px;
-
     z-index: 0;
     pointer-events: none;
 }
 
 .bottle {
     width: 240px;
-    z-index: 0;
     height: 280px;
+    z-index: 0;
     rotate: 50deg;
     object-fit: contain;
     opacity: 0.5;
     will-change: transform, rotate;
-}
-
-/* task4 */
-.phone-generator {
-    position: relative;
-    z-index: 10;
-}
-
-/* task5 */
-.pages_button {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-}
-
-.pages_button button {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: 1px solid #333;
-    border-radius: 0;
-    cursor: pointer;
-}
-
-.pages_button button.active {
-    background-color: #333;
-    color: white;
-}
-
-.pages_button button+button {
-    border-left: 0;
-}
-
-.pages_button button:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.pages_button button:focus-visible {
-    outline: none;
-}
-
-/* task6 */
-.product-card {
-    transition: transform 0.25s ease;
-}
-
-.product-card::before {
-    content: "";
-
-    position: absolute;
-    inset: -5px;
-
-    background: radial-gradient(circle at var(--posx, 50%) var(--posy, 50%),
-            #39ff14,
-            rgba(57, 255, 20, 0.4),
-            transparent 100%);
-
-    filter: blur(25px);
-
-    opacity: 0;
-
-    z-index: -10;
-    pointer-events: none;
-
-    transition:
-        opacity 0.3s ease,
-        filter 0.2s ease;
-}
-
-/* .product-card.is-hovered {
-    transition: transform 0.06s linear;
-} */
-
-.product-card.is-hovered::before {
-    opacity: 0.45;
-}
-
-.product-card.is-clicked::before {
-    opacity: 1;
-    filter: blur(35px);
-}
-
-/* task7 */
-#birth_info {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-}
-
-#birth_info.error {
-    color: red;
-}
-
-#birth_info.success {
-    color: green;
 }

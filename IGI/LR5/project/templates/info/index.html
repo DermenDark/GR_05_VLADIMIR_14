@@ -236,6 +236,13 @@
     </article>
     {% endif %}
 
+    <!-- task8 -->
+    <br>
+    <button id="find-me">Показать мою локацию</button><br />
+    <p id="status"></p>
+    <a id="map-link" target="_blank"></a>
+    <div id="map"></div>
+
     {% if company %}
     <section>
         <h2>О компании</h2>
@@ -410,4 +417,6 @@
 
     {% block scripts %}
     <script src="{% static 'js/task1.js' %}" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="{% static 'js/task9.js' %}" defer></script>
     {% endblock %}
