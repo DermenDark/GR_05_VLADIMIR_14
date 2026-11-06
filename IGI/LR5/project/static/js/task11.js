@@ -24,9 +24,6 @@ const bottles = [...box.querySelectorAll('.bottle')];
 let ticking = false;
 
 window.addEventListener('scroll', () => {
-    if (ticking) return;
-
-    ticking = true;
 
     requestAnimationFrame(() => {
         const value = window.scrollY;
@@ -39,6 +36,5 @@ window.addEventListener('scroll', () => {
             `;
         });
 
-        ticking = false;
     });
 }, { passive: true });

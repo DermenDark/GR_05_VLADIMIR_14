@@ -1,4 +1,3 @@
-
 import { createPagination } from "./pagination.js";
 const table = document.querySelector("#employees-table");
 const headers = [...document.querySelectorAll(".capital_table")];
@@ -202,7 +201,6 @@ function showEmployeeDetails(employee) {
         details.appendChild(link);
     }
 }
-
 
 function addEmploerPremi(employee, checked) {
 
